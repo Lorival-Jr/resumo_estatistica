@@ -104,6 +104,17 @@ $$\lim\limits_{x \to -1} \frac{x^2 -1}{x + 1} = -2$$
 
 #####  **Alguns limites fundamentais**
 
+Limites fundamentais são alguns limites que valem um valor conhecido, e são utilizados para descobrir outros limites mais complexos
+
+
+$$\lim\limits_{x \to 0} \frac{sen(x)}{x} = 1$$
+$$\lim\limits_{x \to 0} \frac{1 - cos(x)}{x} = 1$$
+$$\lim\limits_{x \to 0^+} \frac{1}{x^r} = +\infty$$
+$$\lim\limits_{x \to 0^-} \frac{1}{x^r} =$$ 
+Se r é ímpar $-\infty$, se r é par $+\infty$
+
+$$\lim\limits_{x \to -\infty} \frac{1}{x^r} = 0$$ 
+$$\lim\limits_{x \to +\infty} \frac{1}{x^r} = 0$$ 
 
 #### Derivação
 
