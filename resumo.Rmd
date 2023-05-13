@@ -1,0 +1,82 @@
+---
+title: "Um resumo do curso de Estatística" 
+author: "Lorival Junior"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<style>
+  body: justify
+</style>
+
+Esse documento busca resumir as matérias do curso de estatística e ser um material de revisão e consulta dessas.
+
+## 1° Ano
+<p>O primeiro ano é uma base para os próximos anos, sendo constituído de várias matérias de matemática pura e outras de estatística básica, essas matérias serão utilizadas em todos os anos seguintes. Essas matérias sendo, no primeiro semestre, Calculo I, Geometria Analítica, Estatística I e Fundamentos de Probabilidade, já no segundo, Calculo II, Algoritmos, Estatística II e Probabilidade I.</p>
+
+### Cálculo I
+
+<p>Cálculo I é uma matéria fundamental para desenvolvimento do curso, apresentando três novas funções matemáticas, o limite, a derivada e a integração. Essas funções serão utilizadas em todas as matérias tanto de cálculo como de estatística.</p>
+
+#### **Limite**
+
+**O que é um limite?**
+Primeiramente, precisamos entender o que é o limite de uma função.
+
+$\lim\limits_{x \to 5} f(x) = 4$
+
+<p>Esse limite seria interpretado como a função f(x) se aproxima de 4 quando x tende a 5. Ou seja, quanto mais o valor de x da função se aproximar de 5, mais o resultado dessa função vai se aproximar de 5. Ou seja, o limite de uma função é o valor que ela se aproxima quando o valor do x se aproxima de outro valor. Assim, o limite de f(x) quando x tende à 5 é 4</p>
+
+<p>Existem outras formas de se aproximar de um número na linha Real, tando pela esquerda, aumentando os número, como 0, 1, 2..., quanto pela direita, diminuindo os números, como 8, 7, 6..., esses são chamados de limites laterais, tendo uma notação para cada na tendência do x. </p> 
+
+$\lim\limits_{x \to 5^-} f(x) = 4$
+Quando a função se aproxima pela esquerda.
+
+$\lim\limits_{x \to 5^+} f(x) = 4$
+Quando a função se aproxima pela direita.
+
+<p> Uma função pode ou não ter um limite, se ambos limites laterais forem iguais, ela tem um limete, se não, não existe limite daquela função.</p>
+
+**Regras operacionais de limite**
+
+$\lim\limits_{x \to a} f(x) + g(x) = \lim\limits_{x \to a} f(x) + \lim\limits_{x \to a} g(x)$
+Ou seja, o limite da soma de funções de mesma base, é a soma dos limites das funções.
+
+$\lim\limits_{x \to a} K*f(x) = K*\lim\limits_{x \to a} f(x)$
+Ou seja, o limite de uma constante vezes uma função é o pruto da constante pelo limite
+
+$\lim\limits_{x \to a} f(x) * g(x) = \lim\limits_{x \to a} f(x) *\lim\limits_{x \to a} g(x)$
+Ou seja, o limite do produto de funções, é o produto dos limites das funções.
+
+$\lim\limits_{x \to a} \frac{f(x)}{g(x) }= \frac{\lim\limits_{x \to a} f(x)}{ \lim\limits_{x \to a} g(x)}$
+Ou seja, o limite da divisão de funções, é a divisão dos limites das funções.
+
+$\lim\limits_{x \to a} f(x) ^n= (\lim\limits_{x \to a} f(x))^n$
+Ou seja, o limite de uma função elevada a uma potência, é a potência do limite.
+
+**Calculando Limites**
+
+O limite pode ser calculado
+#### Derivação
+
+#### Integração
+
+### Geometria Analítica
+
+### Estatística I
+
+### Fundamentos de Probabilidade
+
+### Calculo II
+
+### Algoritmos
+
+### Estatística II
+
+### Probablidade I
+
+## 2° Ano
