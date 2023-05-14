@@ -118,6 +118,22 @@ $$\lim\limits_{x \to +\infty} \frac{1}{x^r} = 0$$
 
 #### Derivação
 
+##### **O que é uma derivada?**
+A derivada representa o coeficiente de varição da reta tangente da função no ponto, sendo a inclinação dessa reta. Esse processo tem duas principais notações, sendo elas $f'(x)$ e $\frac{d}{dx}f(x)$.
+
+[gráfico]
+
+
+
+##### **Regras de derivação**
+
+A derivação de funções mais complexas são resolvidas com base em algumas derivações já conhecidas, essas já conhecidas sendo chamadas de regras de derivação.
+
+**Derivada da constante**
+
+
+
+
 #### Integração
 
 ### Geometria Analítica
