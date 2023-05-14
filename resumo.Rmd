@@ -129,10 +129,29 @@ A derivada representa o coeficiente de varição da reta tangente da função no
 
 A derivação de funções mais complexas são resolvidas com base em algumas derivações já conhecidas, essas já conhecidas sendo chamadas de regras de derivação.
 
-**Derivada da constante**
+**Regra da constante**
+A derivada de uma função constante é zero.
+Ex:
+$$\frac{d}{dx}(5) = 0$$
+**Regra da potência**
+Conhecida também como regra do tombamento, quando temos uma potência de x descemos a potência como produto e elevamos x potência menos um.
+Ex:
+$$\frac{d}{dx}(x^5) = 5 \cdot x^{5-1}$$
+$$\frac{d}{dx}(x^5) = 5 \cdot x^{4}$$
+**Regra da soma**
+A derivada de uma soma de funções é a soma das derivadas das funções.
+Ex:
+$$\frac{d}{dx}(x^3 + 4x) = \frac{d}{dx}(x^3) + \frac{d}{dx}(4x)$$
+$$\frac{d}{dx}(x^3 + 4x) = 3x^2 + 4)$$
 
-
-
+**Regra do produto**
+A derivada de um produto de funções é a soma da derivada da primeira vezes a segunda com a derivada da segunda vezes a primeira.
+No caso geral: $(f(x) \cdot g(x))' = f'(x)\cdot g(x) + g'(x)\cdot f(x) $
+Ex:
+$(x \cdot (2 - x^2))' = x'\cdot (2 - x^2) + (2 - x^2)'\cdot x $
+$(x \cdot (2 - x^2))' = 1\cdot (2 - x^2) + (-2x)\cdot x $
+$(x \cdot (2 - x^2))' = 2 - x^2 -2x^2 $
+$(x \cdot (2 - x^2))' = 2 -3x^2 $
 
 #### Integração
 
