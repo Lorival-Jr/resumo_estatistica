@@ -11,7 +11,7 @@
 
 <meta name="author" content="Lorival Junior" />
 
-<meta name="date" content="2023-05-14" />
+<meta name="date" content="2023-05-15" />
 
 <title>Um resumo do curso de Estatística</title>
 
@@ -164,7 +164,7 @@ pre code {
 
 <h1 class="title toc-ignore">Um resumo do curso de Estatística</h1>
 <h4 class="author">Lorival Junior</h4>
-<h4 class="date">2023-05-14</h4>
+<h4 class="date">2023-05-15</h4>
 
 </div>
 
@@ -245,7 +245,17 @@ Uma função pode ou não ter um limite, se ambos limites laterais forem iguais,
 <div id="regras-de-derivação" class="section level5">
 <h5><strong>Regras de derivação</strong></h5>
 <p>A derivação de funções mais complexas são resolvidas com base em algumas derivações já conhecidas, essas já conhecidas sendo chamadas de regras de derivação.</p>
-<p><strong>Derivada da constante</strong></p>
+<p><strong>Regra da constante</strong> A derivada de uma função constante é zero. Ex: <span class="math display">\[\frac{d}{dx}(5) = 0\]</span> <strong>Regra da potência</strong> Conhecida também como regra do tombamento, quando temos uma potência de x descemos a potência como produto e elevamos x potência menos um. Ex: <span class="math display">\[\frac{d}{dx}(x^5) = 5 \cdot x^{5-1}\]</span> <span class="math display">\[\frac{d}{dx}(x^5) = 5 \cdot x^{4}\]</span> <strong>Regra da soma</strong> A derivada de uma soma de funções é a soma das derivadas das funções. Ex: <span class="math display">\[\frac{d}{dx}(x^3 + 4x) = \frac{d}{dx}(x^3) + \frac{d}{dx}(4x)\]</span> <span class="math display">\[\frac{d}{dx}(x^3 + 4x) = 3x^2 + 4)\]</span></p>
+<strong>Regra do produto</strong>
+<p>
+A derivada de um produto de funções é a soma da derivada da primeira vezes a segunda com a derivada da segunda vezes a primeira.
+</p>
+<p>No caso geral: <span class="math inline">\((f(x) \cdot g(x))&#39; = f&#39;(x)\cdot g(x) + g&#39;(x)\cdot f(x)\)</span><br> Ex: <span class="math display">\[(x \cdot (2 - x^2))&#39; = x&#39;\cdot (2 - x^2) + (2 - x^2)&#39;\cdot x\]</span> <span class="math display">\[(x \cdot (2 - x^2))&#39; = 1\cdot (2 - x^2) + (-2x)\cdot x\]</span> <span class="math display">\[(x \cdot (2 - x^2))&#39; = 2 - x^2 -2x^2\]</span> <span class="math display">\[(x \cdot (2 - x^2))&#39; = 2 -3x^2\]</span></p>
+<p><strong>Regra da Divisão</strong></p>
+<p>
+A derivada de uma divisão de funções é a diferença da derivada da primeira vezes a segunda com a derivada da segunda vezes a primeira, tudo isso dividido pela segunda ao quadrado.
+</p>
+<p>No caso geral: <span class="math inline">\((\frac{f(x)}{g(x)})&#39; = \frac{f&#39;(x)\cdot g(x) - g&#39;(x)\cdot f(x)}{g(x)^2}\)</span> Ex: <span class="math inline">\((x \cdot (2 - x^2))&#39; = x&#39;\cdot (2 - x^2) + (2 - x^2)&#39;\cdot x\)</span></p>
 </div>
 </div>
 <div id="integração" class="section level4">

@@ -145,13 +145,46 @@ $$\frac{d}{dx}(x^3 + 4x) = \frac{d}{dx}(x^3) + \frac{d}{dx}(4x)$$
 $$\frac{d}{dx}(x^3 + 4x) = 3x^2 + 4)$$
 
 **Regra do produto**
-A derivada de um produto de funções é a soma da derivada da primeira vezes a segunda com a derivada da segunda vezes a primeira.
-No caso geral: $(f(x) \cdot g(x))' = f'(x)\cdot g(x) + g'(x)\cdot f(x) $
+A derivada de um produto de funções é a soma da derivada da primeira vezes a segunda com a derivada da segunda vezes a primeira.<br>
+No caso geral: $(f(x) \cdot g(x))' = f'(x)\cdot g(x) + g'(x)\cdot f(x)$<br>
 Ex:
-$(x \cdot (2 - x^2))' = x'\cdot (2 - x^2) + (2 - x^2)'\cdot x $
-$(x \cdot (2 - x^2))' = 1\cdot (2 - x^2) + (-2x)\cdot x $
-$(x \cdot (2 - x^2))' = 2 - x^2 -2x^2 $
-$(x \cdot (2 - x^2))' = 2 -3x^2 $
+$$(x \cdot (2 - x^2))' = x'\cdot (2 - x^2) + (2 - x^2)'\cdot x$$
+$$(x \cdot (2 - x^2))' = 1\cdot (2 - x^2) + (-2x)\cdot x$$
+$$(x \cdot (2 - x^2))' = 2 - x^2 -2x^2$$
+$$(x \cdot (2 - x^2))' = 2 -3x^2$$
+
+**Regra da Divisão**
+
+A derivada de uma divisão de funções é a diferença da derivada da primeira vezes a segunda com a derivada da segunda vezes a primeira, tudo isso dividido pela segunda ao quadrado.<br>
+No caso geral: $\left(\frac{f(x)}{g(x)}\right)' = \frac{f'(x)\cdot g(x) - g'(x)\cdot f(x)}{g(x)^2}$<br>
+Ex:
+$$\left(\frac{x}{2 - x^2}\right)' = \frac{x'\cdot (2 - x^2) - (2 - x^2)'\cdot x}{(2-x^2)^2}$$
+$$\left(\frac{x}{2 - x^2}\right)' = \frac{1\cdot (2 - x^2) - (-2x)\cdot x}{(2-x^2)^2}$$
+$$\left(\frac{x}{2 - x^2}\right)' = \frac{1\cdot (2 - x^2) - (-2x)\cdot x}{(2-x^2)^2}$$
+$$\left(\frac{x}{2 - x^2}\right)' = \frac{2 - x^2 -2x^2}{(2-x^2)^2}$$
+$$\left(\frac{x}{2 - x^2}\right)' = \frac{2 - x^2 -2x^2}{(2-x^2)^2}$$
+$$\left(\frac{x}{2 - x^2}\right)' = \frac{2 - 3x^2}{(2-x^2)^2}$$
+Essa regra pode ser usada para resolver divisões de derivada, no entanto elas podem ser resolvidas também via regra do produto, lembrando que uma divisão também é um produto<br>
+$$\left(\frac{2x- 1}{x}\right)' = [(2x - 1)(x^{-1})]'$$
+$$\left(\frac{2x- 1}{x}\right)' = (2x - 1)'\cdot x^{-1} + (x^{-1})'\cdot (2x - 1) $$
+$$\left(\frac{2x- 1}{x}\right)' = 2\cdot x^{-1} + (-1\cdot x^{-2})\cdot (2x - 1) $$
+$$\left(\frac{2x- 1}{x}\right)' = \frac{2}x - \frac{2x - 1}{x^2} $$
+**Regra da cadeia**
+A regra da cadeia é usada quando temos uma composta de funções, ela é o produto da derivada da primeira aplicada na segunda com a derivada da segunda.
+
+No caso geral: $(f \circ g)'(x) = f'(g(x))\cdot g'(x) $<br>
+Ex:
+$$\frac{d}{dx}(x^2 + 3x)^4$$
+Nesse exemplo, $f(x) = x^4$ e $g(x) = x^2 + 3x$
+Agora é necessário achar f'(g(x)) e g'(x)
+$$f'(x) = 4x^3$$
+$$f'(g(x))= 4(x^2 + 3x)^3$$
+$$g'(x) = 2x + 3$$
+
+$$\frac{d}{dx}(x^2 + 3x)^4 = 4(x^2 + 3x)^3 \cdot (2x + 3)$$
+##### **L'Hospital**
+L'Hospital é usado para resolver indeterminações em limites, facilitando a resolução de indeterminações do tipo $\frac{0}{0}$ e $\frac{\infty}{\infty}$
+
 
 #### Integração
 
