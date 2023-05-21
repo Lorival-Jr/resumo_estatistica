@@ -2,7 +2,14 @@
 title: "Um resumo do curso de Estatística" 
 author: "Lorival Junior"
 date: "`r Sys.Date()`"
-output: html_document
+fontsize: 20pt
+output: 
+  html_document:
+    toc: true
+    toc_depth: 2
+    toc_float: True
+    theme: simplex
+linestretch: 1.5
 ---
 
 ```{r setup, include=FALSE}
@@ -10,21 +17,28 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 <style>
-  body: justify
+  body{
+    text-align: justify;
+    font-size: 16px
+    }
+  h4 {font-size:20px}
+  h5 {font-size:18px}
 </style>
 
 Esse documento busca resumir as matérias do curso de estatística e ser um material de revisão e consulta dessas.
+<br>
 
-## 1° Ano
+# **1° Ano**
 <p>O primeiro ano é uma base para os próximos anos, sendo constituído de várias matérias de matemática pura e outras de estatística básica, essas matérias serão utilizadas em todos os anos seguintes. Essas matérias sendo, no primeiro semestre, Calculo I, Geometria Analítica, Estatística I e Fundamentos de Probabilidade, já no segundo, Calculo II, Algoritmos, Estatística II e Probabilidade I.</p>
+<br>
 
-### Cálculo I
+##  **Cálculo I**
 
 <p>Cálculo I é uma matéria fundamental para desenvolvimento do curso, apresentando três novas funções matemáticas, o limite, a derivada e a integração. Essas funções serão utilizadas em todas as matérias tanto de cálculo como de estatística.</p>
 
-#### **Limite**
+### **Limite**
 
-##### **O que é um limite?**
+#### **O que é um limite?**
 Primeiramente, precisamos entender o que é o limite de uma função.
 
 $$\lim\limits_{x \to 5} f(x) = 4$$
@@ -39,9 +53,9 @@ Quando a função se aproxima pela esquerda.
 $$\lim\limits_{x \to 5^+} f(x) = 4$$
 Quando a função se aproxima pela direita.
 
-<p> Uma função pode ou não ter um limite, se ambos limites laterais forem iguais, ela tem um limete, se não, não existe limite daquela função.</p>
+<p> Uma função pode ou não ter um limite, se ambos limites laterais forem iguais, ela tem um limete, se não, não existe limite daquela função.</p><br>
 
-##### **Regras operacionais de limite**
+#### **Regras operacionais de limite**
 
 $$\lim\limits_{x \to a} f(x) + g(x) = \lim\limits_{x \to a} f(x) + \lim\limits_{x \to a} g(x)$$
 Ou seja, o limite da soma de funções de mesma base, é a soma dos limites das funções.
@@ -57,8 +71,9 @@ Ou seja, o limite da divisão de funções, é a divisão dos limites das funç�
 
 $$\lim\limits_{x \to a} f(x) ^n= (\lim\limits_{x \to a} f(x))^n$$
 Ou seja, o limite de uma função elevada a uma potência, é a potência do limite.
+<br>
 
-##### **Calculando Limites**
+#### **Calculando Limites**
 
 O limite pode ser calculado via substituição direta, que significa trocar a variável x pelo valor que ela tende, por exemplo:
 
@@ -80,7 +95,7 @@ $$\frac{1-1}{-1+1}$$
 
 $$\frac{0}{0}$$
 Esse resultado é chamado indeterminação, não podendo ser considerado, para resolver essa indeterminação podemos seguir dois caminhos, o primeiro mexendo na equação e o segundo aplicando L'Hospital.
-
+<br>
 **Resolvendo indeterminações**
 
 Olhando a equação anterior podemos separar a equação da parte de cima, o dividendo, é um produto da diferença.
@@ -101,8 +116,9 @@ Agora podemos fazer via substituição direta
 
 $$(2*(-1))$$
 $$\lim\limits_{x \to -1} \frac{x^2 -1}{x + 1} = -2$$
+<br>
 
-#####  **Alguns limites fundamentais**
+####  **Alguns limites fundamentais**
 
 Limites fundamentais são alguns limites que valem um valor conhecido, e são utilizados para descobrir outros limites mais complexos
 
@@ -115,36 +131,33 @@ Se r é ímpar $-\infty$, se r é par $+\infty$
 
 $$\lim\limits_{x \to -\infty} \frac{1}{x^r} = 0$$ 
 $$\lim\limits_{x \to +\infty} \frac{1}{x^r} = 0$$ 
+<br>
+### **Derivação**
 
-#### Derivação
-
-##### **O que é uma derivada?**
+#### **O que é uma derivada?**
 A derivada representa o coeficiente de varição da reta tangente da função no ponto, sendo a inclinação dessa reta. Esse processo tem duas principais notações, sendo elas $f'(x)$ e $\frac{d}{dx}f(x)$.
+<br>
 
-[gráfico]
-
-
-
-##### **Regras de derivação**
+#### **Regras de derivação**
 
 A derivação de funções mais complexas são resolvidas com base em algumas derivações já conhecidas, essas já conhecidas sendo chamadas de regras de derivação.
 
-**Regra da constante**
+**Regra da constante**<br>
 A derivada de uma função constante é zero.
 Ex:
 $$\frac{d}{dx}(5) = 0$$
-**Regra da potência**
+**Regra da potência**<br>
 Conhecida também como regra do tombamento, quando temos uma potência de x descemos a potência como produto e elevamos x potência menos um.
 Ex:
 $$\frac{d}{dx}(x^5) = 5 \cdot x^{5-1}$$
 $$\frac{d}{dx}(x^5) = 5 \cdot x^{4}$$
-**Regra da soma**
+**Regra da soma**<br>
 A derivada de uma soma de funções é a soma das derivadas das funções.
 Ex:
 $$\frac{d}{dx}(x^3 + 4x) = \frac{d}{dx}(x^3) + \frac{d}{dx}(4x)$$
 $$\frac{d}{dx}(x^3 + 4x) = 3x^2 + 4)$$
 
-**Regra do produto**
+**Regra do produto**<br>
 A derivada de um produto de funções é a soma da derivada da primeira vezes a segunda com a derivada da segunda vezes a primeira.<br>
 No caso geral: $(f(x) \cdot g(x))' = f'(x)\cdot g(x) + g'(x)\cdot f(x)$<br>
 Ex:
@@ -153,7 +166,7 @@ $$(x \cdot (2 - x^2))' = 1\cdot (2 - x^2) + (-2x)\cdot x$$
 $$(x \cdot (2 - x^2))' = 2 - x^2 -2x^2$$
 $$(x \cdot (2 - x^2))' = 2 -3x^2$$
 
-**Regra da Divisão**
+**Regra da Divisão**<br>
 
 A derivada de uma divisão de funções é a diferença da derivada da primeira vezes a segunda com a derivada da segunda vezes a primeira, tudo isso dividido pela segunda ao quadrado.<br>
 No caso geral: $\left(\frac{f(x)}{g(x)}\right)' = \frac{f'(x)\cdot g(x) - g'(x)\cdot f(x)}{g(x)^2}$<br>
@@ -169,7 +182,7 @@ $$\left(\frac{2x- 1}{x}\right)' = [(2x - 1)(x^{-1})]'$$
 $$\left(\frac{2x- 1}{x}\right)' = (2x - 1)'\cdot x^{-1} + (x^{-1})'\cdot (2x - 1) $$
 $$\left(\frac{2x- 1}{x}\right)' = 2\cdot x^{-1} + (-1\cdot x^{-2})\cdot (2x - 1) $$
 $$\left(\frac{2x- 1}{x}\right)' = \frac{2}x - \frac{2x - 1}{x^2} $$
-**Regra da cadeia**
+**Regra da cadeia**<br>
 A regra da cadeia é usada quando temos uma composta de funções, ela é o produto da derivada da primeira aplicada na segunda com a derivada da segunda.
 
 No caso geral: $(f \circ g)'(x) = f'(g(x))\cdot g'(x) $<br>
@@ -182,42 +195,173 @@ $$f'(g(x))= 4(x^2 + 3x)^3$$
 $$g'(x) = 2x + 3$$
 
 $$\frac{d}{dx}(x^2 + 3x)^4 = 4(x^2 + 3x)^3 \cdot (2x + 3)$$
-##### **L'Hospital**
-L'Hospital é usado para resolver indeterminações em limites, facilitando a resolução de indeterminações do tipo $\frac{0}{0}$ e $\frac{\infty}{\infty}$
+**Derivada da exponencial**<br>
+A derivada da exponencial é a derivada do que ela está aplicada multiplicada pela expressão inicial.
 
 
-#### Integração
+**Derivada do seno**<br>
+A derivada do seno é a derivada do que seno está aplicado multiplicada pelo cosseno.
+<br>
+Ex:
+$$\frac{d}{dx}e^{2x} = \frac{d}{dx}(2x)\cdot e^{2x}$$
+$$\frac{d}{dx}e^{2x} = 2e^{2x}$$
+No caso mais comum, a derivada da exponencial de x é exponencial de x, pela derivada de x ser 1.
+$$\frac{d}{dx}e^x = e^x$$
+**Derivada do cosseno**<br>
+A derivada do cosseno é a derivada do que cosseno está aplicado multiplicada por menos seno.
+<br>
+Ex:
+$$\frac{d}{dx}cos(x^2) = \frac{d}{dx}(x^2)\cdot -sen(x^2)$$
+$$\frac{d}{dx}cos(x^2) = -2x\cdot sen(x^2)$$
+No caso mais comum, a derivada de cossena de x é menos seno de x, pela derivada de x ser 1.
+$$\frac{d}{dx}cos(x) = -sen(x)$$
 
-### Geometria Analítica
 
-### Estatística I
+**Regra de L'Hospital**<br>
+L'Hospital é usado para resolver indeterminações em limites, facilitando a resolução de indeterminações do tipo $\frac{0}{0}$ e $\frac{+\infty}{+\infty}$. Nessa regra, fazemos a derivada do dividendo e do divisor independentemente, então reaplicamos o limite.
+<br>
+Ex:
+$$\lim\limits_{x \to +\infty} \frac{e^x}{x} $$
+Substituindo apenas obteriamos $\frac{e^{+\infty}}{+\infty} = \frac{+\infty}{+\infty}$
+<br> Aplicando L'Hospital
+$$\lim\limits_{x \to +\infty} \frac{(e^x)'}{(x)'} = \lim\limits_{x \to +\infty} \frac{e^x}{1}$$
+Agora Substituindo:
 
-### Fundamentos de Probabilidade
+$$\lim\limits_{x \to +\infty} \frac{(e^x)'}{(x)'} = e^{+\infty} = +\infty$$
 
-### Calculo II
+##### Maximos e mínimos
+Uma aplicação de derivadas é para obter máximos e mínimos de funções.
 
-### Algoritmos
+**Pontos críticos**<br>
+Todos máximos e mínimos são pontos críticos, mas nem todos pontos crítios são máximos e mínimos, pontos críticos podem ser encontrados substituindo um valor na derivada da função e resultado dá zero ou não existe.
 
-### Estatística II
+$$f(x) = x^{\frac{4}3} + 4x^{\frac{1}3}$$
+$$f'(x) = \frac{4}{3}x^{\frac{1}3} + \frac{4}{3}x^{\frac{-2}{3}}$$
+$$f'(x) = \frac{4}{3}\left(x^\frac{1}{3} + \frac{1}{x^\frac{1}3}\right) = \frac{4}{3}x^{\frac{-2}{3}}(x + 1)$$
+Se aplicamos em 0 a função não vai existir
+$$f'(0) = \frac{4}{3}\left(0^\frac{1}{3} + \frac{1}{0^\frac{2}3}\right)$$
+Sendo assim um ponto crítico.
+<br> Se aplicarmos em -1
+$$f'(-1) = \frac{4}{3}-1^{\frac{-2}{3}}(-1 + 1) = 0$$
+Sendo outro ponto crítico<br>
 
-### Probablidade I
+**Regra da derivada primeira**
+Os pontos em que a derivada troca de sinal são pontos extremos.
 
-## 2° Ano
+**Regra da derivada segunda**
+É usada para determinar se é um ponto de máximo ou mínimo local
 
-### Calculo III
 
-### Algebra Linear
+### Integração
+A integral representa a área, sendo a antiderivada, ou o contrário da derivada.
 
-### Estrutura de Dados
 
-### Probabilidade II
 
-### Calculo IV
+## Geometria Analítica 
 
-### Métodos Numéricos
+## Estatística I
 
-### Estatística Computacional
+## Fundamentos de Probabilidade
 
-### Inferência
+### Distribuições Discretas<br>
+**Distribuição Uniforme Discreta**<br>
+Uma das distribuições mais simples, na qual todos pontos tem mesma probabilidade.<br>
 
-###
+ $X$ ~ $U_{d}(x)$
+$$f(x) = p = \frac{1}{n}$$
+$\bar{x} = \frac{1}{n}\sum{x}$; &emsp;   $Var(x) = \frac{1}{n}\sum{x^2 - \frac{(\sum{x})^2}{n}}$<br><br>
+p : A probabilidade de evento acontecer<br>
+n : O número de elementos <br><br>
+**Distribuição Bernoulli**<br>
+Nessa distribuição, só há dois resultados possíveis fracasso (0) sucesso (1), e apenas é realizado uma única tentativa de experimento.<br>
+
+$X$ ~ $Ber(p)$<br>
+$$f(x) = p^x(1-p)^{1-x}$$
+$bar{x} = p$; &emsp; $Var(x) = p(1-p)$<br>
+p : A probabilidade de evento acontecer<br><br>
+
+**Distribuição Binomial**<br>
+A distribuição binomial é a ocorrência de mais de um experimento de Bernoulli, mantendo x igual a 1 ou 0.<br>
+  $X$ ~ $Binom(n,p)$<br>
+
+$$f(x) = \binom nkp^x(1-p)^{(n-x)}$$
+$\bar{x} = n.p$; &emsp; $Var(x) = np(1-p)$<br>
+p : A probabilidade de evento acontecer<br>
+n : O número de ensaios<br><br>
+
+**Distribuição de Poisson**<br>
+Nessa distribuição X é uma contagem do número de sucessos em um intervalo.<br>
+$X$ ~ $Poisson(\lambda)$<br>
+
+$$f(x) =  \frac{e^{-\lambda}\lambda^x}{x!}$$
+$\bar{x} = Var(x) = \lambda$<br>
+\lambda : O valor médio de ocorrências.<br><br>
+
+**Distribuição Multinumial**<br>
+É uma distribuição usada para k eventos mutuamente  exclusivos, com n repetições independetes, tendo uma $p_{i}$ para cada $x_{i}$.<br>
+$X$ ~ $M(x_{1},x_{2},...,x_{k};p_{1},p_{2},...,p_{k})$<br>
+
+$$p(x_{1},x_{2},..,x_{k}) = \frac{n!}{x_{1}!x_{2}!...x_{k}!}p_{1}^{x_{1}}p_{2}^{x_{2}}...p_{k}^{x_{k}}$$
+$\bar{x_{i}} = np_{i} $; &emsp; $Var(x_{i}) = np_{i}(1-p_{i})$<br>
+$p_{i}$ : A probabilidade do evento $x_{i}$ ocorrer.<br><br>
+
+**Distribuição Geométrica**<br>
+É uma distribuição usada para encontrar o primeiro sucesso na i-ésima tentativa.<br>
+$X$~$G(p)$<br>
+
+$$f(x) = p(1-p)^{x-1}$$
+$\bar{x}=\frac{1}{p}$; &emsp; $Var(x)=\frac{1-p}{p^2}$ <br>
+p : A probabilidade do evento ocorrer<br>
+
+**Distribuição Binomial Negativa ou de Pascal**<br>
+Nessa distribuição $X$ é o número de experimentos até o r-ésimo sucesso.<br>
+$X$~$BN(p,r)$<br>
+
+$$f(x) = \binom{x-1}{r-1}p^r(1-p)^{x-r}$$
+$\bar{x} = \frac{r}{p}$; &emsp; $Var(x) = \frac{r(1-p)}{p^2}$<br>
+p : A probabilidade do evento ocorrer<br>
+r : número de sucessos<br><br>
+
+**Distribuição Hipergeométrica**<br>
+É usada quando queremos a probabilidade de k sucessos em n retiradas, sem reposição, de uma população de tamanho N que contém x sucessos.<br>
+
+$X$~$H(N,k,n)$<br>
+$$f(x) = \frac{\binom k x \binom{N-k}{n-x}}{\binom N n}$$
+$\bar{x} = n\frac{k}N = \frac n p$; &emsp; $Var(x)= n \frac k N \left(1-\frac k N \right) \left( \frac{N - n}{N - 1} \right)$<br>
+N : Tamanho inicial da população<br>
+n : Tamanho selecionado da amostra<br> 
+k : Sucessos retirados na amostra<br>
+x : Número de sucessos na população<br>
+
+## Calculo II
+
+## Algoritmos
+
+## Estatística II
+
+## Probablidade I
+
+### Distribuições Contínuas
+
+**Conceitos Gerais**
+
+**Distribuição0
+
+# 2° Ano
+
+## Calculo III
+
+## Algebra Linear
+
+## Estrutura de Dados
+
+## Probabilidade II
+
+## Calculo IV
+
+## Métodos Numéricos
+
+## Estatística Computacional
+
+## Inferência
+
