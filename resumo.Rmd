@@ -522,7 +522,7 @@ $$F(x) = \frac{x-a}{b-a}$$
 Escopo:<br>
 $a,b \in \rm I\!R$
 
-```{r Gama, echo = FALSE}
+```{r Unif, echo = FALSE}
 set.seed(1)
 par(mfrow = c(1,1))
 
