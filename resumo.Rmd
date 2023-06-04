@@ -536,6 +536,9 @@ hist(runif(100000),
      )
 ```
 
+**Propriedades**<br>
+$E(x) = \frac{a + b}{2}$, $Var(x) = \frac{(b - a)^2}{12}$
+
 #### Distribuições Mistas
 
 # 2° Ano
