@@ -23,6 +23,7 @@ knitr::opts_chunk$set(echo = TRUE)
     }
   h4 {font-size:20px}
   h5 {font-size:18px}
+  strong {fontsize:16px}
 </style>
 
 Esse documento busca resumir as matérias do curso de estatística e ser um material de revisão e consulta dessas.
@@ -339,13 +340,203 @@ x : Número de sucessos na população<br>
 
 ## Estatística II
 
-## Probablidade I
+## Probabilidade I
 
 ### Distribuições Contínuas
 
-**Conceitos Gerais**
+#### **Conceitos Gerais**
 
-**Distribuição0
+#### **Função de Distribuição de Probabilidades - FDP**
+
+#### **Função de Distribuição Acumulada - FDA**
+
+
+#### **Distribuição Normal**
+$Z$~$N(\mu,\sigma)$
+$$f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\frac{(x-\mu)^2}{\sigma^2}}$$
+$$F(x) = \int\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\frac{(x-\mu)^2}{\sigma^2}}dx$$
+Escopo:<br>
+$-\infty < x < +\infty$, $-\infty < \mu < +\infty$, $\sigma > 0$
+
+**Propriedades**<br>
+$E(x) = \mu$
+
+```{r Normal, echo = FALSE}
+set.seed(1)
+
+hist(rnorm(100000),
+     main = 'Distribuição Normal',
+     xlab= 'x',
+     ylab = 'Probabilidade', 
+     freq = F,
+     ylim = c(0,0.45),
+     col = 'gray25'
+     )
+
+
+```
+<p>**Padronizando a normal**</p>
+Relembrando que uma Normal padrão é $Z$~$N(0,1)$, então se $Z$~$N(\mu,\sigma)$:<br>
+
+$$Z = \frac{x - \mu}{\sigma}$$
+
+#### **Distribuição Exponencial**<br>
+$X$~$exp(\theta)$
+$$f(x) = \theta e^{-\theta x}$$
+$$F(x) = 1 - e^{-\theta x}$$
+Escopo:<br>
+$0 < x < +\infty$, $\theta > 0$<br>
+
+**Propriedades**<br>
+$E(x^1) = \frac{1}{\theta}$, $E(x^r) = \frac{r}{\theta}E(x^{r-1})$, $Var(x) = \frac{1}{\theta^2}$
+
+```{r exponencial, echo = FALSE}
+set.seed(1)
+
+hist(rexp(100000),
+     main = 'Distribuição Exponencial',
+     xlab= 'x',
+     ylab = 'Probabilidade', 
+     freq = F,
+     ylim = c(0,0.45),
+     col = 'gray25'
+     )
+
+
+```
+
+
+#### **Distribuição Gama**
+
+$X$~$Gama(\alpha,\beta)$
+
+$$f(x) = \frac{\beta^\alpha x^{\alpha -1}e^{-\beta x}}{\Gamma(\alpha)}$$
+Sendo $\Gamma(\alpha) = \int_0^\infty x^{\alpha -1}e^{-x}dx$
+
+Escopo:<br>
+$\alpha > 0$, $\beta > 0$
+
+**Propriedades**<br>
+$\bullet$  $E(x) = \frac{\alpha} \beta$, $Var(x) = \frac{\alpha}{\beta^2}$, $E(x^2) = \frac{\alpha (\alpha + 1)}{\beta^2}$<br>
+$\bullet$  $\Gamma(n) = (n -1)!$ (n inteiro)<br>
+$\bullet$ $\Gamma(y + 2) = (y + 1)\Gamma(y + 1) = y(y+1)\Gamma(y)$<br>
+$\bullet$  $\Gamma(\frac{1}{2}) = \sqrt \pi$<br>
+$\bullet$  $X$ ~ $Gama(1,\beta)  = X$ ~ $Exp(\beta)$<br>
+$\bullet$ $X$ ~ $Gama(\frac{1}2, \frac{n}{2}) = X$ ~ $\chi_n^2$
+
+
+```{r Gama, echo = FALSE}
+set.seed(1)
+
+hist(rgamma(100000, 3),
+     main = 'Distribuição Gama',
+     xlab= 'x',
+     ylab = 'Probabilidade', 
+     freq = F,
+     ylim = c(0,0.3),
+     col = 'gray25'
+     )
+```
+
+
+#### **Distribuição Beta**
+
+$f(x) = \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha) \Gamma(\beta)}x^{\alpha -1}(1-x)^{\beta-1}$
+```{r beta, echo = FALSE}
+set.seed(1)
+par(mfrow = c(2,3))
+hist(rbeta(100000, 2, 2),
+     main = 'Distribuição Gama(2,2)',
+     xlab= 'x',
+     ylab = 'Probabilidade', 
+     freq = F,
+     ylim = c(0,2),
+     col = 'gray25'
+     )
+
+hist(rbeta(100000, 5, 2),
+     main = 'Distribuição Gama(5,2)',
+     xlab= 'x',
+     ylab = 'Probabilidade', 
+     freq = F,
+     ylim = c(0,3),
+     col = 'gray25'
+     )
+
+hist(rbeta(100000, 2, 5),
+     main = 'Distribuição Gama(2,5)',
+     xlab= 'x',
+     ylab = 'Probabilidade', 
+     freq = F,
+     ylim = c(0,3),
+     col = 'gray25'
+     )
+
+hist(rbeta(100000, 1, 5),
+     main = 'Distribuição Gama(1,5)',
+     xlab= 'x',
+     ylab = 'Probabilidade', 
+     freq = F,
+     ylim = c(0,5),
+     col = 'gray25'
+     )
+
+hist(rbeta(100000, 5, 1),
+     main = 'Distribuição Gama(5,1)',
+     xlab= 'x',
+     ylab = 'Probabilidade', 
+     freq = F,
+     ylim = c(0,5),
+     col = 'gray25'
+     )
+
+hist(rbeta(100000, 0.5, 0.5),
+     main = 'Distribuição Gama(0.5, 0.5)',
+     xlab= 'x',
+     ylab = 'Probabilidade', 
+     freq = F,
+     ylim = c(0,3),
+     col = 'gray25'
+     )
+
+```
+
+Escopo:<br>
+$0 < x < 1$, $\alpha > 0$, $\beta > 0$
+
+**Propriedades**<br>
+ $E(x) = \frac{\alpha}{\alpha + \beta}$, 
+ $Var(x) = \frac{\alpha\beta}{(\alpha + \beta)^2(\alpha + \beta + 1)}$ q<br>
+
+- $\alpha$, $\beta$ são parâmetros de forma
+- Se $\alpha$ = $\beta$ então $f(x)$ é simétrico e $E(x) = 0.5$
+- Se $X$ ~ $Beta(1,1) = X$ ~ $Unif(0,1)$
+
+#### Distribuição Uniforme Contínua
+
+$X$ ~ $Unif(a, b)$
+
+$$f(x) = \frac{1}{b-a}$$
+$$F(x) = \frac{x-a}{b-a}$$
+
+Escopo:<br>
+$a,b \in \rm I\!R$
+
+```{r Gama, echo = FALSE}
+set.seed(1)
+par(mfrow = c(1,1))
+
+hist(runif(100000),
+     main = 'Distribuição Uniforme',
+     xlab= 'x',
+     ylab = 'Probabilidade', 
+     freq = F,
+     ylim = c(0,1.2),
+     col = 'gray25'
+     )
+```
+
+#### Distribuições Mistas
 
 # 2° Ano
 
