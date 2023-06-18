@@ -340,6 +340,215 @@ x : Número de sucessos na população<br>
 
 ## Estatística II
 
+### Conceitos iniciais
+
+Sendo x uma v.a.c
+
+$f(x) \ge 0$ e $\int^{+\infty}_{-\infty}f(x) = 1$
+
+f é chamada de função densidade de probabilidades (fdp) de x 
+
+- FDA: $F(x) = P(X \leq x) = \int^x_{-\infty}f(t)dt$
+- $E(x) = \int^{+\infty}_{-\infty}xf(x)dx$
+- $Var(x) = E(x^2) - [E(x)]^2$
+
+**Propriedades da média**<br>
+
+- $E(x) = x$
+- $E(kx)=kE(x)$
+- $E(x \pm y) = E(x) \pm E(y)$
+- $E(ax + b) = E(ax) + E(b) = aE(x) + b$
+
+**Propriedades da variância**<br>
+
+- $Var(a) = 0$
+- $Var(ax) = a^2Var(x)$
+- $Var(x \pm y)=Var(x) + Var(y)$
+- $Var(ax + b) = Var(ax) + Var(b) = a^2Var(x)$
+
+### Amostra Aleatória simples
+
+- Todos indivíduos tem a mesma chance de ser selecionado;
+- Pode ter ou não reposição, normalmente é sem;
+- População é homogênea finita.
+
+### Teorema Central do Limite
+
+Se $x_1,...,x_n$ for uma amostra aleatória simples de tamanho n, de média $\mu$ e var finita $\sigma^2$, então a distribuição amostral da média $\bar{x}$ será
+<center>$\bar{x}$~$N \left ( \mu, \frac{\sigma^2}{n} \right )$</center>
+
+Representa a distribuição amostral da média.
+
+### Estimadores
+
+<p>![](img/estimadores_precisao.png)</p>
+**Propriedades**<br>
+
+- Não tendencioso (ou não viciado)<br>
+&emsp; $E(\hat\theta) = \theta$
+- Tendencioso (Viciado)<br>
+&emsp; Vicio: $B(\hat\theta)=E(\hat\theta)-\theta$<br>
+- Eficiência 
+&emsp;$Var(\hat\theta_1)<Var(\hat\theta_2)$ (menor melhor)
+
+OBS: Se $\hat\theta_1$ é não viciado e tiver variância mínima, dizemos que $\hat\theta$ é ENVVM (Estimador não viciado de Var mínima)
+
+### Método de Máxima Verossimilhança
+
+1. $L(\theta) = \prod^n_{i=1} f(x_1,...,x_n|\theta)$ - (Função de Verossimilhança)
+
+2. $l(\theta)=ln(L(\theta))$
+
+3. $\frac{\partial l(\theta)}{\partial\theta}$
+
+4. $\frac{\partial l(\theta)}{\partial\theta}=0$
+
+5. Verificar se $\hat\theta$ encontrado em (4) é ponto de máximo, isso derivando novamente e vendo se é menor que zero.
+
+### Estimação intervalar
+
+O que precisamos "saber" para construir um Intervalo de Confiança (IC)?
+
+- amostra
+- $1 - \alpha$ (nivel de confiança)
+- Distribuição amostral de $\theta$ (ou quantidade pivotal)
+
+O intervalo de confiança é constituído de dois intervalos, a área de rejeição e área de aceitação.
+
+- Área de aceitação: É o intervalo em que a hipótese nula é aceita, ficando, frequentemente, em torno da média.
+- Área de rejeição: É o intervalo em que a hipótese nula é rejeitada, sendo o intervalo ao entorno do de aceitação.
+
+```{r funcao grafico IC, echo = F}
+grafico.teste.norm <- function(alternative = c('greater', 'less', 'two.sided'), z_calc=NULL, conf.level = 0.95)
+{
+  # Criando os limites baseado no tipo do teste
+  if(alternative == 'less')
+    {
+      lim_inf <- -4
+      lim_sup <- qnorm(conf.level)
+  }
+  
+  if(alternative == 'greater')
+  {
+    lim_inf <- qnorm(1 - conf.level)
+    lim_sup <- 4
+  }
+  
+  if(alternative == 'two.sided')
+  {
+    lim_inf <- qnorm((1 - conf.level)/2)
+    lim_sup <- qnorm(conf.level + (1 - conf.level)/2)
+  }
+  
+  # Criando o eixo x
+  x <- seq(-4, 4, length=100)
+  
+  # criando n probabilidades, baseadas no eixo x
+  y <- dnorm(x)
+  
+  data_fill <- data.frame(x = x, y = y)
+  data_fill <- data_fill[data_fill$x < lim_sup,]
+  data_fill <- data_fill[data_fill$x > lim_inf,]
+  
+  plot(x,y, type = "l", lwd = 2, axes = FALSE, xlab = "", ylab = "")
+  axis(1, at = -3:3, labels = c(seq(-3, 3)))
+  polygon(x = c(min(data_fill$x),data_fill$x , max(data_fill$x)),
+          y = c(-0.0171, data_fill$y, -0.0171),
+          col = "gray", border = T) 
+  if (!is.null(z_calc))
+  {abline(v = z_calc, lwd = 2, col = 'red', lty = 'dashed')
+  text(z_calc, 0, paste0('Z=',z_calc), col='black', cex = 0.8)}
+}
+
+grafico.teste.norm('two.sided', conf.level = 0.80)
+```
+<p>Esse seria um exemplo do gráfico do intervalo de confiança para uma normal, a área cinza a área de aceitação em torno da média que possui área $1 - \alpha$, e área branca a área de rejeição, possuindo área $\alpha$.</p>
+
+Os intervalos podem ser representados das seguintes formas
+
+$$P\left( \bar{x} - Z_{\frac{\alpha}{2}}\cdot \frac{\sigma}{\sqrt n}\leq \mu \leq \bar{x} + Z_{\frac \alpha 2} \cdot \frac{\sigma}{\sqrt n} \right) = 1 - \alpha$$
+<center> **Ou** </center>
+
+$$IC(\mu, 1 - \alpha) = \bar{x} \pm Z_{\frac{\alpha}{2}}\cdot \frac{\sigma}{\sqrt n}$$
+
+#### Intervalo de confiança para $\mu$ quando $\sigma$ for desconhecido
+
+**a) Amostras grandes**
+
+- $X$ ~ $N(\mu,\sigma^2)$
+- $\bar{X}$ ~ $N(\mu,\frac{\sigma^2}{n})$
+- $IC(\mu, 1 - \alpha)$ = $\bar{x} \pm Z_{\frac{\alpha}{2}}\cdot \frac{S}{\sqrt n}$
+
+**b)Amostra pequena**
+
+- $IC(\mu, 1 - \alpha)$ = $\bar{x} \pm t_{\left (\frac{\alpha}{2},n-1 \right )}\cdot \frac{S}{\sqrt n}$
+
+Em que t é a distribuição t student com n-1 graus de liberdade
+
+$$f(x) = \frac {\Gamma \left ( \frac{k + 1}{2} \right )}{\sqrt{\pi k} \Gamma{ \left ( \frac{k} {2} \right )}} \frac{1}{\left ( \frac{x^2}{k} + 1 \right ) \frac{k +1}2}$$
+
+#### Intervalo de confiança para a proporção populacional
+
+- $p$ <- proporção populacional
+- $\hat p$ <- proporção amostral
+- $\hat p$ ~ $N\left (p, \frac{p(1-p)}n \right )$
+
+Para esse intervalo de confiança há duas formas de constuílo, a otimista e a conservadora:
+
+$IC(p, 1-\alpha) = \hat p \pm Z_{\frac{\alpha}{2}} \cdot \sqrt{\frac{\hat p (1 - \hat p)} n}$ (otimista)
+
+$IC(p, 1-\alpha)=\hat p \pm Z_{\frac{\alpha}{2}} \cdot \sqrt{\frac 1 {4n}}$ (conservador)
+
+**Margem de Erro**<br>
+
+- $e = Z_{\frac{\alpha}{2}} \sqrt{\frac{\hat{p}(1- \hat p)}{n}}$ (Otimista)
+- $e = Z_{\frac{\alpha}{2}}\sqrt{\frac{1}{4n}}$
+
+**Tamanho da amostra**<br>
+
+- $n = \frac{Z_{\frac{\alpha}{2}}^2 \hat p  (1- \hat p)}{e^2}$ (Otimista)
+- $n = \left (Z_{\frac{\alpha}{2}} \frac{1}{2e}\right )^2$
+- $n = \left ( Z_{\frac{\alpha}{2}} \frac \sigma e \right )^2$
+- $n = \left (  t_{\left ( \frac{\alpha}{2},n-1 \right )} \cdot \frac S e \right )^2$
+
+#### Erros associados a testes de hipóteses
+
+```{r Erros testes hipoteses, echo= F}
+erros_t12 <- data.frame('Decisão' = c('Rejeita H0', 'Não Rejeita H0'), 'H0 verdadeira' = c('Erro Tipo I', 'Sem erro'), 'H0 Falsa' = c('Sem erro', 'erro tipo II'))
+
+head(erros_t12)
+```
+
+Para que serve um teste de hipóteses?
+&emsp; Auxiliar na tomada de decisão com base em valores amostrais
+
+O que é um teste de hipótese?
+&emsp; Uma metodologia usada para chegar na tomada de decisão
+
+- Procedimento:
+1. Especificar as hipóteses nulas e alternativas
+2. Estabelecer a estatística teste e sua distribuição
+3. Estabelecer o nível de significância e regiçoes críticas
+4. Calcular a estatística teste
+5. Tomar a decisão
+
+Exemplo hipótese:
+$H_0: \theta = \theta_0$
+$H_1: \theta \neq \theta_0$
+
+Sempre $H_0$ sempre carrega o igual sendo $=,\ge,\le$.
+
+#### Teste de hipótese proporção
+
+$Zc = \frac{\hat p - p}{\sqrt{\frac{p(1-p)}{n}}}$ ~ $N(0,1)$
+
+#### Cálculo do valor p:
+
+(Pode ser aplicado a $t_c$, $\chi^2_c$, $F_c$, etc)
+- Se $H_1: \theta \neq \theta_0$ => $p = 2(1- \Phi(z_c))$ 
+- Se $H_1: \theta > \theta_0$ => $p = 1- \Phi(z_c)$ 
+- Se $H_1: \theta < \theta_0$ => $p = \Phi(z_c)$ 
+
 ## Probabilidade I
 
 ### Distribuições Contínuas
@@ -348,7 +557,30 @@ x : Número de sucessos na população<br>
 
 #### **Função de Distribuição de Probabilidades - FDP**
 
+Uma f(x) é uma função densidade de probabilidade (fdp) da variável x e possui um suporte no qual a probabilidade é maior que 0.
+
+$$P(a \leq x \leq b) = \int_{a}^{b}f(x)dx$$
+
+Propriedades:
+
+- $f(x) \geq 0, \forall x \in I\!R$ 
+- $\int_{-\infty}^{+\infty}f(x)dx=1$
+- $P(x=0)=\int_{a}^{a}f(x)dx=0, a \in I\!R$
+- $P(a\leq x\leq b) = P(a\leq x< b) = P(a<x\leq b) = P(a<x<b)$
+- É a derivada da fda.
+
+
+Toda função que satisfaça as duas primeiras propridades é uma fdp.
+
 #### **Função de Distribuição Acumulada - FDA**
+
+A Função de Distribuição Acumulada (fda) é a probabilidade do evento estar em um intervalo, sendo a integral da fdp.
+
+$$F(x)=P(x \leq X) = \int_{-\infty}^{x}f(t)dt, \forall x \in I\!R$$
+
+- $F(x)$ é não decrescente;
+- $F(-\infty) = 0$ e $F(+\infty)=1$
+- $F(x)$ é contínua a direita
 
 
 #### **Distribuição Normal**
@@ -359,7 +591,12 @@ Escopo:<br>
 $-\infty < x < +\infty$, $-\infty < \mu < +\infty$, $\sigma > 0$
 
 **Propriedades**<br>
-$E(x) = \mu$
+
+- $E(x) = \mu$
+- $f(x) \ge 0, \forall x$
+- A curva é simétrica em relação a $\mu$
+- É assintótica em relação ao eixo x.
+- O ponto de máximo é $\left ( \mu, \frac{1}{\sigma \sqrt{2 \pi}} \right )$
 
 ```{r Normal, echo = FALSE}
 set.seed(1)
@@ -379,6 +616,8 @@ hist(rnorm(100000),
 Relembrando que uma Normal padrão é $Z$~$N(0,1)$, então se $Z$~$N(\mu,\sigma)$:<br>
 
 $$Z = \frac{x - \mu}{\sigma}$$
+e 
+$$f(z)=\int^z_{-\infty}\frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}2}$$
 
 #### **Distribuição Exponencial**<br>
 $X$~$exp(\theta)$
@@ -539,7 +778,80 @@ hist(runif(100000),
 **Propriedades**<br>
 $E(x) = \frac{a + b}{2}$, $Var(x) = \frac{(b - a)^2}{12}$
 
-#### Distribuições Mistas
+### Variáveis Bidimensionais
+
+#### Covariância
+
+É uma medida de associação entre duas v.a's x e y.
+
+$$Cov(x,y) = E(xy) - E(x)E(y)$$
+
+#### Correlação
+
+A Corr(x,y) varia entre -1 e 1, quanto mais próximo de zero for a correlação, menor é a associação entre x e y.
+
+$$Corr(x,y)=\frac{Cov(x,y)}{\sqrt{Var(x)Var(y)}}$$
+
+Propriedades
+
+- $Cov(x,y)=Cov(y,x)$, a orderm não importa
+- $Cov(ax,by)=abCov(x,y)$
+- $Cov(x,y) = Corr(x,y) = 0$, se x e y são independentes
+- $E(ax + by) = aE(x) + bE(y)$
+- $Var(x \pm y) = Var(x) + Var(y) \pm 2Cov(x,y)$
+- $Var(ax + by) =a^2Var(x) + b^2Var(y) + 2abCov(x,y)$
+- $E(xy) = E(x)E(y)$, se x e y são independentes
+
+#### Distribuição condicional
+
+$$P(x = x|Y=y) = \frac{P(X=x, Y=y)}{P(Y=y)}$$
+Se x e y forem independentes
+
+$$P(X=x|Y=y) = \frac{P(X=x) P(Y=y)}{P(Y=y)} = P(x = x)$$
+
+#### Transformação de variáveis
+
+Seja X uma v.a. discreta com fdp P(X=x) defina y = g(x), a fdp de Y é
+
+$$I\!P(Y=y)=I\!P(g(x)=y)=\sum I\!P(X=x)$$
+Ex:
+
+| x      | -3  | -2  | -1  | 0   | 1   | 2   | 3   |
+|--------|-----|-----|-----|-----|-----|-----|-----|
+| P(X=x) | 1/7 | 1/7 | 1/7 | 1/7 | 1/7 | 1/7 | 1/7 |
+
+Encontre a fdp de Y=x²-x
+
+
+| x         | -3 | -2 | -1 | 0 | 1 | 2 | 3 |
+|-----------|----|----|----|---|---|---|---|
+| Y=x^2 - x | 12 | 6  | 2  | 0 | 0 | 2 | 6 |
+
+Assim,
+
+| y      | 0   | 2   | 6   | 12  |
+|--------|-----|-----|-----|-----|
+| P(Y=y) | 2/7 | 2/7 | 2/7 | 1/7 |
+
+### Probabilidade do valor Máximo e Mínimo
+
+### Função Geradora de Momentos - FGM
+
+Se X for discreto,
+$$M_X(t) = E(e^{tx}) = \sum_x e^{tx}I\!P(X=x)$$
+Se X for contínuo,
+$$M_X(t) = E(e^{tx}) = \int^{+\infty}_{-\infty}e^{tx}f(x)dx$$
+
+O r-ésimo momento de um v.a. X pode ser calculado derivando a fgm r vevez e avaliando no ponto t=0
+
+$$E(x^r)=\left. \frac{d^r}{d^rt}m(t)\right|_{t=0} = m^{(r)}(0)$$
+Propriedades:
+
+- $Var(x) = m''(0) - (m'(0))^2$
+- $X_1, X_2, ..., X_n$, n v.a's i.i.d. então $M_{x_1 + x_2 + ... + x_n}(t) = \prod_{i=1}^n m_{x_i}(t) = (m_{x_i}(t))^n$
+- Unicidade: Se X e Y tem a mesma fgm então X e Y são identicamente distribuídas.
+- Seja $Y = ax + b$ sua fgm será $M_Y(t) = M_{ax + b}(t) = e^{bt}m_x(at)$
+
 
 # 2° Ano
 
