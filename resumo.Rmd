@@ -457,7 +457,7 @@ grafico.teste.norm <- function(alternative = c('greater', 'less', 'two.sided'), 
           col = "gray", border = T) 
   if (!is.null(z_calc))
   {abline(v = z_calc, lwd = 2, col = 'red', lty = 'dashed')
-  text(z_calc, 0, paste0('Z=',z_calc), col='black', cex = 0.8)}
+  text(z_calc, 0, paste0('Zc=',z_calc), col='black', cex = 0.8)}
 }
 
 grafico.teste.norm('two.sided', conf.level = 0.80)
@@ -544,10 +544,282 @@ $Zc = \frac{\hat p - p}{\sqrt{\frac{p(1-p)}{n}}}$ ~ $N(0,1)$
 
 #### Cálculo do valor p:
 
+Como o p-valor funciona?
+
+Basicamente se o p-valor for menor que a significância rejeita-se $H_0$ 
+
 (Pode ser aplicado a $t_c$, $\chi^2_c$, $F_c$, etc)
 - Se $H_1: \theta \neq \theta_0$ => $p = 2(1- \Phi(z_c))$ 
 - Se $H_1: \theta > \theta_0$ => $p = 1- \Phi(z_c)$ 
 - Se $H_1: \theta < \theta_0$ => $p = \Phi(z_c)$ 
+
+#### Poder do teste e tamanho da amostra
+
+**Se bilateral**
+
+$$n = \left ( \frac{Z_{\frac{\alpha}{2}} \sqrt{\hat p(1- \hat p)} + Z_\beta \sqrt{p(1-p)}}{p - \hat p} \right )^2$$
+
+**Se unilateral**
+
+$$n = \left ( \frac{Z_{\alpha} \sqrt{\hat p(1- \hat p)} + Z_\beta \sqrt{p(1-p)}}{p - \hat p} \right )^2$$
+
+#### Teste de hipótese para $\mu$
+
+**1) Se $\sigma$ for conhecido, então**
+
+- $z_c = \frac{\bar{x} - \mu}{\frac{\sigma}{\sqrt{n}}}$ ~ $N(0,1)$
+
+**2) Se $\sigma$ for desconhecido e a amostra pequena, então**
+
+- $t_c = \frac{\bar{x} - \mu}{\frac{S}{\sqrt{n}}}$  ~ $t_{n-1}$
+
+**2) Se $\sigma$ for desconhecido e a amostra grande, então**
+
+- $z_c = \frac{\bar{x} - \mu}{\frac{S}{\sqrt{n}}}$ ~ $N(0,1)$
+<br><br>
+#### Distribuição Qui-quadrado
+
+$x$ ~ $\chi^2_k$
+
+$$f(x;k)= \frac{1}{\Gamma \left(\frac{k}2 \right )2^{\frac{k}{2}}}x^{\frac{k}2 -1}e^{\frac{-x}2} $$
+
+```{r}
+
+set.seed(1)
+
+hist(rchisq(100000, 4),
+     main = 'Distribuição Qui-quadrado com k=4',
+     xlab= 'x',
+     ylab = 'Probabilidade', 
+     breaks = 30,
+     freq = F,
+     ylim = c(0,0.25),
+     xlim = c(0, 20),
+     col = 'gray25'
+     )
+
+```
+
+#### Teste de hipóstese para $\sigma^2$
+
+Se $Z_i$ ~ $N(0,1)$
+
+$\sum^n_{i=1}(z_i-\bar{z})^2$ ~ $\chi^2_{n-1}$
+
+e assim
+
+$\chi^2_c = \frac{(n-1)S^2}{\sigma^2}$ ~ $\chi^2_{n-1}$
+
+#### Teste de hipótese para variância populacional (Fischer)
+
+<center> $F_c = \frac{s_1^2}{s_2^2}$ ~ $F_{n_1 -1, n_2 - 1}$ </center>
+
+- Depende de duas amostras, e $s_i$ é a variância de cada amostra
+- $s_1^2$ sendo sempre maior que $s_2^2$
+- É um teste para verificar se duas variâncias populacionais são diferentes baseado nas amostrais
+- Por padrão o raio da diferença é 4, mas pode ser ajustado dependendo da situação
+
+Se $F_c \ge4$, então $\sigma^2_1 \neq \sigma^2_2$
+
+Se $F_c <4$, então $\sigma^2_1 =\sigma^2_2$
+
+#### Teste de hipóteses para $\mu_1 - \mu_2 (Diferença de médias)$
+
+1. Se $\sigma_1$ e $\sigma_2$ são conhecidos, então
+
+$z_c = \frac{\bar{x_1}-\bar{x_2}}{\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}}$ ~ $N(0,1)$
+
+2. Se $\sigma_1$ e $\sigma_2$ são desconhecidos e iguais, então
+
+$t_c = \frac{\bar{x_1}-\bar{x_2}}{s_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}$ ~ $t_{(n1 + n2 -2)}$
+
+em que
+
+$s_p = \sqrt{\frac{(n_1-1)s_1^2 +(n_2 - 1)s_2^2}{n_1 + n_2 - 2}}$
+
+3. Se $\sigma_1$ e $\sigma_2$ são desconhecidos e diferentes, então
+
+$t_c = \frac{\bar{x_1}-\bar{x_2}}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$ ~ $t_{\phi}$
+
+em que
+
+$\phi = \frac{(\omega_1 + \omega_2)^2}{\frac{\omega_1^2}{n1-1} + \frac{\omega_2^2}{n2-1}}$;&emsp;
+$\omega_1 = \frac{s^2_1}{n_1}$ &emsp;e&emsp; $\omega_2 = \frac{s^2_2}{n_2}$
+
+#### Teste t para dados pareados
+
+$t_c = \frac{\bar{d}}{\frac{s_d}{\sqrt{n}}}$
+
+em que,
+
+&emsp; $d$ = Depois - Antes
+
+&emsp; $\bar{d}$ é a média das diferenças
+
+&emsp; $s_d$ é o desvio padrão das diferenças
+
+Ex: Verificar se houve mudanças na pressão arterial cistólica após o uso de determinbado farmaco.
+
+|Antes| 139 | 116 | 136 | 133 | 132 | 131 | 124 | 135 | 133 | 144 |121|115|
+|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+|Depois| 141 | 113 | 134 | 136 | 133 | 133 | 128 | 134 | 137 | 148|128|118|
+<br>
+<br>
+Diferenças = {2,-3,-2,3,1,2,4,-1,4,4,7,3}
+<br><br>
+$\bar{d} = 2 $
+
+$S_d = 2.860$
+
+$n = 12$
+
+$\alpha = 0.05$
+
+$$H_0: \mu_D - \mu_A = 0$$
+$$H_1: \mu_D - \mu_A \neq 0$$
+
+$t_c = \frac{\bar{d}}{\frac{s_d}{\sqrt{n}}} = \frac{2}{\frac{2.860}{\sqrt{12}}}=2.422$
+
+```{r teste hipotese t pareado,echo = F}
+
+grafico.teste.norm('two.sided', 2.422,)
+
+```
+<p>Assim, com 0.95 de confiança, a estatística $t_c$ é igual 2.422, estando na região de rejeição, portanto rejeita-se $H_0$, apresentando evideências qdas diferênças de pressão antes e depois da aplicação do fármaco.</p>
+
+#### Teste Qui-Quadrado
+
+- Utilizado para avaliar a associção existente entre variáveis qualitativas
+
+- É utilizado para verificar se variáveis estão associadas, se amostras diferentes em uma série de experimentos semelhantes são homogêneos e testar a adequalidade de um modelo probabilístico a um conjunto de dados.
+
+$\chi = \sum\frac{(\theta - e)^2} e$ ~ $\chi^2_m$
+<br><br>
+em que
+<br><br>
+$m = (r-1)(s-1)$
+
+$\theta$: é a frequência obeservada 
+
+$e$: é a frequência esperada 
+
+Como calcular o esperado?
+
+$e$ = $\frac{marginal(x)\cdot marginal(y)}{total(n)}$
+
+Como tomar a decisão?
+
+$\chi^2_c \ge \chi_t^2$ $\rightarrow$ Rejeitar $H_0$
+
+$\chi^2_c < \chi_t^2$ $\rightarrow$ Não rejeitar $H_0$
+
+**Pressupostos**
+
+- Os grupos devem ser independentes e devem ser selecionados aleatoriamente
+
+- As observações devem ser frequências ou contagens
+
+- Cada observação pertence a uma e somente uma categoria
+
+- A amostra deve ser relativamente grande
+
+Ex: Estamos interessados em estudar se a queixa de dores (presentes ou ausente) em idosos está associada a participação em um programa de atividade física. Para isso selecionou-se uma amostra de 150 idosos e foi construido a seguinte tabela de contingência:
+
+
+| Queixas | Participou | Não participou | Total |
+|---------|------------|----------------|-------|
+| Presente| 55         | 21             | 76    |
+| Ausente | 42         | 32             | 74    |
+| Total   | 97         | 53             | 150   |
+
+$H_0:$ A queixa de dores e o programa são independentes
+
+$H_1:$ A queixa de dores e o programa não são independentes
+
+$\alpha = 0.05$
+
+esperado1 = $\frac{76 \cdot97}{150} = 49.1466 \approx 49.15$
+
+esperado2 = $\frac{76 \cdot53}{150} = 49.3333 \approx 26.85$
+
+esperado3 = $\frac{74 \cdot97}{150} = 49.1466 \approx 47.85$
+
+esperado4 = $\frac{74 \cdot53}{150} = 49.1466 \approx 26.15$
+
+$\chi^2_c = \frac{(55 - 49.15)^2}{49.15} + \frac{(42 - 47.85)^2}{47.85} + \frac{(21 - 26.85)^2}{26.85} + \frac{(32 - 26.15)^2}{26.15}$
+
+$\chi^2_c  = 3.9945$
+
+$\chi^2_t = \chi^2_{(r -1)(s-1); 0.05} = \chi^2_{(2 -1)(2-1); 0.05} = \chi^2_{1; 0.05} = 3.841$
+
+Como $\chi^2_c>\chi_t^2$, então rejeitamos $H_0$, ou seja, com 95% de confiança, existem indícios de que dores e o programa não são independentes.
+
+#### Regressão linear simples
+
+1. Correlação
+
+2. Modelo de regressão
+
+3. Diagnóstico
+
+4. Extrapolação
+
+**Correlação**
+
+**Coeficiente de correlação linear de Pearson**
+
+$$\rho = \frac{cov(x,y)}{s(x)s(y)}$$
+
+$$\rho = \frac{n\sum x_i y_i - \sum x_i \sum y_i}{\sqrt{n \sum_i  x_i^2 - (\sum_i x_i)^2} \cdot \sqrt{n \sum_i y_i^2 - (\sum_i y_i)^2}}$$
+
+OBS: $-1 \le \rho \le 1$
+
+##### Teste de significância para $\rho$
+
+$H_0:$ $\rho = 0$
+
+$H_1:$ $\rho \neq 0$
+
+$t_c = r \sqrt{\frac{n-2}{1-r^2}}$ ~ $t_{n-2}$
+
+Conclusão:
+
+$|t_c| \le |t_t| \rightarrow$ não rejeita $H_0$
+
+$|t_c| > |t_t| \rightarrow$ rejeita $H_0$
+
+##### Modelo de regrssão
+
+Esse modelo por ser linear segue a funçãpo
+$\hat{a} = \bar{y} - \hat{b}\bar{x}$
+
+$\hat{b} = \frac{n\sum x_i y_i - \sum x_i \sum y_i}{n \sum x_i^2 - (\sum x_i)^2}$
+
+##### Resíduos
+
+$r_i = y_i - \hat{y_i}$
+
+$\hat{\sigma^2} = \frac{S_{aE}}{n-2}$
+
+em que
+
+$S_{aE} = \sum_i(y_i - \hat{y_i})^2$
+
+##### Inferência sobre os parâmetros do modelo
+
+a) Para o coeficiente angular ($\hat{b}$)
+
+$E_p(\hat{b}) = \sqrt{\frac{\sigma^2}{S_{xx}}}$
+
+$\hat{b} \pm \sqrt{\frac{\sigma^2}{S_{xx}}}t_{(n-2); \frac \alpha 2}$
+
+$t_c = \frac{\hat{b} - b}{\sqrt{\frac{\hat{\sigma^2}}{S_{xx}}}}$ ~ $t_{n-2}$
+
+Se |$t_c$| > $t_{\frac{\alpha}{2}; n-2} \rightarrow$ rejeita $H_0$
+
+b) Para o intercepto ($a$)
+
+
 
 ## Probabilidade I
 
