@@ -35,6 +35,8 @@ Esse documento busca resumir as matérias do curso de estatística e ser um mate
 
 ##  **Cálculo I**
 
+---
+
 <p>Cálculo I é uma matéria fundamental para desenvolvimento do curso, apresentando três novas funções matemáticas, o limite, a derivada e a integração. Essas funções serão utilizadas em todas as matérias tanto de cálculo como de estatística.</p>
 
 ### **Limite**
@@ -260,26 +262,35 @@ A integral representa a área, sendo a antiderivada, ou o contrário da derivada
 
 ## Geometria Analítica 
 
+---
+
 ## Estatística I
 
-## Fundamentos de Probabilidade
+---
 
-### Distribuições Discretas<br>
+<br><br><br>
+
+##  **Fundamentos de probabilidade**
+
+---
+
+### Distribuições Discretas<br><br>
 **Distribuição Uniforme Discreta**<br>
 Uma das distribuições mais simples, na qual todos pontos tem mesma probabilidade.<br>
 
  $X$ ~ $U_{d}(x)$
 $$f(x) = p = \frac{1}{n}$$
-$\bar{x} = \frac{1}{n}\sum{x}$; &emsp;   $Var(x) = \frac{1}{n}\sum{x^2 - \frac{(\sum{x})^2}{n}}$<br><br>
+$\bar{x} = \frac{1}{n}\sum{x}$; &emsp;   $Var(x) = \frac{1}{n}\sum{x^2 - \frac{(\sum{x})^2}{n}}$<br><br><br>
 p : A probabilidade de evento acontecer<br>
-n : O número de elementos <br><br>
+n : O número de elementos <br><br><br>
+
 **Distribuição Bernoulli**<br>
 Nessa distribuição, só há dois resultados possíveis fracasso (0) sucesso (1), e apenas é realizado uma única tentativa de experimento.<br>
 
 $X$ ~ $Ber(p)$<br>
 $$f(x) = p^x(1-p)^{1-x}$$
-$bar{x} = p$; &emsp; $Var(x) = p(1-p)$<br>
-p : A probabilidade de evento acontecer<br><br>
+$\bar{x} = p$; &emsp; $Var(x) = p(1-p)$<br>
+p : A probabilidade de evento acontecer <br><br><br>
 
 **Distribuição Binomial**<br>
 A distribuição binomial é a ocorrência de mais de um experimento de Bernoulli, mantendo x igual a 1 ou 0.<br>
@@ -288,7 +299,7 @@ A distribuição binomial é a ocorrência de mais de um experimento de Bernoull
 $$f(x) = \binom nkp^x(1-p)^{(n-x)}$$
 $\bar{x} = n.p$; &emsp; $Var(x) = np(1-p)$<br>
 p : A probabilidade de evento acontecer<br>
-n : O número de ensaios<br><br>
+n : O número de ensaios<br><br><br>
 
 **Distribuição de Poisson**<br>
 Nessa distribuição X é uma contagem do número de sucessos em um intervalo.<br>
@@ -296,15 +307,15 @@ $X$ ~ $Poisson(\lambda)$<br>
 
 $$f(x) =  \frac{e^{-\lambda}\lambda^x}{x!}$$
 $\bar{x} = Var(x) = \lambda$<br>
-\lambda : O valor médio de ocorrências.<br><br>
+$\lambda$ : O valor médio de ocorrências.<br><br><br>
 
-**Distribuição Multinumial**<br>
+**Distribuição Multinomial**<br>
 É uma distribuição usada para k eventos mutuamente  exclusivos, com n repetições independetes, tendo uma $p_{i}$ para cada $x_{i}$.<br>
 $X$ ~ $M(x_{1},x_{2},...,x_{k};p_{1},p_{2},...,p_{k})$<br>
 
 $$p(x_{1},x_{2},..,x_{k}) = \frac{n!}{x_{1}!x_{2}!...x_{k}!}p_{1}^{x_{1}}p_{2}^{x_{2}}...p_{k}^{x_{k}}$$
-$\bar{x_{i}} = np_{i} $; &emsp; $Var(x_{i}) = np_{i}(1-p_{i})$<br>
-$p_{i}$ : A probabilidade do evento $x_{i}$ ocorrer.<br><br>
+$\bar{x_{i}} = np_{i}$; &emsp; $Var(x_{i}) = np_{i}(1-p_{i})$<br>
+$p_{i}$ : A probabilidade do evento $x_{i}$ ocorrer.<br><br><br>
 
 **Distribuição Geométrica**<br>
 É uma distribuição usada para encontrar o primeiro sucesso na i-ésima tentativa.<br>
@@ -312,7 +323,7 @@ $X$~$G(p)$<br>
 
 $$f(x) = p(1-p)^{x-1}$$
 $\bar{x}=\frac{1}{p}$; &emsp; $Var(x)=\frac{1-p}{p^2}$ <br>
-p : A probabilidade do evento ocorrer<br>
+p : A probabilidade do evento ocorrer<br><br><br>
 
 **Distribuição Binomial Negativa ou de Pascal**<br>
 Nessa distribuição $X$ é o número de experimentos até o r-ésimo sucesso.<br>
@@ -321,7 +332,7 @@ $X$~$BN(p,r)$<br>
 $$f(x) = \binom{x-1}{r-1}p^r(1-p)^{x-r}$$
 $\bar{x} = \frac{r}{p}$; &emsp; $Var(x) = \frac{r(1-p)}{p^2}$<br>
 p : A probabilidade do evento ocorrer<br>
-r : número de sucessos<br><br>
+r : número de sucessos<br><br><br>
 
 **Distribuição Hipergeométrica**<br>
 É usada quando queremos a probabilidade de k sucessos em n retiradas, sem reposição, de uma população de tamanho N que contém x sucessos.<br>
@@ -332,66 +343,73 @@ $\bar{x} = n\frac{k}N = \frac n p$; &emsp; $Var(x)= n \frac k N \left(1-\frac k 
 N : Tamanho inicial da população<br>
 n : Tamanho selecionado da amostra<br> 
 k : Sucessos retirados na amostra<br>
-x : Número de sucessos na população<br>
+x : Número de sucessos na população<br><br><br><br>
 
 ## Calculo II
 
+---
+
 ## Algoritmos
 
-## Estatística II
+---
 
-### Conceitos iniciais
+<br><br><br>
 
-Sendo x uma v.a.c
+## **Estatística II**
 
-$f(x) \ge 0$ e $\int^{+\infty}_{-\infty}f(x) = 1$
+---
 
-f é chamada de função densidade de probabilidades (fdp) de x 
+### Conceitos iniciais <br><br>
 
+Sendo x uma v.a.c <br><br>
+
+$f(x) \ge 0$ e $\int^{+\infty}_{-\infty}f(x) = 1$ <br><br>
+
+- f é chamada de função densidade de probabilidades (fdp) de x
 - FDA: $F(x) = P(X \leq x) = \int^x_{-\infty}f(t)dt$
 - $E(x) = \int^{+\infty}_{-\infty}xf(x)dx$
-- $Var(x) = E(x^2) - [E(x)]^2$
+- $Var(x) = E(x^2) - [E(x)]^2$ <br><br>
 
 **Propriedades da média**<br>
 
 - $E(x) = x$
 - $E(kx)=kE(x)$
 - $E(x \pm y) = E(x) \pm E(y)$
-- $E(ax + b) = E(ax) + E(b) = aE(x) + b$
+- $E(ax + b) = E(ax) + E(b) = aE(x) + b$ <br><br>
 
 **Propriedades da variância**<br>
 
 - $Var(a) = 0$
 - $Var(ax) = a^2Var(x)$
 - $Var(x \pm y)=Var(x) + Var(y)$
-- $Var(ax + b) = Var(ax) + Var(b) = a^2Var(x)$
+- $Var(ax + b) = Var(ax) + Var(b) = a^2Var(x)$ <br><br>
 
 ### Amostra Aleatória simples
 
 - Todos indivíduos tem a mesma chance de ser selecionado;
 - Pode ter ou não reposição, normalmente é sem;
-- População é homogênea finita.
+- População é homogênea finita. <br><br>
 
 ### Teorema Central do Limite
 
 Se $x_1,...,x_n$ for uma amostra aleatória simples de tamanho n, de média $\mu$ e var finita $\sigma^2$, então a distribuição amostral da média $\bar{x}$ será
 <center>$\bar{x}$~$N \left ( \mu, \frac{\sigma^2}{n} \right )$</center>
 
-Representa a distribuição amostral da média.
+Representa a distribuição amostral da média. <br><br>
 
 ### Estimadores
 
-<p>![](img/estimadores_precisao.png)</p>
+<p>![](img/estimadores_precisao.png)</p><br>
 **Propriedades**<br>
 
 - Não tendencioso (ou não viciado)<br>
-&emsp; $E(\hat\theta) = \theta$
+&emsp; $E(\hat\theta) = \theta$<br><br>
 - Tendencioso (Viciado)<br>
-&emsp; Vicio: $B(\hat\theta)=E(\hat\theta)-\theta$<br>
+&emsp; Vicio: $B(\hat\theta)=E(\hat\theta)-\theta$<br><br>
 - Eficiência 
 &emsp;$Var(\hat\theta_1)<Var(\hat\theta_2)$ (menor melhor)
 
-OBS: Se $\hat\theta_1$ é não viciado e tiver variância mínima, dizemos que $\hat\theta$ é ENVVM (Estimador não viciado de Var mínima)
+OBS: Se $\hat\theta_1$ é não viciado e tiver variância mínima, dizemos que $\hat\theta$ é ENVVM (Estimador não viciado de Var mínima)<br><br>
 
 ### Método de Máxima Verossimilhança
 
@@ -403,7 +421,7 @@ OBS: Se $\hat\theta_1$ é não viciado e tiver variância mínima, dizemos que $
 
 4. $\frac{\partial l(\theta)}{\partial\theta}=0$
 
-5. Verificar se $\hat\theta$ encontrado em (4) é ponto de máximo, isso derivando novamente e vendo se é menor que zero.
+5. Verificar se $\hat\theta$ encontrado em (4) é ponto de máximo, isso derivando novamente e vendo se é menor que zero.<br><br>
 
 ### Estimação intervalar
 
@@ -411,7 +429,7 @@ O que precisamos "saber" para construir um Intervalo de Confiança (IC)?
 
 - amostra
 - $1 - \alpha$ (nivel de confiança)
-- Distribuição amostral de $\theta$ (ou quantidade pivotal)
+- Distribuição amostral de $\theta$ (ou quantidade pivotal) <br><br>
 
 O intervalo de confiança é constituído de dois intervalos, a área de rejeição e área de aceitação.
 
@@ -470,6 +488,7 @@ $$P\left( \bar{x} - Z_{\frac{\alpha}{2}}\cdot \frac{\sigma}{\sqrt n}\leq \mu \le
 <center> **Ou** </center>
 
 $$IC(\mu, 1 - \alpha) = \bar{x} \pm Z_{\frac{\alpha}{2}}\cdot \frac{\sigma}{\sqrt n}$$
+<br><br>
 
 #### Intervalo de confiança para $\mu$ quando $\sigma$ for desconhecido
 
@@ -477,15 +496,15 @@ $$IC(\mu, 1 - \alpha) = \bar{x} \pm Z_{\frac{\alpha}{2}}\cdot \frac{\sigma}{\sqr
 
 - $X$ ~ $N(\mu,\sigma^2)$
 - $\bar{X}$ ~ $N(\mu,\frac{\sigma^2}{n})$
-- $IC(\mu, 1 - \alpha)$ = $\bar{x} \pm Z_{\frac{\alpha}{2}}\cdot \frac{S}{\sqrt n}$
+- $IC(\mu, 1 - \alpha)$ = $\bar{x} \pm Z_{\frac{\alpha}{2}}\cdot \frac{S}{\sqrt n}$<br><br>
 
 **b)Amostra pequena**
 
-- $IC(\mu, 1 - \alpha)$ = $\bar{x} \pm t_{\left (\frac{\alpha}{2},n-1 \right )}\cdot \frac{S}{\sqrt n}$
+- $IC(\mu, 1 - \alpha)$ = $\bar{x} \pm t_{\left (\frac{\alpha}{2},n-1 \right )}\cdot \frac{S}{\sqrt n}$<br><br>
 
-Em que t é a distribuição t student com n-1 graus de liberdade
+Em que t é a distribuição t student com n-1 graus de liberdade<br><br>
 
-$$f(x) = \frac {\Gamma \left ( \frac{k + 1}{2} \right )}{\sqrt{\pi k} \Gamma{ \left ( \frac{k} {2} \right )}} \frac{1}{\left ( \frac{x^2}{k} + 1 \right ) \frac{k +1}2}$$
+$$f(x) = \frac {\Gamma \left ( \frac{k + 1}{2} \right )}{\sqrt{\pi k} \Gamma{ \left ( \frac{k} {2} \right )}} \frac{1}{\left ( \frac{x^2}{k} + 1 \right ) \frac{k +1}2}$$<br><br>
 
 #### Intervalo de confiança para a proporção populacional
 
@@ -493,23 +512,23 @@ $$f(x) = \frac {\Gamma \left ( \frac{k + 1}{2} \right )}{\sqrt{\pi k} \Gamma{ \l
 - $\hat p$ <- proporção amostral
 - $\hat p$ ~ $N\left (p, \frac{p(1-p)}n \right )$
 
-Para esse intervalo de confiança há duas formas de constuílo, a otimista e a conservadora:
+Para esse intervalo de confiança há duas formas de constuílo, a otimista e a conservadora:<br><br>
 
 $IC(p, 1-\alpha) = \hat p \pm Z_{\frac{\alpha}{2}} \cdot \sqrt{\frac{\hat p (1 - \hat p)} n}$ (otimista)
 
-$IC(p, 1-\alpha)=\hat p \pm Z_{\frac{\alpha}{2}} \cdot \sqrt{\frac 1 {4n}}$ (conservador)
+$IC(p, 1-\alpha)=\hat p \pm Z_{\frac{\alpha}{2}} \cdot \sqrt{\frac 1 {4n}}$ (conservador)<br><br>
 
 **Margem de Erro**<br>
 
 - $e = Z_{\frac{\alpha}{2}} \sqrt{\frac{\hat{p}(1- \hat p)}{n}}$ (Otimista)
-- $e = Z_{\frac{\alpha}{2}}\sqrt{\frac{1}{4n}}$
+- $e = Z_{\frac{\alpha}{2}}\sqrt{\frac{1}{4n}}$<br><br>
 
 **Tamanho da amostra**<br>
 
 - $n = \frac{Z_{\frac{\alpha}{2}}^2 \hat p  (1- \hat p)}{e^2}$ (Otimista)
 - $n = \left (Z_{\frac{\alpha}{2}} \frac{1}{2e}\right )^2$
 - $n = \left ( Z_{\frac{\alpha}{2}} \frac \sigma e \right )^2$
-- $n = \left (  t_{\left ( \frac{\alpha}{2},n-1 \right )} \cdot \frac S e \right )^2$
+- $n = \left (  t_{\left ( \frac{\alpha}{2},n-1 \right )} \cdot \frac S e \right )^2$<br><br>
 
 #### Erros associados a testes de hipóteses
 
@@ -518,40 +537,43 @@ erros_t12 <- data.frame('Decisão' = c('Rejeita H0', 'Não Rejeita H0'), 'H0 ver
 
 head(erros_t12)
 ```
-
+<br><br>
 Para que serve um teste de hipóteses?
+
 &emsp; Auxiliar na tomada de decisão com base em valores amostrais
 
 O que é um teste de hipótese?
+
 &emsp; Uma metodologia usada para chegar na tomada de decisão
+<br><br>
 
 - Procedimento:
-1. Especificar as hipóteses nulas e alternativas
-2. Estabelecer a estatística teste e sua distribuição
-3. Estabelecer o nível de significância e regiçoes críticas
-4. Calcular a estatística teste
-5. Tomar a decisão
+1. Especificar as hipóteses nulas e alternativas<br>
+2. Estabelecer a estatística teste e sua distribuição<br>
+3. Estabelecer o nível de significância e regiçoes críticas<br>
+4. Calcular a estatística teste<br>
+5. Tomar a decisão<br><br>
 
-Exemplo hipótese:
-$H_0: \theta = \theta_0$
+Exemplo hipótese:<br>
+$H_0: \theta = \theta_0$<br>
 $H_1: \theta \neq \theta_0$
 
-Sempre $H_0$ sempre carrega o igual sendo $=,\ge,\le$.
+Sempre $H_0$ sempre carrega o igual sendo $=,\ge,\le$.<br><br>
 
-#### Teste de hipótese proporção
+#### Teste de hipótese proporção<br><br>
 
-$Zc = \frac{\hat p - p}{\sqrt{\frac{p(1-p)}{n}}}$ ~ $N(0,1)$
+$Zc = \frac{\hat p - p}{\sqrt{\frac{p(1-p)}{n}}}$ ~ $N(0,1)$<br><br>
 
 #### Cálculo do valor p:
 
-Como o p-valor funciona?
+Como o p-valor funciona?<br><br>
 
 Basicamente se o p-valor for menor que a significância rejeita-se $H_0$ 
 
-(Pode ser aplicado a $t_c$, $\chi^2_c$, $F_c$, etc)
-- Se $H_1: \theta \neq \theta_0$ => $p = 2(1- \Phi(z_c))$ 
-- Se $H_1: \theta > \theta_0$ => $p = 1- \Phi(z_c)$ 
-- Se $H_1: \theta < \theta_0$ => $p = \Phi(z_c)$ 
+(Pode ser aplicado a $t_c$, $\chi^2_c$, $F_c$, etc)<br>
+- Se $H_1: \theta \neq \theta_0$ => $p = 2(1- \Phi(z_c))$ <br>
+- Se $H_1: \theta > \theta_0$ => $p = 1- \Phi(z_c)$ <br>
+- Se $H_1: \theta < \theta_0$ => $p = \Phi(z_c)$ <br><br><br>
 
 #### Poder do teste e tamanho da amostra
 
@@ -561,29 +583,31 @@ $$n = \left ( \frac{Z_{\frac{\alpha}{2}} \sqrt{\hat p(1- \hat p)} + Z_\beta \sqr
 
 **Se unilateral**
 
-$$n = \left ( \frac{Z_{\alpha} \sqrt{\hat p(1- \hat p)} + Z_\beta \sqrt{p(1-p)}}{p - \hat p} \right )^2$$
+$$n = \left ( \frac{Z_{\alpha} \sqrt{\hat p(1- \hat p)} + Z_\beta \sqrt{p(1-p)}}{p - \hat p} \right )^2$$<br><br><br>
 
 #### Teste de hipótese para $\mu$
 
 **1) Se $\sigma$ for conhecido, então**
 
-- $z_c = \frac{\bar{x} - \mu}{\frac{\sigma}{\sqrt{n}}}$ ~ $N(0,1)$
+- ##### $z_c = \frac{\bar{x} - \mu}{\frac{\sigma}{\sqrt{n}}}$ ~ $N(0,1)$
 
 **2) Se $\sigma$ for desconhecido e a amostra pequena, então**
 
-- $t_c = \frac{\bar{x} - \mu}{\frac{S}{\sqrt{n}}}$  ~ $t_{n-1}$
+- ##### $t_c = \frac{\bar{x} - \mu}{\frac{S}{\sqrt{n}}}$  ~ $t_{n-1}$
 
 **2) Se $\sigma$ for desconhecido e a amostra grande, então**
 
-- $z_c = \frac{\bar{x} - \mu}{\frac{S}{\sqrt{n}}}$ ~ $N(0,1)$
+- ##### $z_c = \frac{\bar{x} - \mu}{\frac{S}{\sqrt{n}}}$ ~ $N(0,1)$
 <br><br>
-#### Distribuição Qui-quadrado
+
+#### Distribuição Qui-quadrado <br><br>
 
 $x$ ~ $\chi^2_k$
 
 $$f(x;k)= \frac{1}{\Gamma \left(\frac{k}2 \right )2^{\frac{k}{2}}}x^{\frac{k}2 -1}e^{\frac{-x}2} $$
+<br>
 
-```{r}
+```{r qui-quadrado, echo= FALSE}
 
 set.seed(1)
 
@@ -600,51 +624,52 @@ hist(rchisq(100000, 4),
 
 ```
 
-#### Teste de hipóstese para $\sigma^2$
+#### Teste de hipóstese para $\sigma^2$ <br><br>
 
-Se $Z_i$ ~ $N(0,1)$
+Se $Z_i$ ~ $N(0,1)$ <br><br>
 
-$\sum^n_{i=1}(z_i-\bar{z})^2$ ~ $\chi^2_{n-1}$
+<center> $\sum^n_{i=1}(z_i-\bar{z})^2$ ~ $\chi^2_{n-1}$ </center><br>
 
-e assim
+<center> e assim </center><br>
 
-$\chi^2_c = \frac{(n-1)S^2}{\sigma^2}$ ~ $\chi^2_{n-1}$
+<center> $\chi^2_c = \frac{(n-1)S^2}{\sigma^2}$ ~ $\chi^2_{n-1}$ </center> <br><br><br>
 
 #### Teste de hipótese para variância populacional (Fischer)
 
 <center> $F_c = \frac{s_1^2}{s_2^2}$ ~ $F_{n_1 -1, n_2 - 1}$ </center>
+<br><br>
 
 - Depende de duas amostras, e $s_i$ é a variância de cada amostra
 - $s_1^2$ sendo sempre maior que $s_2^2$
 - É um teste para verificar se duas variâncias populacionais são diferentes baseado nas amostrais
-- Por padrão o raio da diferença é 4, mas pode ser ajustado dependendo da situação
+- Por padrão o raio da diferença é 4, mas pode ser ajustado dependendo da situação <br><br>
 
 Se $F_c \ge4$, então $\sigma^2_1 \neq \sigma^2_2$
 
-Se $F_c <4$, então $\sigma^2_1 =\sigma^2_2$
+Se $F_c <4$, então $\sigma^2_1 =\sigma^2_2$ <br><br>
 
-#### Teste de hipóteses para $\mu_1 - \mu_2 (Diferença de médias)$
+#### Teste de hipóteses para $\mu_1 - \mu_2$ (Diferença de médias)
 
 1. Se $\sigma_1$ e $\sigma_2$ são conhecidos, então
 
-$z_c = \frac{\bar{x_1}-\bar{x_2}}{\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}}$ ~ $N(0,1)$
+&emsp;$z_c = \frac{\bar{x_1}-\bar{x_2}}{\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}}$ ~ $N(0,1)$<br><br>
 
 2. Se $\sigma_1$ e $\sigma_2$ são desconhecidos e iguais, então
 
-$t_c = \frac{\bar{x_1}-\bar{x_2}}{s_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}$ ~ $t_{(n1 + n2 -2)}$
+&emsp;$t_c = \frac{\bar{x_1}-\bar{x_2}}{s_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}$ ~ $t_{(n1 + n2 -2)}$
 
 em que
 
-$s_p = \sqrt{\frac{(n_1-1)s_1^2 +(n_2 - 1)s_2^2}{n_1 + n_2 - 2}}$
+&emsp;$s_p = \sqrt{\frac{(n_1-1)s_1^2 +(n_2 - 1)s_2^2}{n_1 + n_2 - 2}}$<br><br>
 
 3. Se $\sigma_1$ e $\sigma_2$ são desconhecidos e diferentes, então
 
-$t_c = \frac{\bar{x_1}-\bar{x_2}}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$ ~ $t_{\phi}$
+&emsp;$t_c = \frac{\bar{x_1}-\bar{x_2}}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$ ~ $t_{\phi}$
 
 em que
 
-$\phi = \frac{(\omega_1 + \omega_2)^2}{\frac{\omega_1^2}{n1-1} + \frac{\omega_2^2}{n2-1}}$;&emsp;
-$\omega_1 = \frac{s^2_1}{n_1}$ &emsp;e&emsp; $\omega_2 = \frac{s^2_2}{n_2}$
+&emsp;$\phi = \frac{(\omega_1 + \omega_2)^2}{\frac{\omega_1^2}{n1-1} + \frac{\omega_2^2}{n2-1}}$;&emsp;
+$\omega_1 = \frac{s^2_1}{n_1}$ &emsp;e&emsp; $\omega_2 = \frac{s^2_2}{n_2}$<br><br><br>
 
 #### Teste t para dados pareados
 
@@ -656,7 +681,7 @@ em que,
 
 &emsp; $\bar{d}$ é a média das diferenças
 
-&emsp; $s_d$ é o desvio padrão das diferenças
+&emsp; $s_d$ é o desvio padrão das diferenças <br><br>
 
 Ex: Verificar se houve mudanças na pressão arterial cistólica após o uso de determinbado farmaco.
 
@@ -667,7 +692,7 @@ Ex: Verificar se houve mudanças na pressão arterial cistólica após o uso de 
 <br>
 Diferenças = {2,-3,-2,3,1,2,4,-1,4,4,7,3}
 <br><br>
-$\bar{d} = 2 $
+$\bar{d} = 2$
 
 $S_d = 2.860$
 
@@ -675,8 +700,9 @@ $n = 12$
 
 $\alpha = 0.05$
 
-$$H_0: \mu_D - \mu_A = 0$$
-$$H_1: \mu_D - \mu_A \neq 0$$
+$H_0: \mu_D - \mu_A = 0$
+
+$H_1: \mu_D - \mu_A \neq 0$
 
 $t_c = \frac{\bar{d}}{\frac{s_d}{\sqrt{n}}} = \frac{2}{\frac{2.860}{\sqrt{12}}}=2.422$
 
@@ -685,7 +711,7 @@ $t_c = \frac{\bar{d}}{\frac{s_d}{\sqrt{n}}} = \frac{2}{\frac{2.860}{\sqrt{12}}}=
 grafico.teste.norm('two.sided', 2.422,)
 
 ```
-<p>Assim, com 0.95 de confiança, a estatística $t_c$ é igual 2.422, estando na região de rejeição, portanto rejeita-se $H_0$, apresentando evideências qdas diferênças de pressão antes e depois da aplicação do fármaco.</p>
+<p>Assim, com 0.95 de confiança, a estatística $t_c$ é igual 2.422, estando na região de rejeição, portanto rejeita-se $H_0$, apresentando evidências que há diferenças de pressão antes e depois da aplicação do fármaco.</p><br>
 
 #### Teste Qui-Quadrado
 
@@ -697,21 +723,21 @@ $\chi = \sum\frac{(\theta - e)^2} e$ ~ $\chi^2_m$
 <br><br>
 em que
 <br><br>
-$m = (r-1)(s-1)$
+$m = (r-1)(s-1)$<br><br>
 
 $\theta$: é a frequência obeservada 
 
-$e$: é a frequência esperada 
+$e$: é a frequência esperada <br><br>
 
 Como calcular o esperado?
 
-$e$ = $\frac{marginal(x)\cdot marginal(y)}{total(n)}$
+$e$ = $\frac{marginal(x)\cdot marginal(y)}{total(n)}$<br><br>
 
 Como tomar a decisão?
 
 $\chi^2_c \ge \chi_t^2$ $\rightarrow$ Rejeitar $H_0$
 
-$\chi^2_c < \chi_t^2$ $\rightarrow$ Não rejeitar $H_0$
+$\chi^2_c < \chi_t^2$ $\rightarrow$ Não rejeitar $H_0$<br><br>
 
 **Pressupostos**
 
@@ -721,7 +747,7 @@ $\chi^2_c < \chi_t^2$ $\rightarrow$ Não rejeitar $H_0$
 
 - Cada observação pertence a uma e somente uma categoria
 
-- A amostra deve ser relativamente grande
+- A amostra deve ser relativamente grande<br><br>
 
 Ex: Estamos interessados em estudar se a queixa de dores (presentes ou ausente) em idosos está associada a participação em um programa de atividade física. Para isso selecionou-se uma amostra de 150 idosos e foi construido a seguinte tabela de contingência:
 
@@ -736,7 +762,7 @@ $H_0:$ A queixa de dores e o programa são independentes
 
 $H_1:$ A queixa de dores e o programa não são independentes
 
-$\alpha = 0.05$
+$\alpha = 0.05$<br><br>
 
 esperado1 = $\frac{76 \cdot97}{150} = 49.1466 \approx 49.15$
 
@@ -750,9 +776,9 @@ $\chi^2_c = \frac{(55 - 49.15)^2}{49.15} + \frac{(42 - 47.85)^2}{47.85} + \frac{
 
 $\chi^2_c  = 3.9945$
 
-$\chi^2_t = \chi^2_{(r -1)(s-1); 0.05} = \chi^2_{(2 -1)(2-1); 0.05} = \chi^2_{1; 0.05} = 3.841$
+$\chi^2_t = \chi^2_{(r -1)(s-1); 0.05} = \chi^2_{(2 -1)(2-1); 0.05} = \chi^2_{1; 0.05} = 3.841$<br><br>
 
-Como $\chi^2_c>\chi_t^2$, então rejeitamos $H_0$, ou seja, com 95% de confiança, existem indícios de que dores e o programa não são independentes.
+Como $\chi^2_c>\chi_t^2$, então rejeitamos $H_0$, ou seja, com 95% de confiança, existem indícios de que dores e o programa não são independentes.<br><br><br>
 
 #### Regressão linear simples
 
@@ -762,7 +788,7 @@ Como $\chi^2_c>\chi_t^2$, então rejeitamos $H_0$, ou seja, com 95% de confianç
 
 3. Diagnóstico
 
-4. Extrapolação
+4. Extrapolação <br><br>
 
 **Correlação**
 
@@ -772,7 +798,7 @@ $$\rho = \frac{cov(x,y)}{s(x)s(y)}$$
 
 $$\rho = \frac{n\sum x_i y_i - \sum x_i \sum y_i}{\sqrt{n \sum_i  x_i^2 - (\sum_i x_i)^2} \cdot \sqrt{n \sum_i y_i^2 - (\sum_i y_i)^2}}$$
 
-OBS: $-1 \le \rho \le 1$
+OBS: $-1 \le \rho \le 1$<br><br>
 
 ##### Teste de significância para $\rho$
 
@@ -780,21 +806,21 @@ $H_0:$ $\rho = 0$
 
 $H_1:$ $\rho \neq 0$
 
-$t_c = r \sqrt{\frac{n-2}{1-r^2}}$ ~ $t_{n-2}$
+$t_c = r \sqrt{\frac{n-2}{1-r^2}}$ ~ $t_{n-2}$<br><br>
 
 Conclusão:
 
 $|t_c| \le |t_t| \rightarrow$ não rejeita $H_0$
 
-$|t_c| > |t_t| \rightarrow$ rejeita $H_0$
+$|t_c| > |t_t| \rightarrow$ rejeita $H_0$<br><br><br>
 
-##### Modelo de regrssão
+##### Modelo de regressão
 
 Esse modelo por ser linear segue a função
 
 $\hat{a} = \bar{y} - \hat{b}\bar{x}$
 
-$\hat{b} = \frac{n\sum x_i y_i - \sum x_i \sum y_i}{n \sum x_i^2 - (\sum x_i)^2}$
+$\hat{b} = \frac{n\sum x_i y_i - \sum x_i \sum y_i}{n \sum x_i^2 - (\sum x_i)^2}$<br><br><br>
 
 ##### Resíduos
 
@@ -804,37 +830,38 @@ $\hat{\sigma^2} = \frac{S_{aE}}{n-2}$
 
 em que
 
-$S_{aE} = \sum_i(y_i - \hat{y_i})^2$
+$S_{aE} = \sum_i(y_i - \hat{y_i})^2$<br><br><br>
 
 ##### Inferência sobre os parâmetros do modelo
 
 a) Para o coeficiente angular ($\hat{b}$)
 
-$E_p(\hat{b}) = \sqrt{\frac{\sigma^2}{S_{xx}}}$
+&emsp;$E_p(\hat{b}) = \sqrt{\frac{\sigma^2}{S_{xx}}}$
 
-$\hat{b} \pm \sqrt{\frac{\sigma^2}{S_{xx}}}t_{(n-2); \frac \alpha 2}$
+&emsp;$\hat{b} \pm \sqrt{\frac{\sigma^2}{S_{xx}}}t_{(n-2); \frac \alpha 2}$
 
-$t_c = \frac{\hat{b} - b}{\sqrt{\frac{\hat{\sigma^2}}{S_{xx}}}}$ ~ $t_{n-2}$
+&emsp;$t_c = \frac{\hat{b} - b}{\sqrt{\frac{\hat{\sigma^2}}{S_{xx}}}}$ ~ $t_{n-2}$
 
-$H_0: \hat b = 0$
+&emsp;$H_0: \hat b = 0$
 
-$H_1: \hat b \neq 0$
+&emsp;$H_1: \hat b \neq 0$
 
-Se |$t_c$| > $t_{\frac{\alpha}{2}; n-2} \rightarrow$ rejeita $H_0$
+&emsp;Se |$t_c$| > $t_{\frac{\alpha}{2}; n-2} \rightarrow$ rejeita $H_0$
+<br><br>
 
 b) Para o intercepto ($a$)
 
-$EP(\hat{a}) = \sqrt{\hat \sigma^2 \left (\frac{1}{n} + \frac{\bar{x}^2}{S_{xx}} \right)}$
+&emsp;$EP(\hat{a}) = \sqrt{\hat \sigma^2 \left (\frac{1}{n} + \frac{\bar{x}^2}{S_{xx}} \right)}$
 
-$\hat{a} \pm \sqrt{\hat \sigma^2 \left (\frac{1}{n} + \frac{\bar{x}^2}{S_{xx}} \right )} t_{\frac \alpha 2 ; n-2}$
+&emsp;$\hat{a} \pm \sqrt{\hat \sigma^2 \left (\frac{1}{n} + \frac{\bar{x}^2}{S_{xx}} \right )} t_{\frac \alpha 2 ; n-2}$
 
-$H_0: a = a_0$
+&emsp;$H_0: a = a_0$
 
-$H_1: a \neq a_0$
+&emsp;$H_1: a \neq a_0$
 
-$t_c = \frac{\hat a - a}{\sqrt{\hat \sigma^2 \left (\frac{1}{n} + \frac{\bar{x}^2}{ S_{xx}}\right )}}$
+&emsp;$t_c = \frac{\hat a - a}{\sqrt{\hat \sigma^2 \left (\frac{1}{n} + \frac{\bar{x}^2}{ S_{xx}}\right )}}$
 
-Se $|t_c| > t_{\frac \alpha 2 ; n-2}$ Rejeita-se $H_0$
+Se $|t_c| > t_{\frac \alpha 2 ; n-2}$ Rejeita-se $H_0$<br><br>
 
 ## Probabilidade I
 
