@@ -278,7 +278,7 @@ A integral representa a área, sendo a antiderivada, ou o contrário da derivada
 **Distribuição Uniforme Discreta**<br>
 Uma das distribuições mais simples, na qual todos pontos tem mesma probabilidade.<br>
 
- $X$ ~ $U_{d}(x)$
+ $X$ &nbsp;~&nbsp; $U_{d}(x)$
 $$f(x) = p = \frac{1}{n}$$
 $\bar{x} = \frac{1}{n}\sum{x}$; &emsp;   $Var(x) = \frac{1}{n}\sum{x^2 - \frac{(\sum{x})^2}{n}}$<br><br><br>
 p : A probabilidade de evento acontecer<br>
@@ -294,7 +294,7 @@ p : A probabilidade de evento acontecer <br><br><br>
 
 **Distribuição Binomial**<br>
 A distribuição binomial é a ocorrência de mais de um experimento de Bernoulli, mantendo x igual a 1 ou 0.<br>
-  $X$ ~ $Binom(n,p)$<br>
+  $X$ &nbsp;~&nbsp; $Binom(n,p)$<br>
 
 $$f(x) = \binom nkp^x(1-p)^{(n-x)}$$
 $\bar{x} = n.p$; &emsp; $Var(x) = np(1-p)$<br>
@@ -311,7 +311,7 @@ $\lambda$ : O valor médio de ocorrências.<br><br><br>
 
 **Distribuição Multinomial**<br>
 É uma distribuição usada para k eventos mutuamente  exclusivos, com n repetições independetes, tendo uma $p_{i}$ para cada $x_{i}$.<br>
-$X$ ~ $M(x_{1},x_{2},...,x_{k};p_{1},p_{2},...,p_{k})$<br>
+$X$ &nbsp;~&nbsp; $M(x_{1},x_{2},...,x_{k};p_{1},p_{2},...,p_{k})$<br>
 
 $$p(x_{1},x_{2},..,x_{k}) = \frac{n!}{x_{1}!x_{2}!...x_{k}!}p_{1}^{x_{1}}p_{2}^{x_{2}}...p_{k}^{x_{k}}$$
 $\bar{x_{i}} = np_{i}$; &emsp; $Var(x_{i}) = np_{i}(1-p_{i})$<br>
@@ -327,7 +327,7 @@ p : A probabilidade do evento ocorrer<br><br><br>
 
 **Distribuição Binomial Negativa ou de Pascal**<br>
 Nessa distribuição $X$ é o número de experimentos até o r-ésimo sucesso.<br>
-$X$~$BN(p,r)$<br>
+$X$&nbsp;~&nbsp;$BN(p,r)$<br>
 
 $$f(x) = \binom{x-1}{r-1}p^r(1-p)^{x-r}$$
 $\bar{x} = \frac{r}{p}$; &emsp; $Var(x) = \frac{r(1-p)}{p^2}$<br>
@@ -393,7 +393,7 @@ $f(x) \ge 0$ e $\int^{+\infty}_{-\infty}f(x) = 1$ <br><br>
 ### Teorema Central do Limite
 
 Se $x_1,...,x_n$ for uma amostra aleatória simples de tamanho n, de média $\mu$ e var finita $\sigma^2$, então a distribuição amostral da média $\bar{x}$ será
-<center>$\bar{x}$~$N \left ( \mu, \frac{\sigma^2}{n} \right )$</center>
+<center>$\bar{x}$&nbsp;~&nbsp;$N \left ( \mu, \frac{\sigma^2}{n} \right )$</center>
 
 Representa a distribuição amostral da média. <br><br>
 
@@ -494,8 +494,8 @@ $$IC(\mu, 1 - \alpha) = \bar{x} \pm Z_{\frac{\alpha}{2}}\cdot \frac{\sigma}{\sqr
 
 **a) Amostras grandes**
 
-- $X$ ~ $N(\mu,\sigma^2)$
-- $\bar{X}$ ~ $N(\mu,\frac{\sigma^2}{n})$
+- $X$ &nbsp;~&nbsp; $N(\mu,\sigma^2)$
+- $\bar{X}$ &nbsp;~&nbsp; $N(\mu,\frac{\sigma^2}{n})$
 - $IC(\mu, 1 - \alpha)$ = $\bar{x} \pm Z_{\frac{\alpha}{2}}\cdot \frac{S}{\sqrt n}$<br><br>
 
 **b)Amostra pequena**
@@ -510,7 +510,7 @@ $$f(x) = \frac {\Gamma \left ( \frac{k + 1}{2} \right )}{\sqrt{\pi k} \Gamma{ \l
 
 - $p$ <- proporção populacional
 - $\hat p$ <- proporção amostral
-- $\hat p$ ~ $N\left (p, \frac{p(1-p)}n \right )$
+- $\hat p$ &nbsp;~&nbsp; $N\left (p, \frac{p(1-p)}n \right )$
 
 Para esse intervalo de confiança há duas formas de constuílo, a otimista e a conservadora:<br><br>
 
@@ -562,7 +562,7 @@ Sempre $H_0$ sempre carrega o igual sendo $=,\ge,\le$.<br><br>
 
 #### Teste de hipótese proporção<br><br>
 
-$Zc = \frac{\hat p - p}{\sqrt{\frac{p(1-p)}{n}}}$ ~ $N(0,1)$<br><br>
+$Zc = \frac{\hat p - p}{\sqrt{\frac{p(1-p)}{n}}}$ &nbsp;~&nbsp; $N(0,1)$<br><br>
 
 #### Cálculo do valor p:
 
@@ -589,20 +589,20 @@ $$n = \left ( \frac{Z_{\alpha} \sqrt{\hat p(1- \hat p)} + Z_\beta \sqrt{p(1-p)}}
 
 **1) Se $\sigma$ for conhecido, então**
 
-- ##### $z_c = \frac{\bar{x} - \mu}{\frac{\sigma}{\sqrt{n}}}$ ~ $N(0,1)$
+- ##### $z_c = \frac{\bar{x} - \mu}{\frac{\sigma}{\sqrt{n}}}$ &nbsp;~&nbsp; $N(0,1)$
 
 **2) Se $\sigma$ for desconhecido e a amostra pequena, então**
 
-- ##### $t_c = \frac{\bar{x} - \mu}{\frac{S}{\sqrt{n}}}$  ~ $t_{n-1}$
+- ##### $t_c = \frac{\bar{x} - \mu}{\frac{S}{\sqrt{n}}}$  &nbsp;~&nbsp; $t_{n-1}$
 
 **2) Se $\sigma$ for desconhecido e a amostra grande, então**
 
-- ##### $z_c = \frac{\bar{x} - \mu}{\frac{S}{\sqrt{n}}}$ ~ $N(0,1)$
+- ##### $z_c = \frac{\bar{x} - \mu}{\frac{S}{\sqrt{n}}}$ &nbsp;~&nbsp; $N(0,1)$
 <br><br>
 
 #### Distribuição Qui-quadrado <br><br>
 
-$x$ ~ $\chi^2_k$
+$x$ &nbsp;~&nbsp; $\chi^2_k$
 
 $$f(x;k)= \frac{1}{\Gamma \left(\frac{k}2 \right )2^{\frac{k}{2}}}x^{\frac{k}2 -1}e^{\frac{-x}2} $$
 <br>
@@ -626,17 +626,17 @@ hist(rchisq(100000, 4),
 
 #### Teste de hipóstese para $\sigma^2$ <br><br>
 
-Se $Z_i$ ~ $N(0,1)$ <br><br>
+Se $Z_i$ &nbsp;~&nbsp; $N(0,1)$ <br><br>
 
-<center> $\sum^n_{i=1}(z_i-\bar{z})^2$ ~ $\chi^2_{n-1}$ </center><br>
+<center> $\sum^n_{i=1}(z_i-\bar{z})^2$ &nbsp;~&nbsp; $\chi^2_{n-1}$ </center><br>
 
 <center> e assim </center><br>
 
-<center> $\chi^2_c = \frac{(n-1)S^2}{\sigma^2}$ ~ $\chi^2_{n-1}$ </center> <br><br><br>
+<center> $\chi^2_c = \frac{(n-1)S^2}{\sigma^2}$ &nbsp;~&nbsp; $\chi^2_{n-1}$ </center> <br><br><br>
 
 #### Teste de hipótese para variância populacional (Fischer)
 
-<center> $F_c = \frac{s_1^2}{s_2^2}$ ~ $F_{n_1 -1, n_2 - 1}$ </center>
+<center> $F_c = \frac{s_1^2}{s_2^2}$ &nbsp;~&nbsp; $F_{n_1 -1, n_2 - 1}$ </center>
 <br><br>
 
 - Depende de duas amostras, e $s_i$ é a variância de cada amostra
@@ -652,11 +652,11 @@ Se $F_c <4$, então $\sigma^2_1 =\sigma^2_2$ <br><br>
 
 1. Se $\sigma_1$ e $\sigma_2$ são conhecidos, então
 
-&emsp;$z_c = \frac{\bar{x_1}-\bar{x_2}}{\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}}$ ~ $N(0,1)$<br><br>
+&emsp;$z_c = \frac{\bar{x_1}-\bar{x_2}}{\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}}$ &nbsp;~&nbsp; $N(0,1)$<br><br>
 
 2. Se $\sigma_1$ e $\sigma_2$ são desconhecidos e iguais, então
 
-&emsp;$t_c = \frac{\bar{x_1}-\bar{x_2}}{s_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}$ ~ $t_{(n1 + n2 -2)}$
+&emsp;$t_c = \frac{\bar{x_1}-\bar{x_2}}{s_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}$ &nbsp;~&nbsp; $t_{(n1 + n2 -2)}$
 
 em que
 
@@ -664,7 +664,7 @@ em que
 
 3. Se $\sigma_1$ e $\sigma_2$ são desconhecidos e diferentes, então
 
-&emsp;$t_c = \frac{\bar{x_1}-\bar{x_2}}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$ ~ $t_{\phi}$
+&emsp;$t_c = \frac{\bar{x_1}-\bar{x_2}}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$ &nbsp;~&nbsp; $t_{\phi}$
 
 em que
 
@@ -719,7 +719,7 @@ grafico.teste.norm('two.sided', 2.422,)
 
 - É utilizado para verificar se variáveis estão associadas, se amostras diferentes em uma série de experimentos semelhantes são homogêneos e testar a adequalidade de um modelo probabilístico a um conjunto de dados.
 
-$\chi = \sum\frac{(\theta - e)^2} e$ ~ $\chi^2_m$
+$\chi = \sum\frac{(\theta - e)^2} e$ &nbsp;~&nbsp; $\chi^2_m$
 <br><br>
 em que
 <br><br>
@@ -806,7 +806,7 @@ $H_0:$ $\rho = 0$
 
 $H_1:$ $\rho \neq 0$
 
-$t_c = r \sqrt{\frac{n-2}{1-r^2}}$ ~ $t_{n-2}$<br><br>
+$t_c = r \sqrt{\frac{n-2}{1-r^2}}$ &nbsp;~&nbsp; $t_{n-2}$<br><br>
 
 Conclusão:
 
@@ -840,7 +840,7 @@ a) Para o coeficiente angular ($\hat{b}$)
 
 &emsp;$\hat{b} \pm \sqrt{\frac{\sigma^2}{S_{xx}}}t_{(n-2); \frac \alpha 2}$
 
-&emsp;$t_c = \frac{\hat{b} - b}{\sqrt{\frac{\hat{\sigma^2}}{S_{xx}}}}$ ~ $t_{n-2}$
+&emsp;$t_c = \frac{\hat{b} - b}{\sqrt{\frac{\hat{\sigma^2}}{S_{xx}}}}$ &nbsp;~&nbsp; $t_{n-2}$
 
 &emsp;$H_0: \hat b = 0$
 
@@ -865,9 +865,11 @@ Se $|t_c| > t_{\frac \alpha 2 ; n-2}$ Rejeita-se $H_0$<br><br>
 
 ## Probabilidade I
 
-### Distribuições Contínuas
+---
 
-#### **Conceitos Gerais**
+### Distribuições Contínuas<br><br>
+
+#### **Conceitos Gerais**<br><br>
 
 #### **Função de Distribuição de Probabilidades - FDP**
 
@@ -884,7 +886,7 @@ Propriedades:
 - É a derivada da fda.
 
 
-Toda função que satisfaça as duas primeiras propridades é uma fdp.
+&emsp;Toda função que satisfaça as duas primeiras propridades é uma fdp.<br><br>
 
 #### **Função de Distribuição Acumulada - FDA**
 
@@ -894,15 +896,15 @@ $$F(x)=P(x \leq X) = \int_{-\infty}^{x}f(t)dt, \forall x \in I\!R$$
 
 - $F(x)$ é não decrescente;
 - $F(-\infty) = 0$ e $F(+\infty)=1$
-- $F(x)$ é contínua a direita
+- $F(x)$ é contínua a direita<br><br><br>
 
 
-#### **Distribuição Normal**
-$Z$~$N(\mu,\sigma)$
+#### **Distribuição Normal**<br><br>
+$Z$&nbsp;~&nbsp;$N(\mu,\sigma)$
 $$f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\frac{(x-\mu)^2}{\sigma^2}}$$
 $$F(x) = \int\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\frac{(x-\mu)^2}{\sigma^2}}dx$$
 Escopo:<br>
-$-\infty < x < +\infty$, $-\infty < \mu < +\infty$, $\sigma > 0$
+$-\infty < x < +\infty$, $-\infty < \mu < +\infty$, $\sigma > 0$<br><br>
 
 **Propriedades**<br>
 
@@ -930,15 +932,15 @@ hist(rnorm(100000),
 Relembrando que uma Normal padrão é $Z$~$N(0,1)$, então se $Z$~$N(\mu,\sigma)$:<br>
 
 $$Z = \frac{x - \mu}{\sigma}$$
-e 
-$$f(z)=\int^z_{-\infty}\frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}2}$$
+<center>**e**</center> 
+$$f(z)=\int^z_{-\infty}\frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}2}$$<br><br><br>
 
 #### **Distribuição Exponencial**<br>
 $X$~$exp(\theta)$
 $$f(x) = \theta e^{-\theta x}$$
 $$F(x) = 1 - e^{-\theta x}$$
 Escopo:<br>
-$0 < x < +\infty$, $\theta > 0$<br>
+$0 < x < +\infty$, $\theta > 0$<br><br>
 
 **Propriedades**<br>
 $E(x^1) = \frac{1}{\theta}$, $E(x^r) = \frac{r}{\theta}E(x^{r-1})$, $Var(x) = \frac{1}{\theta^2}$
@@ -957,6 +959,7 @@ hist(rexp(100000),
 
 
 ```
+<br><br>
 
 
 #### **Distribuição Gama**
@@ -964,10 +967,10 @@ hist(rexp(100000),
 $X$~$Gama(\alpha,\beta)$
 
 $$f(x) = \frac{\beta^\alpha x^{\alpha -1}e^{-\beta x}}{\Gamma(\alpha)}$$
-Sendo $\Gamma(\alpha) = \int_0^\infty x^{\alpha -1}e^{-x}dx$
+Sendo, &emsp; $\Gamma(\alpha) = \int_0^\infty x^{\alpha -1}e^{-x}dx$
 
 Escopo:<br>
-$\alpha > 0$, $\beta > 0$
+$\alpha > 0$, $\beta > 0$ <br> <br>
 
 **Propriedades**<br>
 $\bullet$  $E(x) = \frac{\alpha} \beta$, $Var(x) = \frac{\alpha}{\beta^2}$, $E(x^2) = \frac{\alpha (\alpha + 1)}{\beta^2}$<br>
@@ -990,11 +993,12 @@ hist(rgamma(100000, 3),
      col = 'gray25'
      )
 ```
+<br><br>
 
+#### **Distribuição Beta**<br>
 
-#### **Distribuição Beta**
-
-$f(x) = \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha) \Gamma(\beta)}x^{\alpha -1}(1-x)^{\beta-1}$
+$$f(x) = \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha) \Gamma(\beta)}x^{\alpha -1}(1-x)^{\beta-1}$$
+<br><br>
 ```{r beta, echo = FALSE}
 set.seed(1)
 par(mfrow = c(2,3))
@@ -1055,15 +1059,15 @@ hist(rbeta(100000, 0.5, 0.5),
 ```
 
 Escopo:<br>
-$0 < x < 1$, $\alpha > 0$, $\beta > 0$
+$0 < x < 1$, $\alpha > 0$, $\beta > 0$<br><br>
 
 **Propriedades**<br>
  $E(x) = \frac{\alpha}{\alpha + \beta}$, 
- $Var(x) = \frac{\alpha\beta}{(\alpha + \beta)^2(\alpha + \beta + 1)}$ q<br>
+ $Var(x) = \frac{\alpha\beta}{(\alpha + \beta)^2(\alpha + \beta + 1)}$ <br>
 
 - $\alpha$, $\beta$ são parâmetros de forma
 - Se $\alpha$ = $\beta$ então $f(x)$ é simétrico e $E(x) = 0.5$
-- Se $X$ ~ $Beta(1,1) = X$ ~ $Unif(0,1)$
+- Se $X$ ~ $Beta(1,1) = X$ ~ $Unif(0,1)$<br><br><br>
 
 #### Distribuição Uniforme Contínua
 
@@ -1090,9 +1094,9 @@ hist(runif(100000),
 ```
 
 **Propriedades**<br>
-$E(x) = \frac{a + b}{2}$, $Var(x) = \frac{(b - a)^2}{12}$
+$E(x) = \frac{a + b}{2}$, $Var(x) = \frac{(b - a)^2}{12}$<br><br><br>
 
-### Variáveis Bidimensionais
+### Variáveis Bidimensionais<br><br>
 
 #### Covariância
 
@@ -1114,14 +1118,15 @@ Propriedades
 - $E(ax + by) = aE(x) + bE(y)$
 - $Var(x \pm y) = Var(x) + Var(y) \pm 2Cov(x,y)$
 - $Var(ax + by) =a^2Var(x) + b^2Var(y) + 2abCov(x,y)$
-- $E(xy) = E(x)E(y)$, se x e y são independentes
+- $E(xy) = E(x)E(y)$, se x e y são independentes<br><br><br>
 
 #### Distribuição condicional
 
-$$P(x = x|Y=y) = \frac{P(X=x, Y=y)}{P(Y=y)}$$
-Se x e y forem independentes
+$$P(x = x|Y=y) = \frac{P(X=x, Y=y)}{P(Y=y)}$$<br><br>
+Se x e y forem independentes<br><br>
 
 $$P(X=x|Y=y) = \frac{P(X=x) P(Y=y)}{P(Y=y)} = P(x = x)$$
+<br><br><br>
 
 #### Transformação de variáveis
 
@@ -1133,21 +1138,22 @@ Ex:
 | x      | -3  | -2  | -1  | 0   | 1   | 2   | 3   |
 |--------|-----|-----|-----|-----|-----|-----|-----|
 | P(X=x) | 1/7 | 1/7 | 1/7 | 1/7 | 1/7 | 1/7 | 1/7 |
-
-Encontre a fdp de Y=x²-x
+<br><br>
+**Encontre a fdp de Y=x²-x**<br><br>
 
 
 | x         | -3 | -2 | -1 | 0 | 1 | 2 | 3 |
 |-----------|----|----|----|---|---|---|---|
 | Y=x^2 - x | 12 | 6  | 2  | 0 | 0 | 2 | 6 |
-
-Assim,
+<br><br>
+**Assim,**<br><br>
 
 | y      | 0   | 2   | 6   | 12  |
 |--------|-----|-----|-----|-----|
 | P(Y=y) | 2/7 | 2/7 | 2/7 | 1/7 |
 
-### Probabilidade do valor Máximo e Mínimo
+<br><br><br>
+
 
 ### Função Geradora de Momentos - FGM
 
@@ -1166,6 +1172,7 @@ Propriedades:
 - Unicidade: Se X e Y tem a mesma fgm então X e Y são identicamente distribuídas.
 - Seja $Y = ax + b$ sua fgm será $M_Y(t) = M_{ax + b}(t) = e^{bt}m_x(at)$
 
+<br><br>
 
 # 2° Ano
 
