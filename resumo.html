@@ -11,7 +11,7 @@
 
 <meta name="author" content="Lorival Junior" />
 
-<meta name="date" content="2023-06-22" />
+<meta name="date" content="2023-07-09" />
 
 <title>Um resumo do curso de Estatística</title>
 
@@ -1493,7 +1493,7 @@ border-radius: 0px;
 
 <h1 class="title toc-ignore">Um resumo do curso de Estatística</h1>
 <h4 class="author">Lorival Junior</h4>
-<h4 class="date">2023-06-22</h4>
+<h4 class="date">2023-07-09</h4>
 
 </div>
 
@@ -2406,7 +2406,7 @@ n-2}\)</span> Rejeita-se <span class="math inline">\(H_0\)</span><br><br></p>
 </div>
 </div>
 <div id="probabilidade-i" class="section level2">
-<h2>Probabilidade I</h2>
+<h2><strong>Probabilidade I</strong></h2>
 <hr />
 <div id="distribuições-contínuas" class="section level3">
 <h3>Distribuições Contínuas<br><br></h3>
@@ -2687,6 +2687,512 @@ e^{bt}m_x(at)\)</span></li>
 </div>
 <div id="probabilidade-ii" class="section level2">
 <h2>Probabilidade II</h2>
+<hr />
+<div id="função-de-distribuição-acumulada-conjunta" class="section level3">
+<h3>Função de distribuição acumulada conjunta<br><br></h3>
+<p>Sejam X e Y duas v.a’s.</br> A função de distribuição acumulada
+conjunta de X e Y é dada por: <br><br></p>
+<p><span class="math inline">\(F(a,b) = F_{xy} = I\!P(X \le a, Y \le
+b)\)</span> <br><br> A fda de X pode ser obtida a partir da conjunta</p>
+<p><span class="math inline">\(F_x(a) = I\!P(X \le a) =
+\int_{-\infty}^{a} f(x,y)dy\)</span><br> <span class="math inline">\(F_y(b) = I\!P(X \le b) = \int_{-\infty}^{b}
+f(x,y)dx\)</span><br></p>
+<p>AS funções <span class="math inline">\(F_x\)</span> e <span class="math inline">\(F_y\)</span> são chamadas de distribuição (ou fda)
+marginal de X e Y.<br><br></p>
+<p><strong>Propriedades</strong></p>
+<ul>
+<li><p><span class="math inline">\(I\!P(X&gt;a, Y&gt;b) = 1 - F_x(a) -
+F_y(b) + F(a,b)\)</span></p></li>
+<li><p><span class="math inline">\(I\!P(a_1 &lt; x \le a_2, b_1 &lt; y
+\le b_2) = F(a_1, b_1) + F(a_2, b_2) - F(a_1,b_2) -
+F(a_2,b_1)\)</span></p></li>
+<li><p><span class="math inline">\(\lim\limits_{a,b \to -\infty} F(a,b)
+= 0\)</span>   <span class="math inline">\(I\!P\)</span> insignificantes
+são consideradas zero <br><br><br></p></li>
+</ul>
+</div>
+<div id="independência-de-v.as" class="section level3">
+<h3>Independência de V.a’s<br><br></h3>
+<p>As variáveis X e Y são independentes se <span class="math inline">\(I\!P(X \in A, Y \in B) = I\!P(X \in A)I\!P(Y \in
+B)\)</span> <br><br></p>
+<p>X e Y são independentes (<span class="math inline">\(X \perp
+Y\)</span>) se e somente se <span class="math inline">\(F(a,b) =
+F_x(a)F_y(b)\)</span> , <span class="math inline">\(\forall
+a,b\)</span><br><br><br></p>
+</div>
+<div id="distribuição-condicional-1" class="section level3">
+<h3>Distribuição condicional <br><br></h3>
+<p>A fdp condicional de x, dado que o evento {Y=y} ocorreu é definido
+por<br><br></p>
+<p><span class="math display">\[f_{x|y}(x|y)=\frac{f(x,y)}{f_y(y)},x \in
+I\!R\]</span> E a fda condicional é<br><br></p>
+<p><span class="math display">\[F_{x|y}(a|y)= I\!P(x \le a|Y=y)=
+\int^a_{-\infty} f_{x|y}(x|y)dx\]</span> <br>
+<strong>Propriedades</strong></p>
+<ul>
+<li><p><span class="math inline">\(f(x,y) = f_{x|y}f_y(y) =
+f_{y|x}(y|x)f_x(x)\)</span></p></li>
+<li><p>Se X e Y são independentes temos <span class="math inline">\(f_{x|y}(x|y) =
+\frac{f(x,y)}{f_y(y)}=\frac{f_x(x)f_y(y)}{f_y(y)} =
+f_x(x)\)</span><br><br><br></p></li>
+</ul>
+</div>
+<div id="soma-de-v.as-independentes" class="section level3">
+<h3>Soma de v.a’s independentes <br><br></h3>
+<p>A fdp de X + Y é obtida como</p>
+<p><span class="math display">\[f_{x+y}(a)= \int^{+\infty}_{-\infty}
+f_{x}(a-y)f_y(y)dy\]</span></p>
+<p>A fda de X + Y é</p>
+<p><span class="math display">\[\int^{+\infty}_{-\infty}F_x(a-y)f_y(y)dy\]</span>
+<br><br><br></p>
+</div>
+<div id="covariância-e-correlação" class="section level3">
+<h3>Covariância e Correlação<br><br></h3>
+<ul>
+<li><p><span class="math inline">\(E(x)=\int \int x f(x,y)dydx =\int x
+\int f(x,y)dydx =\int x f_x(x)dx\)</span></p></li>
+<li><p><span class="math inline">\(E(X+Y) = \int \int (x+y)f(x,y)dxdy =
+\int\int xf(x,y)dxdy + \int\int yf(x,y)dxdy\)</span><br> <span class="math inline">\(E(X+Y)=\int x f_x(x)dx + \int y f_y(y)dy = E(X) +
+E(Y)\)</span><br> <span class="math inline">\(E(X + Y) = E(X) +
+E(Y)\)</span></p></li>
+<li><p>Se <span class="math inline">\(X \perp Y\)</span>, então <span class="math inline">\(E(g(x)h(x)) = I\!E(g(x))I\!E(h(y))\)</span>, em
+particular, <span class="math inline">\(I\!E(XY) =
+I\!E(X)I\!E(Y)\)</span><br><br></p></li>
+</ul>
+<p><strong>Covariância</strong> entre X e Y é dado por <span class="math inline">\(Cov(X,Y) = E(XY) - E(X)E(Y)\)</span></p>
+<ul>
+<li><p><span class="math inline">\(Cov(X,Y) = Cov(Y,X)\)</span></p></li>
+<li><p><span class="math inline">\(Cov(X,X) = Var(X)\)</span></p></li>
+<li><p><span class="math inline">\(Cov(aX, bY) = ab\cdot
+Cov(X,Y)\)</span></p></li>
+<li><p><span class="math inline">\(Var(X+Y) = Var(X) + Var(Y) +
+2Cov(X,Y)\)</span></p></li>
+<li><p><span class="math inline">\(Var(X-Y) = Var(X) + Var(Y) -
+2Cov(X,Y)\)</span><br><br></p></li>
+</ul>
+<p><strong>Correlação</strong> entre X e Y é dado por <span class="math inline">\(Corr(x,y)=\frac{Cov(x,y)}{\sqrt{Var(x)Var(y)}} =
+\frac{E(XY) - E(X)E(Y)}{\sqrt{Var(x)Var(y)}}\)</span></p>
+<ul>
+<li><p><span class="math inline">\(-1\le Corr(X,Y) \le
+1\)</span></p></li>
+<li><p><span class="math inline">\(Corr(aX,bY) =
+Corr(X,Y)\)</span><br><br><br></p></li>
+</ul>
+</div>
+<div id="normal-bivariada" class="section level3">
+<h3>Normal Bivariada<br><br></h3>
+<p><span class="math inline">\(f(x,y) =
+\frac{1}{2\pi\sigma_x\sigma_y\sqrt{1 -
+\rho^2}}e^{\frac{-1}{2(1-\rho^2)}[\left (\frac{x-\mu_x}{\sigma_x}\right
+)^2 -2\rho \left (\frac{y-\mu_y}{\sigma_y} \right ) + \left (\frac{y +
+\mu_y}{\sigma_y} \right)^2]}\)</span></p>
+<p><span class="math inline">\((x,y) \in I\!R^2, (\mu_x,\mu_y) \in
+I\!R^2, \sigma_x, \sigma_y &gt; 0, -1 \le \rho \le
+1\)</span><br><br></p>
+</div>
+<div id="máximos-e-mínimos" class="section level3">
+<h3>Máximos e Mínimos<br><br></h3>
+<p><strong>Máximo</strong></p>
+<p><span class="math inline">\(g_n(x) = n(F(x))^{n-1}\)</span></p>
+<p><span class="math inline">\(G_n(x) = (F(x))^n\)</span></p>
+<p><strong>Mínimo</strong></p>
+<p><span class="math inline">\(g_1(x) = n(1 -
+F(x))^{n-1}f(x)\)</span></p>
+<p><span class="math inline">\(G_1(x) = 1 - (1
+-F(x))^n\)</span><br><br></p>
+<p>A fdp conjunta de (<span class="math inline">\(x_{(1)},x_{(n)}\)</span>) é <br><br></p>
+<p><span class="math inline">\(f_{x_1,x_n}(x_1,x_n) =
+n(n-1)(F(x_n)-F(x_1))^{n-2}f(x_1)f(x_n), x_n \ge
+x_1\)</span><br><br></p>
+<p>A densidade marginal da j-ésima estatística de ordem é</p>
+<p><span class="math inline">\(f_{x_{j}}(x) =
+\frac{n!}{(n-j)!(j-1)!}(F(x))^{j-1}(1-F(x))^{n-j}f(x)\)</span>
+<br><br><br></p>
+</div>
+<div id="funções-de-vetores-aleatórios" class="section level3">
+<h3>Funções de Vetores Aleatórios<br><br></h3>
+<p>Seja (<span class="math inline">\(X_1, X_2\)</span>) uma v.a com
+f.d.p conjunta f(<span class="math inline">\(x_1, x_2\)</span>). Suponha
+que estamos interessados nas v.a’s</p>
+<p><span class="math inline">\(Y_1 = g_1(x_1, x_2)\)</span></p>
+<p><span class="math inline">\(Y_2 = g_2(x_1, x_2)\)</span><br><br></p>
+<p>Suponha que:</p>
+<ol style="list-style-type: decimal">
+<li>As funções inversas existam e sejam únicas</li>
+</ol>
+<p>  <span class="math inline">\(x_1 = h_1(y_1, y_2)\)</span></p>
+<p>  <span class="math inline">\(x_2 = h_1(y_1, y_2)\)</span>
+<br><br></p>
+<ol start="2" style="list-style-type: decimal">
+<li><span class="math inline">\(g_1\)</span> e <span class="math inline">\(g_2\)</span> têm derivadas parciais contínuas e
+Jacobiano (J)</li>
+</ol>
+<p>  <span class="math inline">\(J(x_1,x_2) = \left |
+\frac{\partial(g_1, g_2)}{\partial (x_1,x_2)} \right | = \left |
+\frac{\partial g_1}{\partial x_1} \right | = \begin{vmatrix}
+\frac{\partial g_1}{\partial x_1}&amp;\frac{\partial g_1}{\partial
+x_2}\\ \frac{\partial g_2}{\partial x_1}&amp;\frac{\partial
+g_2}{\partial x_2}\\ \end{vmatrix} \neq 0\)</span></p>
+<p>Então, a fdp da v.a (<span class="math inline">\(Y_1, Y_2\)</span>)
+é</p>
+<p><span class="math display">\[f_{Y_1, Y_2}(y_1, y_2) = f_{X_1,
+X_2}(x_1, x_2) |J(x_1, x_2)|^{-1}\]</span> Sendo <span class="math inline">\(x_1 = h_1(y_1, y_2)\)</span> e <span class="math inline">\(x_2 = h_2(y_1, y_2)\)</span></p>
+<p>Ex: Sejam <span class="math inline">\(X_1, X_2\)</span> v.a’s
+independentes com distribuição exponencial do parâmetro <span class="math inline">\(\lambda_1, \lambda_2\)</span>, respectivamente,
+determine a fdp conjunta e sejam:</p>
+<p><span class="math display">\[Y_1 = x_1 + x_2\]</span> <span class="math display">\[Y_2 = x_1 - x_2\]</span> <br><br> Resolvendo:</p>
+<p>colocando <span class="math inline">\(x_1\)</span> e <span class="math inline">\(x_2\)</span> em função de <span class="math inline">\(Y_1\)</span> e <span class="math inline">\(Y_2\)</span></p>
+<p><span class="math inline">\(Y_1 = x_1 + x_2\)</span>,   <span class="math inline">\(x_1 = Y_1 - x_2\)</span></p>
+<p>Substituindo <span class="math inline">\(x_1\)</span> em <span class="math inline">\(Y_2\)</span></p>
+<p><span class="math inline">\(Y_2 = x_1 - x_2\)</span>,   <span class="math inline">\(Y_2 = Y_1 - x_2 - x_2\)</span>,   <span class="math inline">\(2x_2 = Y_1 - Y_2\)</span>,   <span class="math inline">\(x_2 = \frac{Y_1-Y_2}{2}\)</span></p>
+<p>Substituindo <span class="math inline">\(x_2\)</span> em <span class="math inline">\(Y_1\)</span></p>
+<p><span class="math inline">\(Y_1 = x_1 + \frac{Y_1-Y_2}{2}\)</span>,  
+<span class="math inline">\(x_1 = Y_1 - \frac{Y_1-Y_2}{2}\)</span>,  
+<span class="math inline">\(x_1 = \frac{Y_1 + Y_2}{2}\)</span></p>
+<p>Assim obtemos duas novas equações <br><br></p>
+<p>Agora precisamos calcular o Jacobiano</p>
+<p><span class="math inline">\(J(x_1,x_2) = \begin{vmatrix}
+\frac{\partial (x_1 + x_2)}{\partial x_1}&amp;\frac{\partial (x_1 +
+x_2)}{\partial x_2}\\ \frac{\partial (x_1 - x_2)}{\partial
+x_1}&amp;\frac{\partial (x_1 - x_2)}{\partial x_2}\\ \end{vmatrix} =
+\begin{vmatrix} 1&amp;1\\ 1&amp;-1\\ \end{vmatrix} = -1 -1 = -2\)</span>
+<br><br><br> A equação definida anteriormente foi<br><br></p>
+<p><span class="math inline">\(f_{y_1, y_2}(y_1, y_2) = f(x_1, x_2)
+\cdot |J(x_1, x_2)|^{-1}\)</span><br><br></p>
+<p>Na qual, <span class="math inline">\(f_{y_1, y_2}(y_1, y_2)\)</span>
+é uma exponencial como dado pelo exercício, lembrando que a fdp da
+distribuição é <span class="math inline">\(f(x) = \theta e^{-\theta
+x}\)</span></p>
+<p><span class="math inline">\(f_{y_1, y_2} = \lambda_1 \lambda_2 \cdot
+e^{-\lambda_1 \left(\frac{y_1 + y_2}{2} \right)} \cdot e^{-\lambda_2
+\left(\frac{y_1 - y_2}{2} \right)} |-2|^{-1} = \frac{\lambda_1
+\lambda_2}{2} \cdot e^{-\lambda_1 \left(\frac{y_1 + y_2}{2} \right)
+-\lambda_2 \left(\frac{y_1 - y_2}{2} \right)}\)</span></p>
+<p>A última parte é definir o escopo</p>
+<p>Os parâmetros da <span class="math inline">\(f_{y_1, y_2}(y_1,
+y_2)\)</span> são <span class="math inline">\(y_1 + y_2\)</span> e <span class="math inline">\(y_1 - y_2\)</span>, e ela sendo uma exponencial,
+esses devem ser maiores que zero, assim <span class="math inline">\(y_1
++ y_2 &gt; 0\)</span> e <span class="math inline">\(y_1 - y_2 &gt;
+0\)</span>.<br><br></p>
+<p>Além disso,</p>
+<p>1 - <span class="math inline">\(y_1 = x_1 + x_2\)</span>, portanto
+<span class="math inline">\(y_1\)</span> deve ser maior que zero.</p>
+<p>2 - <span class="math inline">\(\frac{y_1 + y_2}2 &gt; 0\)</span>,  
+<span class="math inline">\(y_1 + y_2 &gt; 0\)</span>,   $y_2 &gt; -y_1
+$</p>
+<p>3 - <span class="math inline">\(\frac{y_1 - y_2}2 &gt; 0\)</span>,  
+<span class="math inline">\(y_1 - y_2 &gt; 0\)</span>,   <span class="math inline">\(y_1 &gt; y_2\)</span></p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABUAAAAPACAMAAADDuCPrAAAAwFBMVEUAAAAAADoAAGYAOjoAOmYAOpAAZrY6AAA6OgA6Ojo6OmY6ZmY6ZpA6ZrY6kJA6kNtmAABmOgBmOjpmZjpmZmZmZpBmkJBmkLZmkNtmtttmtv+QOgCQZgCQZjqQkDqQkLaQtraQttuQtv+Q29uQ2/+2ZgC2Zjq2kGa2kLa2tpC2tra2ttu227a229u22/+2///bkDrbkGbbtmbbtpDbtrbb27bb29vb2//b////tmb/25D/27b/29v//7b//9v///8OJc87AAAACXBIWXMAAB2HAAAdhwGP5fFlAAAgAElEQVR4nO3dcWPbxp2gYchxrKa1azun21zi7V27jeKtc47VuE4tOxa//7dagpQoUqRE4ochMDN4nj9aWw6GhAW+xmBAqpkBENKM/QQASiWgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQlHdAG4Bk0icq+YgJjf23DdQleaNS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VRHQNjrtUfZ7DZdYztdvYyr6ptb1gI4VgtIDWtMn0m/OeytpaRUBXf/WFH+daPkhrTW8l3PjR3r4RPqgf9byM5GuXglotm6OsuLf/jhbP9AK/8dg82cijROC8gNazU/lXD8zENDc/P76D/PvyR/fjv08kvjw7eIlU/rObAbUT+UEKIqAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAko9fjy4tG7sZ8DkyKgVOPqVSOgDEpAqcXVeSOgDEtAqcT8/FNAGZiAUof3p42AMjQBpQafX87r+fSlgDIsAaU8n06brz8uf3nZNM/n/3fRNCffW0RiaAJKeealPPlx+cvz5a8uTp59tArP4ASUAl0szzvbOz+X56K/t/8joAxNQCnQag5/eVPSloAyNAGlROfXqbxYzeVnAsrwBJQSzc88f5gtknmzmjQTUIYnoJToy4vmyWwxlb+dwQsogxNQirScw2/M4AWUwQkoRVrM4Tdn8ALK4ASUIi3m8JszeAFlcAJKmdo5/OYMXkAZnIBSpk+nJ3/fnMELKIMTUMo0r+WfX2zM4AWUwQkohbpovjrdmMELKIMTUAr16bTZnMELKIMTUArVfgL987tfEVAGJaCU6nxzDV5AGZ6AUqibT7KD8Qgohbq4O4OHwQkoZXp/ar7O6ASUAl22P4HTCSijE1AK1N7C5Aoo4xNQCvTlZdM8009GJ6AAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQf8DiyiBTLJO5WYAAAAASUVORK5CYII=" width="672" />
+<br><br></p>
+<p><strong>Passos para usar o método jacobiano</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>Obter as inversas <span class="math inline">\(x_1\)</span> e
+<span class="math inline">\(x_2\)</span></p></li>
+<li><p>Calcular o determinante do Jacobiano <span class="math inline">\(J(x_1, x_2)\)</span></p></li>
+<li><p>Calcular a fdp de <span class="math inline">\(y_1\)</span> e
+<span class="math inline">\(y_2\)</span></p></li>
+<li><p>Possíveis valores ou suporte de <span class="math inline">\(y_1\)</span> e <span class="math inline">\(y_2\)</span></p></li>
+</ol>
+<p><br><br><br></p>
+</div>
+<div id="função-geradora-de-momentos---fgm-1" class="section level3">
+<h3>Função Geradora de Momentos - FGM</h3>
+<p>Se X for discreto, <span class="math display">\[M_X(t) = E(e^{tx}) =
+\sum_x e^{tx}I\!P(X=x)\]</span> Se X for contínuo, <span class="math display">\[M_X(t) = E(e^{tx}) =
+\int^{+\infty}_{-\infty}e^{tx}f(x)dx\]</span></p>
+<p>No qual o primeiro momento é a média, o segundo momento pode ser
+usado para descobrir a variância, o terceiro para verificar assimetria e
+o quarto para calcular a curtose.</p>
+<p>O r-ésimo momento de um v.a. X pode ser calculado derivando a fgm r
+vevez e avaliando no ponto t=0</p>
+<p><span class="math display">\[E(x^r)=\left.
+\frac{d^r}{d^rt}m(t)\right|_{t=0} = m^{(r)}(0)\]</span>
+Propriedades:</p>
+<ul>
+<li><span class="math inline">\(Var(x) = m&#39;&#39;(0) -
+(m&#39;(0))^2\)</span></li>
+<li><span class="math inline">\(M_{x+y}(t) = M_X(t) \cdot
+M_Y(t)\)</span>, se <span class="math inline">\(X \perp Y\)</span></li>
+<li><span class="math inline">\(X_1, X_2, ..., X_n\)</span>, n v.a’s
+i.i.d. então <span class="math inline">\(M_{x_1 + x_2 + ... + x_n}(t) =
+\prod_{i=1}^n m_{x_i}(t) = (m_{x_i}(t))^n\)</span></li>
+<li>Unicidade: Se X e Y tem a mesma fgm então X e Y são identicamente
+distribuídas.</li>
+<li>Seja <span class="math inline">\(Y = ax + b\)</span> sua fgm será
+<span class="math inline">\(M_Y(t) = M_{ax + b}(t) =
+e^{bt}m_x(at)\)</span> <br><br><br></li>
+</ul>
+</div>
+<div id="função-característica" class="section level3">
+<h3>Função Característica <br><br></h3>
+<p>A função característica de uma v.a X é definida por:</p>
+<p><span class="math display">\[\varnothing_x(t) = I\!E(e^{itx}, t \in
+I\!R, i = \sqrt{-1})\]</span> Propriedades:</p>
+<ul>
+<li><p><span class="math inline">\(i^rE(x^r)=\left.
+\frac{d^r}{dt^r}\varnothing_x(t)\right|_{t=0}\)</span></p></li>
+<li><p>Se <span class="math inline">\(X \perp Y\)</span> então <span class="math inline">\(\varnothing_{x+y}(t) =
+\varnothing_x(t)\varnothing_y(t)\)</span></p></li>
+<li><p><span class="math inline">\(\varnothing_{ax + b}(t) =
+e^{itb}\varnothing_x(at)\)</span></p></li>
+<li><p>Unicidade, <span class="math inline">\(\varnothing_{X}(t) =
+\varnothing_{Y}(t) &lt;=&gt;\)</span> X e Y tem a mesma
+distribuição.<br><br></p></li>
+</ul>
+</div>
+<div id="desigualdade-de-markov" class="section level3">
+<h3>Desigualdade de Markov <br><br></h3>
+<p>Seja X uma v.a positiva, então</p>
+<p><span class="math display">\[P(x &gt; t) \le \frac{E(x)}{t}, \forall
+t &gt; 0\]</span> Demonstração (Caso contínuo):</p>
+<p><span class="math inline">\(E(x) = \int^{\infty}_0 x f_x(x) dx =
+\int^t_0 x f_x(x) dx + \int^\infty_t xf_x(x)dx \ge \int^\infty_t
+tf_x(x)dx\)</span></p>
+<p><span class="math inline">\(E(x) = t P(x&gt;t)\)</span></p>
+<p>logo, <span class="math inline">\(I\!P(x&gt;t) \le \frac {E(x)}
+t\)</span><br><br></p>
+</div>
+<div id="desigualdade-de-chebyschew" class="section level3">
+<h3>Desigualdade de Chebyschew <br><br></h3>
+<p>Seja x uma v.a tal que <span class="math inline">\(Var(x)\)</span>
+existe, então</p>
+<p><span class="math inline">\(I\!P(|X-I\!E(x)| \ge t) \le
+\frac{Var(x)}{t^2}\)</span><br><br></p>
+<p>Demonstração: <span class="math inline">\(Y = (X -
+E(X))^2\)</span></p>
+<p><span class="math inline">\(P(Y \ge 0) = 1\)</span></p>
+<p><span class="math inline">\(I\!E(Y)= E[
+(x-E(x))^2]=Var(x)\)</span></p>
+<p><span class="math inline">\(I\!P(|X-E(x)| \ge t) = P(|X-E(x)|^2 \ge
+t^2) = P(Y \ge t^2) \le \frac{E(Y)}{t^2} =
+\frac{Var(x)}{t^2}\)</span></p>
+<p> logo <span class="math inline">\(P(|X-E(x)| \ge t) \le
+\frac{Var(x)}{t^2}\)</span><br><br></p>
+</div>
+<div id="convergência-em-probabilidade" class="section level3">
+<h3>Convergência em probabilidade<br><br></h3>
+<p>Seja <span class="math inline">\(x_1, x_2, ...\)</span> uma sequência
+infinita de v.a’s dizemos que essa sequência converge em probabilidade
+para <span class="math inline">\(x_n \rightarrow^{I\!P} b, b \in
+I\!R\)</span><br><br></p>
+<p>Se <span class="math inline">\(\lim\limits_{n \to +\infty} I\!P(|x_n
+- x|) = 1, \forall\)</span>   <span class="math inline">\(\varepsilon
+&gt; 0\)</span>, então <span class="math inline">\(\lim I\!P(|x_n - b|
+&lt; \varepsilon) = 1, \forall\)</span>   <span class="math inline">\(\varepsilon &gt; 0\)</span><br><br></p>
+<p>Ex) Seja <span class="math inline">\(Z_1, Z_2, ..., Z_n\)</span>
+v.a’s tais que</p>
+<p><span class="math inline">\(I\!P(Z_n = n^2) = \frac{1}n\)</span>  
+<span class="math inline">\(I\!P(Z_n = 0) = 1- \frac 1 n\)</span></p>
+<p>(<em>A distribuição é definida por duas equações, uma quando $Z_n é
+igual a zero e outra quando é diferente</em>)</p>
+<p>Mostre que <span class="math inline">\(Z_n \rightarrow^{I\!P}
+0\)</span><br><br></p>
+<p><span class="math inline">\(Z_n \rightarrow^{I\!P} 0 &lt;=&gt;_{n
+\rightarrow \infty} I\!P(|Z_n - 0| &lt; \varepsilon) = 1\)</span>,  
+<span class="math inline">\(\forall\)</span>   <span class="math inline">\(\varepsilon &gt; 0\)</span></p>
+<p>(<em>Ou seja <span class="math inline">\(Z_n\)</span> converge em
+probabilidade para zero, se e somente, se, quando <span class="math inline">\(n\)</span> tende ao infinito e a probabilidade da
+diferença de <span class="math inline">\(Z_n\)</span> e o ponto 0 serem
+menor que <span class="math inline">\(\varepsilon\)</span> é igual a 1,
+sendo <span class="math inline">\(\varepsilon\)</span> um número muito
+pequeno. Que significa que, para valores grandes de <span class="math inline">\(n\)</span> <span class="math inline">\(X_n\)</span> e <span class="math inline">\(X\)</span> são iguais com probabilidade,
+aproximadamente, igual a 1.</em>)<br><br></p>
+<p>Se <span class="math inline">\(0 &lt; \varepsilon &lt;
+n^2\)</span>,</p>
+<p><span class="math inline">\(P(|Z_n - 0| &lt; \varepsilon) = P(Z_n
+&lt; \varepsilon) = P(Z_n = 0) = 1 - \frac{1} n \rightarrow^{n \to
+\infty} 1\)</span></p>
+<p>(<em>Visto que <span class="math inline">\(\varepsilon\)</span> é um
+número muito pequeno, para <span class="math inline">\(Z_n\)</span> ser
+menor que ele, ele deve ser aproximadamente zero, a função de <span class="math inline">\(P(Z_n = 0)\)</span> foi definidada anteriormente,
+substituindo-a e aplicando o limite quando n tende ao infinito, chegamos
+que essa probabilidade é igual a 1.</em>)<br><br></p>
+<p>Se <span class="math inline">\(\varepsilon &gt; n^2\)</span></p>
+<p><span class="math inline">\(P(Z_n&lt; \varepsilon) = P(Z_n = 0) +
+P(Z_n = n^2) = 1 - \frac 1 n + \frac 1 n = 1,\)</span>   <span class="math inline">\(\forall\)</span>   <span class="math inline">\(n\)</span><br><br></p>
+<p>(<em>Somando a probabilidade das duas formas da distribuição por
+<span class="math inline">\(\varepsilon\)</span> ser maior que <span class="math inline">\(n^2\)</span>, chegamos então que para todos os
+casos quando n tende ao infinito, a função tende a 1</em>)</p>
+<p>Assim, <span class="math inline">\(\lim\limits_{n \to \infty} P(|Z_n
+- 0| &lt; \varepsilon) = 1\)</span>   <span class="math inline">\(\forall\)</span>   <span class="math inline">\(\varepsilon &gt; 0\)</span></p>
+<p>Logo, <span class="math inline">\(Z_n \rightarrow^{I\!P}
+0\)</span><br><br></p>
+</div>
+<div id="lei-fraca-dos-grandes-números" class="section level3">
+<h3>Lei Fraca dos Grandes Números<br><br></h3>
+<p><span class="math inline">\((X_n)n \ge 1\)</span> sequência de v.a’s
+iid, tais que</p>
+<p><span class="math inline">\(E(X_n) = \mu, Var(x_n) \sigma^2 &lt;
+\infty\)</span></p>
+<p>Seja <span class="math inline">\(\bar x_n =
+\frac{\sum^n_{i=1}X_i}{n}\)</span></p>
+<p><span class="math inline">\(\bar{X_n} \rightarrow^p
+\mu\)</span><br><br></p>
+</div>
+<div id="lema-de-borel-continelli" class="section level3">
+<h3>Lema de Borel-Continelli<br><br></h3>
+<p>Seja <span class="math inline">\((A_n)_{n \ge 1}\)</span> uma
+sequência de eventos</p>
+<ul>
+<li><p>Se <span class="math inline">\(\sum^{\infty}_{n = 1} P(A_n) &lt;
+\infty \rightarrow P(A_n\)</span> infinitas vezes) = 0</p></li>
+<li><p>Se <span class="math inline">\(A_i \perp A_j\)</span> e <span class="math inline">\(\sum^\infty_{n=1}P(A_n) = \infty \rightarrow
+P(A_n\)</span> infinitas vezes<span class="math inline">\()\)</span> =
+1<br><br></p></li>
+</ul>
+<p>Ex) Uma moeda honesta é lançada repetidamente e de forma
+independente, sejam</p>
+<p><span class="math inline">\(A_n\)</span>: O n-ésimo lançamento
+resultou em “cara”</p>
+<p><span class="math inline">\(B_n\)</span>: O n-ésimo e o (n+1)-ésimo
+lançamento resultaram em “cara”<br><br></p>
+<p>Mostre que:</p>
+<p>       a) <span class="math inline">\(I\!P(A_n i.v.) = 1\)</span></p>
+<p>       b) <span class="math inline">\(I\!P(B_n i.v.) = 1\)</span>
+<br><br></p>
+<p>a ) <span class="math inline">\(P(A_n) = \frac 1 2, n
+=1,2,...\)</span></p>
+<p><span class="math inline">\(P(A_n \cap A_{n+1}) = P(A_n)P(A_{n+1}),
+A_i \perp A_j\)</span></p>
+<p><span class="math inline">\(\sum^\infty_{n=1} P(A_n) =
+\sum^\infty_{n=1} \frac 1 2 = \infty\)</span></p>
+<p>Logo, pelo lema de B.C., <span class="math inline">\(I\!P(A_n i.v) =
+1\)</span>, ou seja se jogarmos infinitas vezes a moeda, aparecerá cara
+infinitas vezes com probabilidade igual 1.<br><br></p>
+<p>b ) <span class="math inline">\(P(B_n) = P(A_n \cap A_{n+1}) = \frac
+1 4, n = 1,2,...\)</span></p>
+<p><span class="math inline">\(P(B_1 \cap B_2) = P(A_1 \cap A_2 \cap A_2
+\cap A_3) = P(A_1 \cap A_2 \cap A_3) = \left ( \frac 1 2 \right )^3 =
+\frac 1 8\)</span></p>
+<p><span class="math inline">\(P(B_1) = \frac 1 4 = P(B_2), P(B_1) \cdot
+P(B_2) = \frac 1 {16}\)</span><br><br></p>
+<p>Assim, <span class="math inline">\(B_1\)</span> e <span class="math inline">\(B_2\)</span> não são independentes, ou seja não
+satisfaz o lema. <br><br> Definindo <span class="math inline">\(C_n\)</span> : Os lançamentos 2n e (2n - 1)
+resultaram em “cara”</p>
+<p><span class="math inline">\(C_1 = A_1 \cap A_2 = B_1\)</span></p>
+<p><span class="math inline">\(C_2 = A_3 \cap A_4 = B_3\)</span></p>
+<p><span class="math inline">\(C_3 = A_5 \cap A_6 = B_5\)</span></p>
+<p><span class="math inline">\(C_n = B_{2n -1}\)</span></p>
+<p><span class="math inline">\(P(C_n) = \frac 1 4, \sum^\infty_{n=1}
+P(C_n) = \infty\)</span></p>
+<p><span class="math inline">\(P(C_n \cap C_{n+1}) = P(A_{2n-1} \cap
+A_{2n} \cap A_{2n+1} \cap A_{2n +2}) = \frac 1 {16} = P(C_n) \cdot
+P(C_{n+1})\)</span><br><br></p>
+<p>Logo, por B.C., <span class="math inline">\(P(C_n i.v.) =
+1\)</span></p>
+<p><span class="math inline">\(P(B_n i.v.) = 1\)</span><br><br><br></p>
+</div>
+<div id="convergência-quase-certa" class="section level3">
+<h3>Convergência Quase-Certa<br><br></h3>
+<p>Seja <span class="math inline">\((X_n)_{n\ge1}\)</span> uma sequência
+de v.a’s. Dizemos que <span class="math inline">\(X_n\)</span> converge
+quase certamente x, <span class="math inline">\(X_n
+\rightarrow^{q_c}x\)</span>, se o evento</p>
+<p>      <span class="math inline">\([w \in \Omega / X_n(w)
+\rightarrow^{n \rightarrow \infty} x]\)</span> tem probabilidade
+1.<br><br></p>
+<p><span class="math inline">\(X_n \rightarrow^{q_c} x\)</span> se e
+somente se <span class="math inline">\(P(|X_n - x| &gt;
+\varepsilon_{iv}) = 0, \forall \varepsilon &gt; 0\)</span><br><br></p>
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABUAAAAPACAMAAADDuCPrAAABAlBMVEUAAAAAADoAAGYAOjoAOmYAOpAAZrYA/wA6AAA6OgA6Ojo6OmY6ZmY6ZpA6ZrY6kLY6kNtmAABmOgBmOjpmZjpmZmZmkJBmkLZmkNtmtttmtv+QOgCQOjqQZgCQZjqQtraQttuQtv+Q2/+2ZgC2Zjq2kGa2kLa2tma2tpC2tra2ttu225C227a229u22/+2///bkDrbkGbbtmbbtpDbtrbb25Db27bb29vb2//b/9vb////AAD/ADr/AGb/OgD/Ojr/Omb/OpD/ZgD/Zjr/ZpD/Zrb/kDr/kGb/kJD/kLb/kNv/tmb/tpD/ttv/tv//25D/27b/29v/2////7b//9v////cu4aHAAAACXBIWXMAAB2HAAAdhwGP5fFlAAAgAElEQVR4nO3di58jR2Hg8R5jfIsTc7a5jc/2BTgW51jujDeYszkv2JhXQibJLOzo//9XTm/1o/pVXZK61N/vJ8EjTXWpuiX9Vq+ZKVYARCmuvQCAXAkoQCQBBYgkoACRBBQgkoACRBJQgEgCChBJQAEiCShAJAEFiCSgAJEEFCCSgAJEElCASAIKEElAASIJKEAkAQWIJKAAkQQUIJKAAkQSUIBIAgoQSUABIgkoQCQBBYgkoACRBBQgkoACRBJQgEgCChBJQAEiCShAJAEFiCSgAJEEFCCSgAJEElCASAIKEElAASIJKEAkAQWIJKAAkQQUIJKAAkQSUIBIAgoQSUABIgkoQCQBBYgkoACRBBQgkoACRBJQgEgCChBJQAEiCShAJAEFiCSgAJEEFCCSgAJEElCASAIKEElAASIJKEAkAQWIJKAAkQQUIJKAAkQSUIBIAgoQSUABIgkoQCQBBYgkoACRBBQgkoACRBJQgEgCChBJQAEiCShAJAEFiCSgAJEEFCCSgAJEElCASAIKEElAASIJKEAkAQWIJKAAkQQUIJKAAkQSUIBIAgoQSUABIgkoQCQBBYgkoACRBBQgkoACRBJQgEgCChBJQAEiCShAJAEFiCSgAJEEFCCSgAJEElCASAIKEElAASIJKEAkAQWIJKAAkQQUIJKAAkQSUIBIAgoQSUABIgkoQCQBBYgkoACRBBQgkoACRBJQgEgCChBJQAEiCShAJAEFiCSgAJEEFCCSgAJEElCASAIKEElAASIJKEAkAQWIJKAAkQQUIJKAAkQSUIBIAgoQSUABIgkoQCQBBYgkoACRBBQgkoACRBJQgEgCChBJQAEiCShAJAEFiDTvgBYAyaRPVPIZE7r20QZuS/JGpZ4wpTP8gwEsloACRBJQgEgCChBJQAEiCShAJAEFiCSgAJEEFCCSgAJEElCASAIKEElAASIJKEAkAQWIJKAAkQQUIJKAAkQSUIBIAgoQSUABIgnoxIHAcgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUgno5JHAUmUY0Mcvf/X8+fOff/lVxLYCCqSTW0C/+GFx8s6nYzcXUCCdvAL66v2i6s2fjJtAQIF0sgro/ZNNNN9+uvO9zYm7j0bNIKBAOjkF9PV762D+uHTG5+ugvvHZmCkEFEgnp4C+aORyk9R3x0whoEA6GQX08eOiqD9hvy+K7455N15AgXQyCuj64Wbj+XrovC4CCqQjoJNHAkuVUUDXT+Hv6p9a8hQeuJ6MArp61qjl5mXRt8ZMIaBAOjkF9OHJuqC/KJ3xat3PxoPSTgIKpJNTQDefY1oX8+mPnm/8bPdJ+lGfYhJQIKGsArr65ZPaj3LefThuAgEF0skroKvHT8oJvftg7G9kElAgncwCuvb4xfNPnj59+sHzTyN+n52AAunkF9BJBBRIR0AnjwSWSkAnjwSWSkAnjwSWKvOAdv8sfBEwdGYBBfoIaOu2SRYI3LCbDmiTgALpZB7Q1V+//PWY4QIKpJN7QEcSUCAdAZ08ElgqAZ08ElgqAZ08ElgqAZ08ElgqAZ08ElgqAZ08ElgqAZ08EliqjAL6+r3Qj2b6SSTgWgR08khgqTIK6OrV+wIKzEhOAV09fjz2zxjXCSiQTlYB3Rb0oykTCCiQTl4BHf3r6+oEFEgns4Cu7qc9iRdQIJ3cArp+Ej/lIaiAAunkFtDVw9On/zN+awEF0skuoNMIKJCOgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgE4eCSyVgCYYCiyTgCYYCiyTgCYYCiyTgCYYCiyTgCYYCiyTgCYYCiyTgCYYCiyTgCYYCiyTgCYYCiyTgCYYCiyTgCYYCiyTgCYYCiyTgCYYCiyTgCYYCiyTgCYYCiyTgCYYCiyTgCYYCiyTgCYYCixTrgF9/NXzn/96/GYCCqSTU0D/+uUhmZ+/X2zcff+rkVMIKJBORgF9/V7xxmebLx5/WhzcfTRuDgEF0skxoM825fz7p09/sEnouIIKKJBOhgG9X2dz99z91cfFvqlDCSiQToYBXT8AfWt/1uO6oO+OmUNAgXTyC+gmmsfn7etHo98d80aSgALp5BfQ40uhpfMGE1AgHQFNMBRYpvwCunpW3P3kcN7DEwEFriWzgG7KeV9648hroMD15BXQte/8w6f/eHwIujnLu/DAlWQX0J3t8/bHf37ic6DA9WQU0HUxv/jkB09OAd0U9fRy6CACCqSTVUC3thU9BPTNX4zbWECBdPIL6MnjP43Mp4ACKeUc0AgCCqQjoAmGAsskoAmGAsskoAmGAsuUeUC7fxa+CBg8tYACPQS0feMUCwRu2E0HtElAgXQyD2jpL3UOIqBAOrkHdCQBBdIR0ARDgWUS0ARDgWXKMKCPX/7q+fPnP/9yzC9SPhBQIJ3cAvrFD0sfSXrn07GbCyiQTl4BffV+7VOdb477daACCiSUVUDvt79N+e2nO9/bnLj7qH+zEgEF0skpoNvfQP/j0hmf+5MewBXlFNAXjVz6o3LAFWUU0MePi6L+hN2fNQauJ6OAhn7u3c/CA9cjoAmGAsuUUUDXT+Ebf8TYU3jgejIK6OpZo5abl0XfGjOFgALp5BTQhyfrgpb/kvGrdT8bD0o7CSiQTk4B3XyOaV3Mpz96vvGz3SfpR32KSUCBhLIK6OqXT2o/ynn34bgJBBRIJ6+Arh4/KSf07oOxv5FpUkAlFajILKBrj188/+Tp06cfPP804vfZTQyoggIl+QV0EgEF0hHQ4UMFFKgQ0OFDBRSoENDhQwUUqBDQ4UMFFKgQ0OFDBRSoENDhQwUUqBDQ4UMFFKgQ0OFDBRSoENDhQwUUqBDQ4UMFFKgQ0OFDBRSoENDhQwUUqBDQ4UMFFKgQ0OFDBRSoENDhQwUUqBDQ4UMFFKgQ0OFDBRSoENDhQwUUqBDQ4UP3AZVRYEdAhw89BnTWuwhcjIAOHyqgQIWADh8qoECFgA4fepWAqjXMl4AOH3qlgM76gMKiCejwoQIKVAjo8KECClQI6PCh8w7oszc+W71+77tfrR4/Lt7an/eiWJ8eoL7Jdp7VffHR+PXCkgjo8KGzDui2drvwPTzZl+/hyd1Phl1KbZPdPNsmA+0EdPjQOQd0l7x9+F4U2/KtH1e+O/Riqpvs53l48lbPZrBsAjp86JwD+mL7CHIfvv0z8mcDn8CvGpvs51k9G/oIFpZJQIcPnXFA98U7hO++WPf0vtjl7+HJd//fJ0+K4s0fd81Q2eQwj4eg0ElAhw9NEtCxGw+7tBe7J+uH8K0fSb7xf97bP4F/ePLm+8VW5xP68iaHeR4/9hAUOgjo8KGJAjpu60HjD6E7BvT1e+vt9l8/rB99/tevVq8+LjrfEypvcpznxfBXUWGBBHT40PkG9OHJro3H8G2ekR8ePK4D+u7uv90PJ0ubHOe5LzyHh3YCOnzofAN6v3/oeAroupqHx5uHcL5+rzugpU2O8xzKDIQI6PCh8w3oi/0DxWP4Hj9eb7d/8Hh6eNoZ0PImpZcCBBTaCejwoRkF9Fnxxv8qjp+Nbwb0fveuUvknjcqblALqXSRoJ6DDh+YT0O1nkp7tn5EPC2hlEwGFQQR0+NBsAvr6vc3p3f8OfApf3cRTeBhEQIcPnW9Aq28iPe4/sHS/e4g5JKC1TUpvIg3/YSZYHgEdPnS+Aa1+jOnF4bn57hn5kIDWNvExJhhEQIcPnW9AKx+kP3zu8/CMfEBA65uU3ozyQXpoJ6DDh843oOUf5Vwn8Pi0e/vAsj+gjU1OP8rpJVDoIKDDh7YFdNQxPE9Aa79MZKrTu/mewUMHAR0+tD2gI/b5PAGt/jq7yfw6OxhEQIcPnXNAK79QeTK/UBkGEdDhQ+cc0PKf9JjOn/SAQQR0+NBZB/T0R+US8EflYBABHT70GgEtRo1P/Roo0ElAhw+df0CBixLQ4UMFFKgQ0OFDBRSoENDhQwUUqBDQ4UMFFKgQ0OFD5xFQQYXZENDhQ+cS0FkfYVgSAR0+NCagjW8JKNwOAR0+NC6g0/onoDBjAjp8qIACFQI6fKiAAhUCOnxoS0A7P2kkoHDDBHT4UAEFKgR08NBCQIEKAR08VECBKgEdPFRAgSoBHTxUQIEqAR08VECBKgEdPFRAgSoBHTxUQIEqAR08VECBKgEdPHQ+AZ31IYYFEdDBQwUUqBLQwUMFFKgS0MFD2wPaMe3EgAbmFlCYDQEdPFRAgSoBHTz0fAHt2lxAYb4EdPDQloBuTrVOO+xTSO1JDEwuoDAbAjp4qIACVQI6eGiSgAbzJ6CQJwEdPPTwemStYAIKiyWgfUOPmwgoUCWgfUOLUkkFFCgR0L6hNxJQ2YX0BLRvqIACLQS0b+jtBHTW1wzkSED7hs4voFFXmoBCegLaN/RmAnqG6xoWTkD7hgoo0EJA+4beTkAVlNvy55d/Wq1ev/zN3663BAHtGyqgME8CemmzDWjLBAIK3QT0gpIHdHfiggGNDeHZAqrKTDWpgQJ6QYkDWuy/Xl5AT1P5eBRTBRr46g8vX7783fbc+5ffPv7L+tQf/1b6zn9svqw8hS9t8bDfYjfqrAS0b2h3QGvT1ue/4YAWja8gTjOg9y93/nP79be/3574zebUw/47/7aqBnS/xX7M774+jTorAe0bOjKgPb0U0BvmSERqBPT1y00aH/+8PX+TxvWpV1+//O36W7/ff2fzdSmg665++7fVX/9wOPHyL8ctzkpA+4YKaHi6iQG9xdj4tyRSI6DbMh7+e/9yd+rx6/UDyv3Q9df/WQno719+u91i29eH/UPPh/O/PCqgfUOnBLT5jrmATtts1m5xn87u9y+Pvj2c9/j1PnwPm/PuDxlcP5fflPP0yuYpoLug7sccw3mB95cEtG/osW4CWpmufnhiJ7ght7hPZxcK6OvTeb/dN3HjYXdq7Zu/bM84BfSYyu2Yh/1TdwFNTUATEdCAW9yni6iHriugq3/fvT/0x1U1oL89bCqgZ5RZQPeXVz9LQOfpFvfpIpoBLZ+uBXT9DP9fv9m9r+QR6KXdRkBjrjUBPb9b3KeLqIfu+Irm1v3h0eX96Un+avs2fPtroAJ6HgKaiIAG3OI+XUQjdIf31O93byLt3lPfvgt/aONDNaCHLdZj/iSg5yOgidQPSvQEt+QW9+kiGqHbfapzn87746c6v90WcvOdV19Xn8LXPwcqoO0ev/zV8+fPf/7lVxHbnimg5cG1OQS0e4Jbcov7dCWHn0T60/brb3bvG21r+HB6d6njJ5EEtMUXPyxO3vl07OazDGh727IIaNy0txibW9ynayn9xPvmZ+HXp37zl9J3dieqPwv/zfHn5QW0xav3i6o3fzJuAgFNREADbnGfZqD83tHsZBXQ+yeb/rz9dOd7mxN3H42a4fIBbfTvOgHdbZHu2hbQgFvcp8RijpCAJvL6vXUwf1w64/N1UN/4bMwUFwhoUZvjZgN6XIiA7t3iPiUWc4gENJEXjVxukvrumCkENBEBDbjFfUpMQPtnTD3hwePHRVF/wn5fFN8d8268gCYioAG3uE+JCWj/jKknPFg/3Gw8Xw+d1+XMAS1qbxqND2hvLecR0NOxiJy19ZNbObvFfUrs5g6RgPYNvXRA69sLaDZucZ8Su7lDlFFA10/h7+qfWprZU/ilBTR+VgFdpps7RBkFdPWsUcvNy6JvjZkiKqCnTgjoaToBbbjFfUrs5g5RTgF9eLIu6C9KZ7xa97PxoLTTmN2tR3FcQI+hE9DwBLd2T7rNfUrt5g5RTgHdfI5pXcynP3q+8bPdJ+lHfYrpogEtwgFtrkFAb8PEfbq9AxJwc1d7VgFd/XL7o0gldx+Om+CyAQ337+YCGjPt2QN6hTvq5IDeWFtCbm4n8wro6vGTckLvPhj7G5nSBvQ0m4COnuDsAb34PVVA+93cTmYW0LXHL55/8vTp0w+efxrx++xmG9DTDEsJ6JkfIwrovARv3zcgv4BOIqBpCGj4Is8U0BuoTnG4Bea/KxUC2je2HtBKJNvG7u5MtxbQyv4Gj8OYqfq2mrbY6wY05sI7Azrre9UQAjp4xtQTpnT+gB4H9wa0em9LGNDdC8ShnZkc0NKSLxDQzJ4QVwIac0jOHtAr1qso3S9uiYD2jY0N6OG20hHQ8jTZBbR0X5hNQEtbCOgZ54m/aAHtnzH1hF26fxa+CBg+94wD2n21hRq7lIAWgS+Pl9i9nsnOGtAkdysBTU5AO7Y+/OdyAa2uMFS9SQGdeHVnFNDQY/DuYzb9dnu2gA44WFMv4uwEdPCMqSfscsbfxjQpoKXANB5SRgW0kq78A1o+Dv2XNmLafAPakRYBna/MA7r665e/HjO8KPZ/FPXl4Zz207tDczy9v8+Xx2/Oaj+9u61U5y9f/u6mdDh9uH21zXe4ooauvz6+aFz+uPl2Wxc9+zfmdO34Br5fjJpvt8DT/hfV7xfdlzf2+AZOF+XjUwzb/nR9FN37O3C+wccnavsJpw8Bvdbln+/0KrFZ/wNzvP4Ou91xunJ7PgS0Mr50fwmcrtyfXjYvv9Kfl7XbV2O+Wg96118fX4ze/+bpoqitv7F/Y07Xjm/g+8XI9ZWvn1ovX9Z6HDheRf/83aeL8vEpxm5fdO/v2Ou/7/hEbT/hdILjO9PTq8TmHdD4p/CHZ50dT+FPz53P8BS+8hy8az+CT/LTPoWvLGleT+GL+lfDput6ajl0IZXXNIZvc/yqdZshRyvtsqIupm8V1cVcfgmZXOYNBrT+/8MCuooKaHl8ZQWXCGj/naA0TVHf/REuENDmEYgM6ODsnCugzZvRGNXb6zkD2jn1ZQJ6+fhkGNDHL3/1/Pnzn38Z8aPwlwro8cZSv8hrBbS54pZN++4Elw3o+GnjA9qer6JyDYQ27b/0jhUPWMFqyDXefgFdB2XQKocYFNCYhA/fQED7ffHD4uSdT8dufpmAnv61rV/kBQIaHDHzgAa3nxLQQKDjA7qfOPCiQHXi0xyN2TrqOzCg3Vd56/eK6i1u3EEZ5YwBHbqFgPZ59X5R9eao30d/oYCe7sWDAlqNUqqANi+3dbvyblwroIEJBga0qKwjeUCP/xY2B1T+nazMURsciG9zVaMCWr81dAS0tOnogI67u1w7oGd9eaD9QpPPmHrCk/vtLwN9++nO9hfS39X/Uny3cwW0dEMtP5FLGtCiPrh7FwcHtCjfiXsqM7+AVh4aHg9fTEDbDk5lTOB7QwLaeogGBDR0lVcvun3Xqu0dGNDB/6D2T1X/9jUDep665hTQ1++tg/nj0hmfr4M66nP0Fwro8by+gDaaeIWAVgOUYUBLMw0IaPjRYPOaKn8j8HV1xvpK5hvQ2mW0Hfiub7deVE+9aneeRBNXB/bcekde8rALTT5j6gmPXjRyuUnqqD+KdIGA1ie4cEDLd8jmuc3tKs9NBTT4jcDX1RnrKxkc0PLTlZYxoauuqF50xwsEjf9ULyeDgA5+Yt439+IDuvkbxvUn7Gf8u/DTAxq4yLkFdDdtM0Btc9fviqHLGuI6AW0GpDxLaC+CB7G66qIZ0NDhmVFAi55Cll+DGhXQzptO5U40goCmEvq598v8LPzNBrQUlcO3hwc0dKFDJQtoy/qjAtp6fujEcdVnDmjw+hwY0Nq22Qd00IPc2rYtJ5IR0L6xlwxooyul75whoI0e9ga0rTRjb0bnC+jpnAQBrR+uxgJXwWifO6Cli4wIaFF9zSa4qPrqBjh7QIvwqy/1i6hvW5ROjLrgoctLPmPqCQ/WT+Hv6p9aus5T+EDGMg1oYJuOQ3SugIbvGD01L11wY/2ha2NAQAN3wPZTpSZMCWj96g8vrGW+FAENXWYpWcGJO/ek69tRAQ0tPDgueJ0L6NGzRi03L4u+NWaKXANar8LUgFY7mDagA26otaMVvmcMCWhtOUkCGmxW+OTZA1rUZqnNFxfQyjc6AjrkCgjsSde3xwe0enWODmh1X8dc8Ij1JZ4x9YRHD0/WBf1F6YxX6342HpR2ShrQajXaZr9WQJvLq/y3CJx72YBWLjbctIQBDRzE5vp3I2rdqQ+qzli9ObQHtF6zyqoC2wTH1qYrvRTavXX9WptlQMPntwS0fuWGD0H/PxaT5RTQzeeY1sV8+qPnGz/bfZJ+1KeYzhvQ9ltAcNg1AnravjWg3XMPC+j47p0hoI0j3x/Q/T3x3AEtanOEtmleYmtAi9OT3JbNgws67O+q7moBDX2jNaDVQ1O9L5W2FdCyXz4pqu4+HDfBjANavTfWViCgHfPUAxpc5fCANg5WY1R5xtaA1q+JOQW0cRusbXaNgLbcbAYGtP7F6ZSAlj1+Uk7o3QdjfyOTgBaliz5XQAeGb3BAW6cLBXQVfjjSGdDq/XJqQBurbr3v1/exdoGBHFSGJgtoUf9eT+wCF9MzuhbQjmy3zN1Zw9iAJmhVZgFde/zi+SdPnz794PmnEb/PTkBDAa2WdI4BbZkvGNDGgS1fRk9AQ9N1DIsNaLk45bVODmh4g7MHtH90I6CBqyA6oOHbfH9AW146HiW/gE4SGdDm9V+fLCqg1Ws4i4C27OiwQ1EbPjmglWWXvggdpLMEtHIgRwe0Xt/WdQSXVRSrakAbR7G6gMbtsLqW6q3u4gEtGqsvLTQY0OAtvTJ341YWuNAicPYoAto39tIBbV5A8xuhzDZOtQe0fsktAW3ctDruKIE7YIfq8QtvMCGgoVPF8fFiooAeK7gqHbfhAS1mEtDj/9UjVF10l46A1oPXDGjpCJ4noKV9bR7Q/WuBA3ayjYD2jb1SQKv3xI6A1m4AiQMaXP0FA1o097B5oc2D0jx5jFZz3JUCevpiVT8i3btTCmi5nK2VPA5ufKu29ap0ZqqAVm/ccQEtLb92pwzs5+nmMiCgq6LtgocS0L6xMw9oKHLNC44M6CoioH13vNOTtfClNueZV0Brqx4c0Or1fFpO+Zvb0y2rqs9bpA1oda+Lxj60KwYEtHknKhpbBy/seFwCUQxd7ceDWxvbfgwG7mWbKdu2zJh6wpTG7G7rdZ8moI3bTRET0MZrR+GbRe3eEUhlZV9Dp+qZaNvL1vvC8fsjAlrpXuuFhu5J9ZPliVouq3Xeyvm1JowO6GkhwYAW9c0ayzr+p3RdBhNWueqqkzXWErgxhJYQcmrWqICebsCxAW0e6MPI4Lfb7ylTKjhh07YZU0+Y0pjdbb3urxXQ8k2gGZ/mrSn0ZXMvwrM1TyUMaO0uG97iNCbTgNaTVI3W6rh1aZui8prciIAGd60joIGjmyCgoQPbvBPtRldv9QkD2no11AI6djdbCGjf2AsGtHRriQlofVGjAxq8JwXSeMGAVu9tbRcauCfVT0YENDys3oTK1wkC2rvK0u2lM6DNrjTmmktA2w74oIDWrubGrbR+f6uubPh+hi0uoP8FIJnkjUo9YUr6CaSUvFGpJ0xp/FP4ynOImKfwbcMaz/hKT8LLby+Unn81n8KXvxFeVG0JReDlgJan8OWLbx6K1p0MP5lrXFbbpTa2KD/NbZu05Slg88j3j+uY7nCVVa+15pbNAzhk1tZp2pZVVJfT9xQ+NFfgmW7tYvvvMIGXAcrvE5a+cTrRvCFXvy6/Sb//3/CNpfSKcW3Lxptx1cPcdxMYbHFP4ceOvUZAS5d2PKPxVe0/oTdCgwEtb1IbGA7o8euugNYvq3kDDca8fYPAnlw9oPWbQdMFAlq9uZQCWp99YEDrw2MCuqoEtPI+TltAQ4ej62Y+NqDBfW0PaHQIBbRn7CICWt/X4LrPG9DuqlXugK3713WvuH5AW45M2oC2NGJAQMN7HRHQ6ltjSQJa3736XaZjR6vbBG6Fg3c0TEB7xg4PaNvcHQGt3nmSBzTQwvIELQFtvWkfz+8KaH3v6pd7pYBWKjM9oG3XdsKAtpWgutODAxqaKkVAj7fZ/X8qb6m3BrRvBa0BbdywGssZFNDWUaMJaM/YwQENZqU5LGlAK6p2aOoAABiJSURBVJvOMaDNy51DQEO9CpwOBbRyc2iqXZ+B/warHFpBb0ArA5u71nNTb86VIKDlu8G1Atq+xMp8gVHtd+EOAtozdkRAB1xmIKCNyHQEtH4/iQno6Yv8Atp27+4oXmAH+iMRuHMf9qLrGAho7RvHXRsT0OpN//DfgQHtWuKqOW9lVFRBBbRnbPUeU0lbLaBDLnNgQOu3onQBLX8rMqDhfQ3VorLukQEN7MjkgHZNHthsakDry2oPaOPMiIDWd+bMAa2+HNKy2OiANg9dUZt2jPIS+vZq3MwC2js2l4CG75/tN5gLBbSxC40LzTKgbTekqwW0tvT2FbbPNTqg4d0pb9kV0LYVhG6Klw3oqMehAtozdmBAB15mM6CVoEQHtDRh6LJjAto+97kCWpl3QEBbS9WxrP5Tp3O6AtoiJqChWQcHtLlxT+Lb54oJaNfxKN9XhgW0ed8KBnR0s+oB7V50/ZY4YO6kBLTjMqcHtPxFODKBy+69144MaMdelv5bFIFd6LjU2sGoz97YvzMHNHzQGuc1NkwT0NAlVWdvGTkxoC2ztSyl60KOd5nyCx+V/zTmHxTQ8S9UVhreW/36LXHA3EktJqBD5xof0OrA4L1pckCrN6NRAQ1r1mJ0QFeVg1Gf/VwBbdsqeUCDAVy1Xb9TAjokAY38RQS08zI6AnqaenBAa7OOUrqkorHbjaGj7twC2jf27AHtHTgloOF7xWHWlmFTAlqOReXu0BvQ9i8rMwSHLCagzXt/Y+AxoN0rbQY0uNct05xq1HUBPWttHo7WgLbOMUh5x3qrPzKJAtoz9oIBrW90UwEN3SUas2Yf0OodMHVAQ3fvloD2LDM4V0dA214n6L6AOQa0b4Kxj3AFtGfsPALa+f3y5QhoaFXpAto4qzmiM6C910THeasBUTpLQNuehPdeQnxAx93F+lcyeK6xgRbQnrHnDmjHVhcMaGXj0Db9N8H6VqcjljSgzT7VFx5Y1fiADr/HNS6vY1lt7w2lDGjLhXSv9LTOtvMOV2/RvrjAYjvPCK9AQFNPmNLcAtq5VYqAti/1AgGtTDzXgAb3agYBbZv/2gGd0KIhAa1cYQkDGnNvPcf4ATOmnjClKwe0mamurboCOvD2Hx/Q9scG7QuubFYKaNtuJwtosPmVMSMDOuYu17Fd4JgMDGjH/H0bD30VL/j+ffuNan9FjmpRT+xDK7h2QCOmTj1j6glTEtDSNy4U0KJ1t5sXFKzj/mSjhecNaMy7FecP6ICNh04XF9DBfR4QewENzph6wpSuG9DajH1b3URAjwvNK6AjOtGxWWNZGQf0dNuPXq2ADpox9YQp3XJAw5G7ekBLh646IHlAWw5TYLoBAY0MRSCg1TNmHtDg7edw1U6NRW9AS+fEv48XvGABTeOqAa0m5EIBbU1fM6CVhcYFNPRgqxLQ1mqXzlk1BlaXG4jiWQIaPr9bXEBjLql1xuG3y8ANKDRb5+1wjDEBHXCLG3fJAppCdEBXCwvosLnrIxpNK3111YAG/jlou6BpYgI69QLjt7xyQINnlK9mAZ2bawa09t/JAe26rdcuvv9xz/SA9g0JBLS5ye0HNOWF7S8w2aahzBSB105SXmD7GbHv47VcsoCmsMiADrnxnD+goYO2uICmN2H2sQGdLHCL7SqqgM7PFQNaztOArZcS0GZR618dTkcFNHy0byigE1w8oINW0PXtKRckoCkUxcu9wzntp3eH5nD6ENC27/fOtz/Sp/m6xx9uuO3fb1z+dpPh+1ebb1W9vKLx/b793QW053hWv78+qzb++P368Slqxy9w/DuP14VO9+3fnE5vD2n5+8Wl19u4vOrtp76+KZfXd3+LP71KbN4BfVk7AB2nK/fHQ0Bbv983X+3+3zgdGF++/QS+37j8zSYj9q8236rn8nr3dxvQnu/Xti/axxf109VehubrXP9VTnfs3wxOl3t5COiV13e+y++7v8WfXiU274Be7Sl8/Rlo/1P42nP+9u+XJo5/QlHeOG7uFE/hQ0/Pj2uqDRr2XDl8tNtfKpioqD8JnfVT+MYZ4VeALrOcthXMfeLkM6aeMKWrBbTz7h/eqnvEhQM64I6ULKDBiQT0/EIrFdC+iZPPmHrClK4V0O67f3irDAPaOWREQIOfRxTQa7h0QM82sYCmcL2Ats3bvpWANraufJ1DQKddJ3Nw2YCejYCmcVMBDVxQsoCOXs+5A9qYSUAvQkD7Jk4+Y+oJUxLQIRcooNEEdJ4ENA0BHXKB5wtoM5fNtBWZB7R+QXkH6Db6eb4rQUB7xrYGdPBU9fuQgHZtMiSgzV5GBzT17b9xlHJ/BJf58s9OQHvGngK6/98LBbTvlju/gA5ofjCXgXMGzCSgl5H58s9OQHvGBl/SuvmAdn57wAwt3w8FNDTJ6IC2XyMCOk3myz87Ae0Zu8SARnx7yJChAR00Uy4Bzb1AmS//7AS0Z+xiAtpzgcMC2jvgXAFt3fnwk3sBHSrz5Z+dgPaMTRHQxhxDVjKkIY2zBHTA0JWADpf36s9PQHvGzjWgwS2WE9AicFTnGtC0l8CsCGjPWAEdvJ5EAR22lsHv1gSvqwsGlJsmoD1jMwrokEeJ8ReYIKDNEW2bJNz51oCGH5tOJKALI6A9Y9MHdOA9N64hYzepbD1x8usGtG2bjoCOuRanLYJbJaA9Y8OvtI15thyoxpCVXDygkyfPK6D7D5yOvpioRXCrBLRnrIAOnnzIiIGbxAW09WwB5UwEtGesgA6ePOGKE+5IS0D3T+IFNFt/fvmn1er1y9/87aqrENCesQI6ePJ0jxpTunRAE09IGwG9gusENHTGDQZ0ntoCujpLQLksAb2sawQ0PLGAXoiA3jIBvSwBjZZrbIJX1f6cXPfp1r36w8uXL3+3LeP9y28f/2V96o9/K33nPzZfVp7Cl7Z42G+xG3VuAtozVkAvMfkZdV1Vue7Tjbt/ufOf26+//f32xG82px723/m3VTWg+y32Y3739WnUuQloz9gzBbR/awFNQ0Bz8/rlJo2Pf962cZPG9alXX7/87fpbv99/Z/N1KaDrrn77t9Vf/3A48fIvxy3OTUB7xgroJSY/o+6AXnQpDLIt4+G/9y93px6/Xj+g3D/eXH/9n5WA/v7lt9sttn192D/0fLjIy6MC2jNWQI+Tn2/uc5p0VXF5j1/vw/ewyeL9IYPr5/Kbcp5e2TwFdBfU/ZhjOC/z/pKA9oy9YkAjJp71wb8OAc3M65dHv903ceNhd2rtm79szzgF9JjK7ZiH/VN3AT2DjAIaNfGsD/51COjc3Z/eMtroCujq33fvD/1xVQ3obw+bCuh5pQvohAMnoJckoHPXCGg5fLWArp/h/+s3u/eVPAK9AgFdHh+Xz8vxFc2t+8Ojy2NJV5t2/rbrNVABPRsBXR4BzczhPfX73ZtIu/fUt+/CH9r4UA3oYYv1mD8J6FkJ6PIIaGZ2n+rcp/P++KnOb7eF3Hzn1dfVp/D1z4EK6NkI6PIIaG4OP4n0p+3X3+zeN9rW8OH07lLHTyIJ6NkI6PI4Ktkp/cT75mfh16d+85fSd3Ynqj8L/83x5+UF9IwEdHkclZyV3zuaIwHtGZtXQM8wafYENGcCOiu3HVBCBDRnAjorAro8ApozAZ2V6QE9nCuguRDQnAnorAjo8ggo5yOgPWMFNHcCyvkIaM9YAc2dgHI+Atoz9jwBdZ++HAHlfAS0e2xtAwHNj4ByPgLaPVZAsyegnI+Ado8V0Ow51pyPgHaPFVCglYB2jxVQoJWAdo8VUKCVgHaPFVCglYB2jxVQoJWAdo9tD+ikRQgo3AIB7R4roEArAe0eK6BAKwHtHiugQCsB7R4roEArAe0eK6BAKwHtHiugQCsB7R4roEArAe0eW99AQIEjAe0ee56A6ifchFwD+vir5z//9fjNBBRIJ6eA/vXLQzI/f38ToeLu+1+NnEJAgXQyCujr94o3Ptt88fjT4uDuo3FzCCiQTo4BfbYp598/ffqDTYnGFVRAgXQyDOj9uj+75+6vPi72TR1KQIF0Mgzo+gHoW/uzHtcFfXfMHAIKpJNfQDfRPD5vXz8a/e6YN5IEFEgnv4AeXwotnTeYgALpCGj3WAEFWuUX0NWz4u4nh/MenggocC2ZBXRTzvvSG0deAwWuJ6+Arn3nHz79x+ND0M1Z3oUHriS7gO5sn7c//vMTnwMFriejgK6L+cUnP3hyCuimqKeXQwdJF9BRF9uYQ0DhFmQV0K1tRQ8BffMX4zZOFdBJBBRuRH4BPXn8p5H5FFAgpZwDGkFAgXQEtHvsmQI6eQ5gBgS0e6yAAq0EtHusgAKtMg/otX4WfhIBhRshoN1jBRRoJaDdYwUUaJV5QEt/qXMQAQXSyT2gIwkokI6Ado8VUKDVTQe0CBiz9UpAgQ4ZBvTxy189f/7851/2/yJlAQXOKbeAfvHDUgzf+XTs5gIKpJNXQF+9X3s8+ea4XwcqoEBCWQX0fvvblN9+uvO9zYm7j/o3KxFQIJ2cArr9DfQ/Lp3x+dX+pMckAgo3IqeAvmjk8mp/VG4SAYUbkVFAHz8uivoT9mv9WeNJBBRuREYBDf3cu5+FB65HQLvHniegk6cA5iCjgK6fwjf+iHGWT+GBG5FRQFfPGrXcvCz61pgpBBRIJ6eAPjxZF7T8l4xfrfvZeFDaSUCBdHIK6OZzTOtiPv3R842f7T5JP+pTTAIKJJRVQFe/fFL7Uc67D8dNIKBAOnkFdPX4STmhdx+MeQNpQ0CBdDIL6NrjF88/efr06QfPPx1bz5WAAinlF9BJBBRIR0C7xwoo0CrXgL7+wdt/N+r3MO2M2t3NYAEFWmUb0JE/w7knoEA6Ato9WkCBVgLaPVpAgVYC2j1aQIFWAto9XECBVgLaPVxAgVYC2j1cQIFWAtozXkCBNrkGNJKAAukI6LjxAgocCejYCWa9f8AlCejYCWa9f8AlCejYCWa9f8AlCejYCWa9f8AlCejYCWa9f8AlCejYCWa9f8AlCejYCWa9f8AlCejYCWa9f8AlCejYCWa9f8AlCejYCWa9f8AlCejYCWa9f8AlCejYCWa9f8AlCejYCWa9f8AlCejYCWa9f8AlCejYCWa9f8AlCejYCWa9f8AlCejYCWa9f8AlCejYCWa9f8AlCejYCWa9f8AlCejYCWa9f8AlCejYCWa9f8AlCejYCWa9f8AlCejYCWa9f8AlCeiFJwBuh4ACRBJQgEgCChBJQAEiCShAJAEFiCSgAJEEFCCSgAJEElCASAIKEElAASIJKEAkAQWIJKAAkQQUIJKAAkQSUIBIAgoQSUABIgkoQKTFBRQgneSNSj1hStc+2MBtSd6o1BNeXE7P8zNaq6WeQ0ZLzWmtV1xqPgepTUbXc05rtdRzyGipOa1VQCfI6HrOaa2Weg4ZLTWntQroBBldzzmt1VLPIaOl5rRWAZ0go+s5p7Va6jlktNSc1iqgE2R0Pee0Vks9h4yWmtNaBXSCjK7nnNZqqeeQ0VJzWquATpDR9ZzTWi31HDJaak5rFdAJMrqec1qrpZ5DRkvNaa0COkFG13NOa7XUc8hoqTmtVUAnyOh6zmmtlnoOGS01p7UK6AQZXc85rdVSzyGjpea0VgGdIKPrOae1Wuo5ZLTUnNYqoBNkdD3ntFZLPYeMlprTWgV0goyu55zWaqnnkNFSc1qrgE6Q0fWc01ot9RwyWmpOaxXQCTK6nnNaq6WeQ0ZLzWmtAjpBRtdzTmu11HPIaKk5rVVAJ8joes5prZZ6DhktNae1CihAfgQUIJKAAkQSUIBIAgoQSUABIgkoQCQBBYgkoACRBBQgkoACRBJQgEgCChBJQAEiCShAJAEFiCSgAJEEFCCSgAJEElCASAIKEElAASIJKEAkAQWIJKAAkQQUIJKAAkTKPKCvfvikKO7e+cW119Hq8ePi6KP9eXNc9Ov33vjsdKq5whmtubzU+R7ex0/eXq/pO93HcB5Lba51vod19fkPNkv94KvTOdc9rHkH9JdPdlfy3X+/9kravH6vcVOc46LX95hSQJsrnNGaK0ud7eE9rKIovl8/a3ZHtbnW2R7WY9nvDl2/9mHNOqD3zX8n56a0xP0a57jox2dFqUrNFc5oza1LndXhLa/rrcZZ8zqq3Wud1WENPDK+9mHNOaCbfyffXD9O/+L98n1qXl7Ur8U5Lnp7uzwuprnCGa25utS5Ht7tKj5d7ZZx95Pwwuax1NBa53pYN+u62zx7/7/rZXz3q/DCLrzUnAP64nAUN/eqd6+9mrBn9Stxhov+fPuU57jO5grns+baUud6eO+Pj+U2y3grvLB5LDW01rke1vWF7wu/ruTuq6sf1owDejqcq4cn+4M2N+s1Vhc2v0W/Wv9LXbzz/vEu01zhbNZcX+psD++z0yO41mM4k6UG1jrbw7q+7H3rD4+Rr39YMw7o+l+hw/EpHbV5Wa/xrfoZM1v05mnRh6V3ZpornM2a60vN4fDuVzTjo3pyWFIGh3Wf/esf1owDenruUflndFbWa/zo1eaDF3/34+MZM1v0i7vvf1V+a7u5wtmsub7UHA7v/g4946N6cojP/A/reqXbG8H1D2veAT2+xNF41XsmXhR3/23/juA7238X57fov+6ftJUCWlvhbNZcX2oOh3d/h57xUT25P75eO+/D+vjJk/0irn9YMw5o+fDcz+UNmZpnpc+DbP9xn+miS1VqrnBeay4HdP6H9/Bux9yP6sbxnZl5H9bt6u4+3H59/cMqoOe0eSNw+7mLVz8sdiuc6aLzDOj8D+/mU6uHN+FnfVRXpbXO/LBuA/qdD7cPja9/WAX0nI7/pm9Xu7nfz3TReQZ09of39Kn/uR/V8lrnfVgf/8fbP3jS/tBYQAeb07Xab/PP+kezXXSeAa2eO7/Du30o1/xo+hyPanmttXNnd1hXuw+0bR4tX/+wCuilvJjj3eYg+4DO8fC+Ov1oz+yPanmtZTM8rFv7R8nXP6wZB3Rmbw322S13povO4134rZaAzu/wbn6nxZulD1zN+ahW1lo2v8O696JlYd6FH2x2H07rdrwpznHReXwOdKsvoHNZ6vreW3z/+IMw8z6q1bWWze6wHrQtzOdAB5vfj0d02v1zONNF5/GTSIcltDyFn9Xh/WlRef4466NaW2vZ3A7r0S6g1z+sGQd0Jj+g2+XF6Ya5f9FmpouufjZopj+1vVN9uXauh/dF7SXFOR/V+lpne1hLC9s/urz+Yc04oDP5FTFd1lfh/s5e/kDgDBdd/fGemf7eoJ3SUud7eNePj96o/kL0+R7Vxlpne1jXC6t9vur6hzXngB5+k+EMfk1li+1nQzYf+a39XsjZLbr2GzpqK5zVmusfpJ/j4S19krJ01jyPanOtsz2sx4UdP+F//cOac0Bn8muyuzw8OS1x/6/hLBddeWHx2r/ku1t5qXM9vC+Ksl2D5npUA2ud62FdvSr9qZGZ/KL/rAO6+udZ/KGWLg/vF/UlznHR1Xdmmiuc0ZorS53n4S3/5YljQGd6VINrnedhXe1/I+zW8UMDVz6seQd0Ln8qsMPj/s8I/vp01gwXXXtre7Z/P3JVX+osD2/5b7KdAjrPoxpe6ywP69ZuYfP5Y6eZBxTgegQUIJKAAkQSUIBIAgoQSUABIgkoQCQBBYgkoACRBBQgkoACRBJQgEgCChBJQAEiCShAJAEFiCSgAJEEFCCSgAJEElCASAIKEElAASIJKEAkAQWIJKAAkQQUIJKAAkQSUIBIAgoQSUABIgkoQCQBBYgkoACRBBQgkoACRBJQgEgCChBJQAEiCShAJAEFiCSgAJEEFCCSgAJEElCASAIKEElAASIJKEAkAQWIJKAAkQQUIJKAAkQSUIBIAgoQSUABIgkoQCQBBYgkoACRBBQgkoACRBJQgEgCSsYePy7e+Ozxk+8Vxd07v7j2YlggASVjm4D+7yfFzkfXXg3LI6BkbB3Qk7ufXHs5LI6AkrFtQO8+/Gr1+NP1F+9eezksjoCSsU1A3/hs++WLonjryqtheQSUjG0Cun/c+fCk+O5X110NyyOgZGwd0MMrnwLKFQgoGRNQrktAyZiAcl0CSsYElOsSUDImoFyXgJIxAeW6BJSMCSjXJaBkTEC5LgElYwLKdQkoGRNQrktAyZiAcl0CChBJQAEiCShAJAEFiCSgAJEEFCCSgAJEElCASAIKEElAASIJKEAkAQWIJKAAkQQUIJKAAkQSUIBIAgoQSUABIgkoQCQBBYgkoACRBBQgkoACRBJQgEgCChBJQAEiCShAJAEFiCSgAJEEFCCSgAJEElCASAIKEElAASIJKEAkAQWIJKAAkQQUIJKAAkQSUIBIAgoQSUABIgkoQCQBBYgkoACRBBQgkoACRBJQgEgCChDp/wMVi04SMawM0wAAAABJRU5ErkJggg==" width="672" />
+<p>
+Ou seja, quando <span class="math inline">\(n\)</span> tende ao
+infinito, <span class="math inline">\(X_n - X\)</span> ficará entre
+<span class="math inline">\(-\varepsilon\)</span> e <span class="math inline">\(+\varepsilon\)</span> com probabilidade 1, e só
+daí <span class="math inline">\(X_n \to^{q_c} X\)</span>.
+</p>
+<p>Logo, por Borel-Contelli, temos que se <span class="math inline">\(\sum^\infty_{n=1} P(|X_n - x| &gt; \varepsilon)
+&lt; \infty\)</span></p>
+<center>
+então <span class="math inline">\(X_n \rightarrow^{q_c}x\)</span>
+</center>
+<p><br><br></p>
+<p>Ex) <span class="math inline">\((X_n)_{n \ge 1}\)</span> uma
+sequência de va’s independentes Bernoulli<span class="math inline">\(\left ( \frac 1 {n^2} \right )\)</span>, mostre
+que <span class="math inline">\(X_n \to^{q_c}0\)</span></p>
+<p><span class="math inline">\(P(|X_n - 0| &gt; \varepsilon\)</span>  
+<span class="math inline">\(i.v) = 0, \forall\)</span> <span class="math inline">\(\epsilon &gt; 0\)</span></p>
+<p><span class="math display">\[\begin{equation}
+P(X_n &gt; \varepsilon) = \begin{cases}
+      0 \ \ \ , \  \varepsilon\ge 1
+      \\
+      \frac{1}{n^2}  \ , \ 0 &lt; \varepsilon &lt; 1
+    \end{cases}
+    \end{equation}\]</span></p>
+<p><span class="math inline">\(\sum^\infty_{n=1} P(|X_n - 0| &gt;
+\varepsilon)\)</span></p>
+<p><span class="math display">\[\begin{equation}
+\sum^\infty_{n=1}(X_n &gt; \varepsilon) = \begin{cases}
+      \sum^\infty_{n=1} 0 \ \ \ = \  0
+      \\
+      \sum^\infty_{n=1}\frac{1}{n^2}  \ =  \frac {\pi^2} 6 \ , \ 0 &lt;
+\varepsilon &lt; 1
+    \end{cases}
+    \end{equation}\]</span></p>
+<p><span class="math inline">\(\sum P &lt; \infty, \forall\)</span> 
+<span class="math inline">\(\varepsilon &gt; 0\)</span></p>
+<p>Por B.C, <span class="math inline">\(P(|X_n - 0| &gt;
+\varepsilon_{i.v}) = 0\)</span></p>
+<p>Logo, <span class="math inline">\(X_n \to^{q_c}
+0\)</span><br><br></p>
+</div>
+<div id="lei-forte-dos-grandes-números" class="section level3">
+<h3>Lei Forte dos Grandes números <br><br></h3>
+<p>Sejam <span class="math inline">\((X_n)_{n \ge 1}\)</span> v.a’s iid
+com média finita <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\bar X_n = \frac{x_1 + x_2 + ... + x_n}
+n\)</span>, então</p>
+<center>
+; <span class="math inline">\(\bar X_n \rightarrow^{q_c} \mu\)</span>
+</center>
+<p><br><br></p>
+</div>
+<div id="convergência-em-distribuição" class="section level3">
+<h3>Convergência em Distribuição <br><br></h3>
+<p>Sejam <span class="math inline">\((X_n)_{n \ge 1}\)</span> e X v.a’s
+com fda <span class="math inline">\(F_n(x)\)</span> e <span class="math inline">\(F(x)\)</span>, respectivamente, dizemos que <span class="math inline">\(X_n\)</span> converge em distribuição para x,</p>
+<center>
+<span class="math inline">\(X_n \rightarrow^D x\)</span> se <span class="math inline">\(\lim\limits_{n \to \infty} F_n(x) = F(x)\)</span>
+</center>
+<p><br><br></p>
+</div>
+<div id="convergência" class="section level3">
+<h3>Convergência<br><br></h3>
+<ul>
+<li><p><span class="math inline">\(X_n \rightarrow^{I\!P}x\)</span>, se
+<span class="math inline">\(\lim\limits_{n \to +\infty} I\!P(|x_n - x|)
+= 1, \forall \varepsilon &gt; 0\)</span></p></li>
+<li><p><span class="math inline">\(X_n \rightarrow^{q_c}x\)</span>, se
+<span class="math inline">\(P(|X_n - x| &gt; \varepsilon_{iv}) = 1,
+\forall \varepsilon &gt; 0\)</span></p></li>
+<li><p><span class="math inline">\(X_n \rightarrow^D x\)</span>, se
+<span class="math inline">\(\lim\limits_{n \to \infty} F_n(x) =
+F_x(x)\)</span><br><br></p></li>
+</ul>
+</div>
+<div id="teorema-de-slustsky" class="section level3">
+<h3>Teorema de Slustsky<br><br></h3>
+<p>Se <span class="math inline">\(X_n \rightarrow^D X, Y_n \rightarrow^D
+C, C \in I\!R\)</span></p>
+<ul>
+<li><p><span class="math inline">\(X_n Y_n \rightarrow^D
+CX\)</span></p></li>
+<li><p><span class="math inline">\(X_n \pm Y_n \rightarrow^D X\pm
+C\)</span></p></li>
+<li><p><span class="math inline">\(\frac{X_n}{Y_n} \rightarrow^D \frac X
+C, C \neq 0\)</span><br><br></p></li>
+</ul>
+</div>
+<div id="teorema-do-limite-central" class="section level3">
+<h3>Teorema do Limite Central<br><br></h3>
+<p>Sejam <span class="math inline">\((X_n)_{n \ge1}\)</span> v.a’s iid
+com média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(\sigma^2 &lt; \infty\)</span>. Seja <span class="math inline">\(\bar X_n = \frac{x_1
++...+x_n}{n}\)</span>,então</p>
+<center>
+<span class="math inline">\(\frac{\bar{X_n} - \mu}{\frac{\sigma}{\sqrt
+n}} \rightarrow^D N(0,1)\)</span>
+</center>
+<p><br><br><br></p>
+</div>
 </div>
 <div id="calculo-iv" class="section level2">
 <h2>Calculo IV</h2>

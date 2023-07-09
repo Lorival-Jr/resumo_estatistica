@@ -13,7 +13,7 @@ linestretch: 1.5
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
 ```
 
 <style>
@@ -863,7 +863,7 @@ b) Para o intercepto ($a$)
 
 Se $|t_c| > t_{\frac \alpha 2 ; n-2}$ Rejeita-se $H_0$<br><br>
 
-## Probabilidade I
+## **Probabilidade I**
 
 ---
 
@@ -1182,7 +1182,488 @@ Propriedades:
 
 ## Estrutura de Dados
 
-## Probabilidade II
+## **Probabilidade II**
+
+---
+
+### Função de distribuição acumulada conjunta<br><br>
+
+Sejam X e Y duas v.a's.</br>
+A função de distribuição acumulada conjunta de X e Y é dada por: <br><br>
+
+$F(a,b) = F_{xy} = I\!P(X \le a, Y \le b)$
+<br><br>
+A fda de X pode ser obtida a partir da conjunta
+
+$F_x(a) = I\!P(X \le a) = \int_{-\infty}^{a} f(x,y)dy$<br>
+$F_y(b) = I\!P(X \le b) = \int_{-\infty}^{b} f(x,y)dx$<br>
+
+AS funções $F_x$ e $F_y$ são chamadas de distribuição (ou fda) marginal de X e Y.<br><br>
+
+**Propriedades**
+
+-  $I\!P(X>a, Y>b) = 1 - F_x(a) - F_y(b) + F(a,b)$
+
+-  $I\!P(a_1 < x \le a_2, b_1 < y \le b_2) = F(a_1, b_1) + F(a_2, b_2) - F(a_1,b_2) - F(a_2,b_1)$
+
+- $\lim\limits_{a,b \to -\infty} F(a,b) = 0$
+&emsp; $I\!P$ insignificantes são consideradas zero
+<br><br><br>
+
+### Independência de V.a's<br><br>
+
+As variáveis X e Y são independentes se $I\!P(X \in A, Y \in B) = I\!P(X \in A)I\!P(Y \in B)$ <br><br>
+
+X e Y são independentes ($X \perp Y$) se e somente se $F(a,b) = F_x(a)F_y(b)$ , $\forall a,b$<br><br><br>
+
+### Distribuição condicional <br><br>
+
+A fdp condicional de x, dado que o evento {Y=y} ocorreu é definido por<br><br>
+
+$$f_{x|y}(x|y)=\frac{f(x,y)}{f_y(y)},x \in I\!R$$
+E a fda condicional é<br><br>
+
+$$F_{x|y}(a|y)= I\!P(x \le a|Y=y)= \int^a_{-\infty} f_{x|y}(x|y)dx$$
+<br>
+**Propriedades**
+
+- $f(x,y) = f_{x|y}f_y(y) = f_{y|x}(y|x)f_x(x)$
+
+- Se X e Y são independentes temos $f_{x|y}(x|y) = \frac{f(x,y)}{f_y(y)}=\frac{f_x(x)f_y(y)}{f_y(y)} = f_x(x)$<br><br><br>
+
+### Soma de v.a's independentes <br><br>
+
+A fdp de X + Y é obtida como 
+
+$$f_{x+y}(a)= \int^{+\infty}_{-\infty} f_{x}(a-y)f_y(y)dy$$
+
+A fda de X + Y é
+
+$$\int^{+\infty}_{-\infty}F_x(a-y)f_y(y)dy$$
+<br><br><br>
+
+### Covariância e Correlação<br><br>
+
+- $E(x)=\int \int x f(x,y)dydx =\int x \int f(x,y)dydx =\int x f_x(x)dx$
+
+- $E(X+Y) = \int \int (x+y)f(x,y)dxdy = \int\int xf(x,y)dxdy + \int\int yf(x,y)dxdy$<br>
+$E(X+Y)=\int x f_x(x)dx + \int y f_y(y)dy = E(X) + E(Y)$<br>
+$E(X + Y) = E(X) + E(Y)$
+
+- Se $X \perp Y$, então $E(g(x)h(x)) = I\!E(g(x))I\!E(h(y))$, em particular, $I\!E(XY) = I\!E(X)I\!E(Y)$<br><br>
+
+**Covariância** entre X e Y é dado por $Cov(X,Y) = E(XY) - E(X)E(Y)$
+
+- $Cov(X,Y) = Cov(Y,X)$
+
+- $Cov(X,X) = Var(X)$
+
+- $Cov(aX, bY) = ab\cdot Cov(X,Y)$
+
+- $Var(X+Y) = Var(X) + Var(Y) + 2Cov(X,Y)$
+
+- $Var(X-Y) = Var(X) + Var(Y) - 2Cov(X,Y)$<br><br>
+
+**Correlação** entre X e Y é dado por $Corr(x,y)=\frac{Cov(x,y)}{\sqrt{Var(x)Var(y)}} = \frac{E(XY) - E(X)E(Y)}{\sqrt{Var(x)Var(y)}}$
+
+- $-1\le Corr(X,Y) \le 1$
+
+- $Corr(aX,bY) = Corr(X,Y)$<br><br><br>
+
+### Normal Bivariada<br><br>
+
+$f(x,y) = \frac{1}{2\pi\sigma_x\sigma_y\sqrt{1 - \rho^2}}e^{\frac{-1}{2(1-\rho^2)}[\left (\frac{x-\mu_x}{\sigma_x}\right )^2 -2\rho \left (\frac{y-\mu_y}{\sigma_y}  \right ) + \left (\frac{y + \mu_y}{\sigma_y} \right)^2]}$
+
+$(x,y) \in I\!R^2, (\mu_x,\mu_y) \in I\!R^2, \sigma_x, \sigma_y > 0, -1 \le \rho \le 1$<br><br>
+
+### Máximos e Mínimos<br><br>
+
+**Máximo**
+
+$g_n(x) = n(F(x))^{n-1}$
+
+$G_n(x) = (F(x))^n$
+
+**Mínimo**
+
+$g_1(x) = n(1 - F(x))^{n-1}f(x)$
+
+$G_1(x) = 1 - (1 -F(x))^n$<br><br>
+
+A fdp conjunta de ($x_{(1)},x_{(n)}$) é <br><br>
+
+$f_{x_1,x_n}(x_1,x_n) = n(n-1)(F(x_n)-F(x_1))^{n-2}f(x_1)f(x_n), x_n \ge x_1$<br><br>
+
+A densidade marginal da j-ésima estatística de ordem é
+
+$f_{x_{j}}(x) = \frac{n!}{(n-j)!(j-1)!}(F(x))^{j-1}(1-F(x))^{n-j}f(x)$
+<br><br><br>
+
+### Funções de Vetores Aleatórios<br><br>
+
+Seja ($X_1, X_2$) uma v.a com f.d.p conjunta f($x_1, x_2$). Suponha que estamos interessados nas v.a's
+
+$Y_1 = g_1(x_1, x_2)$
+
+$Y_2 = g_2(x_1, x_2)$<br><br>
+
+Suponha que:
+
+1. As funções inversas existam e sejam únicas
+
+&emsp; $x_1 = h_1(y_1, y_2)$
+
+&emsp; $x_2 = h_1(y_1, y_2)$
+<br><br>
+
+2. $g_1$ e $g_2$ têm derivadas parciais contínuas e Jacobiano (J)
+
+&emsp; $J(x_1,x_2) = \left | \frac{\partial(g_1, g_2)}{\partial (x_1,x_2)} \right | =  \left | \frac{\partial g_1}{\partial x_1} \right | = \begin{vmatrix}
+\frac{\partial g_1}{\partial x_1}&\frac{\partial g_1}{\partial x_2}\\
+\frac{\partial g_2}{\partial x_1}&\frac{\partial g_2}{\partial x_2}\\
+\end{vmatrix} \neq 0$
+
+Então, a fdp da v.a ($Y_1, Y_2$) é
+
+$$f_{Y_1, Y_2}(y_1, y_2) = f_{X_1, X_2}(x_1, x_2) |J(x_1, x_2)|^{-1}$$
+Sendo $x_1 = h_1(y_1, y_2)$ e $x_2 = h_2(y_1, y_2)$
+
+Ex: Sejam $X_1, X_2$ v.a's independentes com distribuição exponencial do parâmetro $\lambda_1, \lambda_2$, respectivamente, determine a fdp conjunta e sejam:
+
+$$Y_1 = x_1 + x_2$$
+$$Y_2 = x_1 - x_2$$
+<br><br>
+Resolvendo:
+
+colocando $x_1$ e $x_2$ em função de $Y_1$ e $Y_2$
+
+$Y_1 = x_1 + x_2$, &emsp;  $x_1 = Y_1  - x_2$
+
+Substituindo $x_1$ em $Y_2$
+
+$Y_2 = x_1 - x_2$, &emsp;  $Y_2 = Y_1  - x_2  - x_2$,  &emsp; $2x_2 = Y_1 - Y_2$,  &emsp; $x_2 = \frac{Y_1-Y_2}{2}$
+
+Substituindo $x_2$ em $Y_1$
+
+$Y_1 = x_1 + \frac{Y_1-Y_2}{2}$, &emsp; $x_1 = Y_1 - \frac{Y_1-Y_2}{2}$, &emsp; $x_1 = \frac{Y_1 + Y_2}{2}$
+
+Assim obtemos duas novas equações <br><br>
+
+Agora precisamos calcular o Jacobiano
+
+ $J(x_1,x_2) = \begin{vmatrix}
+\frac{\partial (x_1 + x_2)}{\partial x_1}&\frac{\partial (x_1 + x_2)}{\partial x_2}\\
+\frac{\partial (x_1 - x_2)}{\partial x_1}&\frac{\partial (x_1 - x_2)}{\partial x_2}\\
+\end{vmatrix} = 
+\begin{vmatrix}
+1&1\\
+1&-1\\
+\end{vmatrix} = -1 -1 = -2$
+<br><br><br>
+A equação definida anteriormente foi<br><br>
+
+$f_{y_1, y_2}(y_1, y_2) = f(x_1, x_2) \cdot |J(x_1, x_2)|^{-1}$<br><br>
+
+Na qual, $f_{y_1, y_2}(y_1, y_2)$ é uma exponencial como dado pelo exercício, lembrando que a fdp da distribuição é $f(x) = \theta e^{-\theta x}$
+
+$f_{y_1, y_2} = \lambda_1 \lambda_2 \cdot e^{-\lambda_1 \left(\frac{y_1 + y_2}{2} \right)} \cdot e^{-\lambda_2 \left(\frac{y_1 - y_2}{2} \right)} |-2|^{-1} = \frac{\lambda_1 \lambda_2}{2} \cdot e^{-\lambda_1 \left(\frac{y_1 + y_2}{2} \right) -\lambda_2 \left(\frac{y_1 - y_2}{2} \right)}$
+
+A última parte é definir o escopo
+
+Os parâmetros da $f_{y_1, y_2}(y_1, y_2)$ são $y_1 + y_2$ e $y_1 - y_2$, e ela sendo uma exponencial, esses devem ser maiores que zero, assim $y_1 + y_2 > 0$ e $y_1 - y_2 > 0$.<br><br>
+
+Além disso,
+
+1 - $y_1 = x_1 + x_2$, portanto $y_1$ deve ser maior que zero.
+
+2 - $\frac{y_1 + y_2}2 > 0$, &emsp; $y_1 + y_2 > 0$, &emsp; $y_2 > -y_1 $
+
+3 - $\frac{y_1 - y_2}2 > 0$, &emsp; $y_1 - y_2 > 0$, &emsp; $y_1 >  y_2$
+
+```{r, echo = FALSE}
+
+curve(x*1, from=0, to= 12, xlab = 'y1', ylab = 'y2', xlim = c(0,10), ylim = c(-10,10), lwd = 1.5)
+curve(x*-1, from=0, to= 12, xlab = 'y1', ylab = 'y2', lwd = 1.5, add=T)
+text(8,6.8,  'y2=y1')
+text(8,-6.8, 'y2=-y1')
+```
+<br><br>
+
+**Passos para usar o método jacobiano**
+
+1. Obter as inversas $x_1$ e $x_2$
+
+2. Calcular o determinante do Jacobiano $J(x_1, x_2)$
+
+3. Calcular a fdp de $y_1$ e $y_2$
+
+4. Possíveis valores ou suporte de $y_1$ e $y_2$
+
+<br><br><br>
+
+### Função Geradora de Momentos - FGM
+
+Se X for discreto,
+$$M_X(t) = E(e^{tx}) = \sum_x e^{tx}I\!P(X=x)$$
+Se X for contínuo,
+$$M_X(t) = E(e^{tx}) = \int^{+\infty}_{-\infty}e^{tx}f(x)dx$$
+
+No qual o primeiro momento é a média, o segundo momento pode ser usado para descobrir a variância, o terceiro para verificar assimetria e o quarto para calcular a curtose.
+
+O r-ésimo momento de um v.a. X pode ser calculado derivando a fgm r vevez e avaliando no ponto t=0
+
+$$E(x^r)=\left. \frac{d^r}{d^rt}m(t)\right|_{t=0} = m^{(r)}(0)$$
+Propriedades:
+
+- $Var(x) = m''(0) - (m'(0))^2$
+- $M_{x+y}(t) = M_X(t) \cdot M_Y(t)$, se $X \perp Y$
+- $X_1, X_2, ..., X_n$, n v.a's i.i.d. então $M_{x_1 + x_2 + ... + x_n}(t) = \prod_{i=1}^n m_{x_i}(t) = (m_{x_i}(t))^n$
+- Unicidade: Se X e Y tem a mesma fgm então X e Y são identicamente distribuídas.
+- Seja $Y = ax + b$ sua fgm será $M_Y(t) = M_{ax + b}(t) = e^{bt}m_x(at)$ <br><br><br>
+
+### Função Característica <br><br>
+
+A função característica de uma v.a X é definida por:
+
+$$\varnothing_x(t) = I\!E(e^{itx}, t \in I\!R, i = \sqrt{-1})$$
+Propriedades:
+
+- $i^rE(x^r)=\left. \frac{d^r}{dt^r}\varnothing_x(t)\right|_{t=0}$
+
+- Se $X \perp Y$ então $\varnothing_{x+y}(t) = \varnothing_x(t)\varnothing_y(t)$
+ 
+- $\varnothing_{ax + b}(t) = e^{itb}\varnothing_x(at)$
+
+- Unicidade, $\varnothing_{X}(t) = \varnothing_{Y}(t) <=>$ X e Y tem a mesma distribuição.<br><br>
+
+### Desigualdade de Markov <br><br>
+
+Seja X uma v.a positiva, então
+
+$$P(x > t) \le \frac{E(x)}{t}, \forall t > 0$$
+Demonstração (Caso contínuo):
+
+$E(x) = \int^{\infty}_0 x f_x(x) dx = \int^t_0 x f_x(x) dx + \int^\infty_t xf_x(x)dx \ge \int^\infty_t tf_x(x)dx$
+
+$E(x) = t P(x>t)$
+
+logo, $I\!P(x>t) \le \frac {E(x)} t$<br><br> 
+
+### Desigualdade de Chebyschew <br><br>
+
+Seja x uma v.a tal que $Var(x)$ existe, então
+
+$I\!P(|X-I\!E(x)| \ge t) \le \frac{Var(x)}{t^2}$<br><br>
+
+Demonstração:  $Y = (X - E(X))^2$
+
+$P(Y \ge 0) = 1$
+
+$I\!E(Y)= E[ (x-E(x))^2]=Var(x)$
+
+$I\!P(|X-E(x)| \ge t) = P(|X-E(x)|^2 \ge t^2) = P(Y \ge t^2) \le \frac{E(Y)}{t^2} = \frac{Var(x)}{t^2}$ 
+
+&emsp;logo $P(|X-E(x)| \ge t) \le \frac{Var(x)}{t^2}$<br><br>
+
+### Convergência em probabilidade<br><br>
+
+Seja $x_1, x_2, ...$ uma sequência infinita de v.a's dizemos que essa sequência converge em probabilidade para $x_n \rightarrow^{I\!P} b, b \in I\!R$<br><br>
+
+Se $\lim\limits_{n \to +\infty} I\!P(|x_n - x|) = 1, \forall$ &nbsp; $\varepsilon > 0$, então $\lim I\!P(|x_n - b| < \varepsilon) = 1, \forall$ &nbsp; $\varepsilon > 0$<br><br>
+
+Ex) Seja $Z_1, Z_2, ..., Z_n$ v.a's tais que
+
+$I\!P(Z_n = n^2) = \frac{1}n$ &emsp; $I\!P(Z_n = 0) = 1- \frac 1 n$
+
+(*A distribuição é definida por duas equações, uma quando $Z_n é igual a zero e outra quando é diferente*)
+
+Mostre que $Z_n \rightarrow^{I\!P} 0$<br><br>
+
+$Z_n \rightarrow^{I\!P} 0 <=>_{n \rightarrow \infty} I\!P(|Z_n - 0| < \varepsilon) = 1$, &nbsp; $\forall$ &nbsp; $\varepsilon > 0$
+
+(*Ou seja $Z_n$ converge em probabilidade para zero, se e somente, se, quando $n$ tende ao infinito e a probabilidade da diferença de $Z_n$ e o ponto 0 serem menor que $\varepsilon$ é igual a 1, sendo $\varepsilon$ um número muito pequeno. Que significa que, para valores grandes de $n$ $X_n$ e $X$ são iguais com probabilidade, aproximadamente, igual a 1.*)<br><br>
+
+Se $0 < \varepsilon < n^2$,
+
+$P(|Z_n - 0| < \varepsilon) = P(Z_n  < \varepsilon) = P(Z_n = 0) = 1 - \frac{1} n \rightarrow^{n \to \infty} 1$
+
+(*Visto que $\varepsilon$ é um número muito pequeno, para $Z_n$ ser menor que ele, ele deve ser aproximadamente zero, a função de $P(Z_n = 0)$ foi definidada anteriormente, substituindo-a e aplicando o limite quando n tende ao infinito, chegamos que essa probabilidade é igual a 1.*)<br><br>
+
+Se $\varepsilon > n^2$
+
+$P(Z_n< \varepsilon) = P(Z_n = 0) + P(Z_n = n^2) = 1 - \frac 1 n + \frac 1 n = 1,$ &nbsp; $\forall$ &nbsp; $n$<br><br>
+
+(*Somando a probabilidade das duas formas da distribuição por $\varepsilon$ ser maior que $n^2$, chegamos então que para todos os casos quando n tende ao infinito, a função tende a 1*)
+
+Assim, $\lim\limits_{n \to \infty} P(|Z_n - 0| < \varepsilon) = 1$ &nbsp; $\forall$ &nbsp; $\varepsilon > 0$
+
+Logo, $Z_n \rightarrow^{I\!P} 0$<br><br> 
+
+### Lei Fraca dos Grandes Números<br><br>
+
+$(X_n)n \ge 1$ sequência de v.a's iid, tais que
+
+$E(X_n) = \mu, Var(x_n) \sigma^2 < \infty$
+
+Seja $\bar x_n = \frac{\sum^n_{i=1}X_i}{n}$
+
+$\bar{X_n} \rightarrow^p  \mu$<br><br>
+
+### Lema de Borel-Continelli<br><br>
+
+Seja $(A_n)_{n \ge 1}$ uma sequência de eventos
+
+- Se $\sum^{\infty}_{n = 1} P(A_n) < \infty \rightarrow P(A_n$ infinitas vezes) = 0
+
+- Se $A_i \perp A_j$ e $\sum^\infty_{n=1}P(A_n) = \infty \rightarrow  P(A_n$ infinitas vezes$)$ = 1<br><br>
+
+Ex) Uma moeda honesta é lançada repetidamente e de forma independente, sejam
+
+$A_n$: O n-ésimo lançamento resultou em "cara"
+
+$B_n$: O n-ésimo e o (n+1)-ésimo lançamento resultaram em "cara"<br><br>
+
+Mostre que: 
+
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; a) $I\!P(A_n i.v.) = 1$
+
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; b) $I\!P(B_n i.v.) = 1$ <br><br>
+
+
+a ) $P(A_n) = \frac 1 2, n =1,2,...$
+
+$P(A_n \cap A_{n+1}) = P(A_n)P(A_{n+1}), A_i \perp A_j$
+
+$\sum^\infty_{n=1} P(A_n) = \sum^\infty_{n=1} \frac 1 2 = \infty$
+
+Logo, pelo lema de B.C., $I\!P(A_n i.v) = 1$, ou seja se jogarmos infinitas vezes a moeda, aparecerá cara infinitas vezes com probabilidade igual 1.<br><br>
+
+b ) $P(B_n) = P(A_n \cap A_{n+1}) = \frac 1 4, n = 1,2,...$
+
+$P(B_1 \cap B_2) = P(A_1 \cap A_2 \cap A_2 \cap A_3) = P(A_1 \cap A_2 \cap A_3) = \left ( \frac 1 2 \right )^3 = \frac 1 8$
+
+$P(B_1) = \frac 1 4 = P(B_2), P(B_1) \cdot P(B_2) = \frac 1 {16}$<br><br>
+
+Assim, $B_1$ e $B_2$ não são independentes, ou seja não satisfaz o lema.
+<br><br>
+Definindo $C_n$ : Os lançamentos 2n e (2n - 1) resultaram em "cara"
+
+$C_1 = A_1 \cap A_2 = B_1$
+
+$C_2 = A_3 \cap A_4 = B_3$
+
+$C_3 = A_5 \cap A_6 = B_5$
+
+
+$C_n = B_{2n -1}$
+
+$P(C_n) = \frac 1 4, \sum^\infty_{n=1} P(C_n) = \infty$
+
+$P(C_n \cap C_{n+1}) = P(A_{2n-1} \cap A_{2n} \cap A_{2n+1} \cap A_{2n +2}) = \frac 1 {16} = P(C_n) \cdot P(C_{n+1})$<br><br>
+
+Logo, por B.C., $P(C_n i.v.) = 1$
+
+$P(B_n i.v.) = 1$<br><br><br>
+
+### Convergência Quase-Certa<br><br>
+
+Seja $(X_n)_{n\ge1}$ uma sequência de v.a's. Dizemos que $X_n$ converge quase certamente x, $X_n \rightarrow^{q_c}x$, se o evento
+
+&emsp; &emsp; &emsp; $[w \in \Omega / X_n(w) \rightarrow^{n \rightarrow \infty} x]$ tem probabilidade 1.<br><br>
+
+$X_n \rightarrow^{q_c} x$ se e somente se $P(|X_n - x| > \varepsilon_{iv}) = 0, \forall \varepsilon > 0$<br><br>
+
+```{r, echo = F}
+set.seed(999)
+amostra <- rnorm(300)
+n <- 1:300
+medias <- sapply(n, FUN = function(x) { mean(sample(amostra, x, replace = T))})
+
+plot(n, medias, type = 'l', ylab= '')
+
+abline(h = mean(amostra), col = 'green', lwd =1.2)
+abline(h = mean(amostra)+ 0.09, col = 'red', lty = "dashed")
+abline(h = mean(amostra)- 0.09, col = 'red', lty = "dashed")
+
+text(65, 0.3, labels = '(|Xn - X|)', cex= .75)
+
+text(270, mean(amostra)- 0.19, labels = '- epsilon', col = 'red', cex= .75)
+text(270, mean(amostra)+ 0.19, labels = '+ epsilon', col = 'red', cex = 0.75)
+
+```
+<p>Ou seja, quando $n$ tende ao infinito, $X_n - X$ ficará entre $-\varepsilon$ e  $+\varepsilon$ com probabilidade 1, e só daí $X_n \to^{q_c} X$.</p> 
+
+
+Logo, por Borel-Contelli, temos que se $\sum^\infty_{n=1} P(|X_n - x| > \varepsilon) < \infty$ 
+
+<center>então $X_n \rightarrow^{q_c}x$</center><br><br>
+
+Ex) $(X_n)_{n \ge 1}$ uma sequência de va's independentes Bernoulli$\left ( \frac 1 {n^2} \right )$, mostre que $X_n \to^{q_c}0$
+
+$P(|X_n - 0| > \varepsilon$ &nbsp; $i.v) = 0, \forall$&nbsp;$\epsilon > 0$
+
+
+\begin{equation} 
+ P(X_n > \varepsilon) = \begin{cases}
+      0 \ \ \ , \  \varepsilon\ge 1
+      \\
+      \frac{1}{n^2}  \ , \ 0 < \varepsilon < 1
+    \end{cases} 
+    \end{equation}
+    
+$\sum^\infty_{n=1} P(|X_n - 0| > \varepsilon)$
+    
+\begin{equation} 
+ \sum^\infty_{n=1}(X_n > \varepsilon) = \begin{cases}
+      \sum^\infty_{n=1} 0 \ \ \ = \  0
+      \\
+      \sum^\infty_{n=1}\frac{1}{n^2}  \ =  \frac {\pi^2} 6 \ , \ 0 < \varepsilon < 1
+    \end{cases} 
+    \end{equation}
+
+$\sum P < \infty, \forall$&nbsp; $\varepsilon > 0$
+
+Por B.C, $P(|X_n - 0| > \varepsilon_{i.v}) = 0$
+
+Logo, $X_n \to^{q_c} 0$<br><br>
+    
+### Lei Forte dos Grandes números <br><br>
+
+Sejam $(X_n)_{n \ge 1}$ v.a's iid com média finita $\mu$ e $\bar X_n = \frac{x_1 + x_2 + ... + x_n} n$, então
+
+<center>;  $\bar X_n \rightarrow^{q_c} \mu$</center><br><br>
+
+### Convergência em Distribuição <br><br>
+
+Sejam $(X_n)_{n \ge 1}$ e X v.a's com fda $F_n(x)$ e $F(x)$, respectivamente, dizemos que $X_n$ converge em distribuição para x, 
+
+<center>$X_n \rightarrow^D x$ se $\lim\limits_{n \to \infty} F_n(x) = F(x)$</center> <br><br>
+
+### Convergência<br><br>
+
+- $X_n \rightarrow^{I\!P}x$, se $\lim\limits_{n \to +\infty} I\!P(|x_n - x|) = 1, \forall \varepsilon > 0$
+
+- $X_n \rightarrow^{q_c}x$, se $P(|X_n - x| > \varepsilon_{iv}) = 1, \forall \varepsilon > 0$
+
+- $X_n \rightarrow^D x$, se $\lim\limits_{n \to \infty} F_n(x) = F_x(x)$<br><br>
+
+### Teorema de Slustsky<br><br>
+
+Se $X_n \rightarrow^D X, Y_n \rightarrow^D C, C \in I\!R$
+
+- $X_n Y_n \rightarrow^D CX$
+
+- $X_n \pm Y_n \rightarrow^D X\pm C$
+
+- $\frac{X_n}{Y_n} \rightarrow^D \frac X C, C \neq 0$<br><br>
+
+### Teorema do Limite Central<br><br>
+
+Sejam $(X_n)_{n \ge1}$ v.a's  iid com média $\mu$ e variância $\sigma^2 < \infty$. Seja $\bar X_n = \frac{x_1 +...+x_n}{n}$,então 
+
+<center>  $\frac{\bar{X_n} - \mu}{\frac{\sigma}{\sqrt n}} \rightarrow^D N(0,1)$ </center>
+
+<br><br><br>
 
 ## Calculo IV
 
