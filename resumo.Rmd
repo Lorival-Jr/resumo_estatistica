@@ -1673,3 +1673,78 @@ Sejam $(X_n)_{n \ge1}$ v.a's  iid com média $\mu$ e variância $\sigma^2 < \inf
 
 ## Inferência
 
+Inferência estatística é um conjunto de técnicas que busca estudar a população, a partir de evidências de uma amostra. Essa sendo essencial na maioria dos casos visto o custo de coletar a população toda.
+
+### Conceitos iniciais
+
+- População: Um conjunto de elementos que possuem uma característica em comum e descrevem algum fenômeno que queremos estudar.
+
+- Amostra: Uma parte da população.
+
+- Estatística: Função da amostra que não depende dos parâmetros deconhecidos da população.
+
+- Parâmetro: Uma medida fixa e deconhecida que usamos para descrever uma característica da população.  (Ex: $\mu$)
+
+- Estimador: É a estatística da amostra utilizada para estimar um parâmetro da população. (Ex: $\bar{x}= \frac{\sum x}{n}$)
+
+- Estimativa: É o valor calculado a partir dos dados da amostra para estimar um parâmetro. (Ex: $\bar x = 3$)
+
+- Estimação: Processo em que a partir de uma amostra procura-se um valor e ou um intervalo que represente o parâmetro de interesse desconhecido.
+
+
+### Distribuição amostral de um estimador
+
+Considerando todas amostras aleatórias simples de tamanho n de uma população, calculamos a estimativa $t = t(x)$ para cada amostra, a partir disso teremos uma distribuição amostral de estimativas.
+<br>
+Por exemplo: <br>
+
+Dado uma população $X = (1,2,3,4,5)$, queremos todas as amostras de $n=2$ com reposição.
+
+O espaço paramétrico será o seguinte: <br>
+
+$\Theta$ = { <br>
+&emsp; &emsp; (1,1), (1,2), (1,3), (1,4), (1,5),<br>
+&emsp; &emsp; (2,1), (2,2), (2,3), (2,4), (2,5),<br>
+&emsp; &emsp; (3,1), (3,2), (3,3), (3,4), (3,5),<br>
+&emsp; &emsp; (4,1), (4,2), (4,3), (4,4), (4,5),<br>
+&emsp; &emsp; (5,1), (5,2), (5,3), (5,4), (5,5)
+}
+<br>
+Por exemplo se queremos a distribuição amostral da média, calculamos a média para cada grupo. <br>
+
+{ <br>
+&emsp; &emsp; 1.0, 1.5, 2.0, 2.5, 3.0,<br>
+&emsp; &emsp; 1.5, 2.0, 2.5, 3.0, 3.5,<br>
+&emsp; &emsp; 2.0, 2.5, 3.0, 3.5, 4.0,<br>
+&emsp; &emsp; 2.5, 3.0, 3.5, 4.0, 4.5,<br>
+&emsp; &emsp; 3.0, 3.5, 4.0, 4.5, 5.0
+}<br>
+
+Com isso, conseguimos a seguinte distribuição amostral: <br>
+
+| $\bar x$             | 1.0  | 1.5  | 2.0  | 2.5  | 3.0  | 3.5  | 4.0  | 4.5  | 5.0  |
+|----------------------|------|------|------|------|------|------|------|------|------|
+| $P(\bar X = \bar x)$ | 1/25 | 2/25 | 3/25 | 4/25 | 5/25 | 4/25 | 3/25 | 2/25 | 1/25 |
+
+
+```{r, echo=F}
+banco <- data.frame(valor = c(1, rep(1.5, 2), rep(2, 3), rep(2.5, 4), rep(3,5), rep(3.5, 4), rep(4,3), rep(4.5,2), 5))
+
+hist(x = banco$valor, freq =F,
+     xlab = 'Média', ylab = 'Probabilidade', main = '')
+curve(dnorm(x, 3, sd(banco$valor)), add = T, col = 'red')
+```
+<br>
+Para a distribuição amostral da média, em específico, quando $n$ aumenta ela se aproxima de uma normal. <br>
+Mais que isso, para amostras aleatórias simples com n suficientemente grande de uma variável aleatória X com média $\mu$ e variância $\sigma^2$, a variável aleatória $\bar X$ seguirá uma distribuição normal com média $\mu$ e variância $\frac{\sigma^2} n$, ou seja, se
+<center>
+ $X$ &nbsp;~&nbsp; $N(\mu, \sigma^2)$</center>
+ 
+ então,
+ <center>
+ $\bar X$ &nbsp;~&nbsp; $N(\mu, \frac{\sigma^2} n)$</center> 
+ <br><br>
+ 
+ **Teorema do Limite Central**
+ 
+
