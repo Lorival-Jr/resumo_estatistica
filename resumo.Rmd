@@ -1795,4 +1795,75 @@ $$f(x) = \frac{1}{\Gamma(k/2)} \left ( \frac 1 2 \right )^{k/2} x^{\frac k 2 -1}
 $0 < x < \infty$,
 
 então x é definida como uma v.a. que segue a distribuição Qui-quadrado
-com k graus de liberdade, $x$ &nbsp; ~ &nbsp; $\chi^2_{k}$
+com k graus de liberdade, $x$ &nbsp; ~ &nbsp; $\chi^2_{k}$, e possui
+<br> 
+
+$E[x] = k$,  $Var[x]=2k$
+<br><br>
+
+Seja $X_i$ com $i = 1,2,...,n$ v.a independentes e normalmente distribuídas com média $\mu_i$ e variância $\sigma^2_i$, então
+
+$$U = \sum^n_{i=1} \left( \frac{x_i - \mu_i}{\sigma_i} \right )$$
+Possui distribuição Qui-quadrado com n graus de liberdade.
+<br><br>
+
+Um outro resultado importante é que, sendo $X_1, X_2, ..., X_n$
+uma amostra aleatório de uma distribuição normal padrão,
+$\sum^n_{i=1} (X_i - \bar{X})^2$ possui distribuição Qui-quadrado
+com $n-1$ graus de liberdade, $\chi^2_{n-1}$
+<br><br>
+
+Se $s^2$ é a variância amostral de uma amostra aleatória que segue
+uma distribuição normal com média $\mu$ e variância $\sigma^2$, então
+
+$$U = \frac{(n-1)s^2}{\sigma^2},$$
+
+possui distribuição Qui-quadrado com $n-1$ graus de liberdade.
+
+**Distribuição F**
+
+A distribuição F é a distribuição da razão de duas v.a. independentes que seguem a distribuição Qui-quadrado. Sendo U e V essas variáveis com
+m e n graus de liberdade respectivamente, sua densidade conjunta é dada por,
+
+$$f(u,v) = \frac{1}{\Gamma(\frac m 2) \Gamma(\frac n 2)2^{(m + n)/2}}u^{(m-2)/2}v^{(n-2)/2}e^{-\frac 1 2 (u +v)}$$
+
+Sendo $0 < u < \infty$, $0 < v < \infty$
+<br>
+
+Queremos encontrar a distribuição da quantidade
+
+$$X = \frac{U/m}{V/n},$$
+A qual pode ser referida como razão de variâncias.
+<br>
+Outra parametrização, seria se considerassemos $X = \frac{U/m}{V/n}$
+e $Y = V$, então
+
+$$f(x) = \frac{\Gamma[(m +n)/2]}{\Gamma(m/2)\Gamma(n/2)}
+\left ( \frac m n) \right )^{m/2} 
+\frac{x^{(m-2)/2}}{[1 + (m/n)x]^{(m + n)/2}}$$
+
+então X é definido como uma v.a que segue a distribuição F com m e n graus de liberdade.
+<br>
+
+Além disso, se temos X e Y amostras independentes de tamanho m e n,
+respectivamente, que seguem a distribuição normal, e essas
+com variâncias amostrais $s_x$ e $s_y$, então
+
+$$\frac{\frac{s_x}{(m-1)}}{\frac{s_y}{(n-1)}}$$
+
+segue a distribuição F com $m-1$ e $n-1$ graus de liberdade.
+<br><br>
+
+Agora considerando X como uma v.a que segue a distribuição F com 
+m e n graus de liberdade, então
+
+$E[X] = \frac n {n-2}$, para n > 2
+
+$Var[X] = \frac{2n^2(m + n -2)}{m(n-2)^2(n-4)}$, para n > 4,
+
+
+Se X é um v.a que segue F com m e n graus de liberdade, então
+
+$$W =\frac{mX/n}{1 + mX/n}$$
+Possui distribuição beta com parâmetros $\alpha = m/2$ e $\beta = n/2$
+
