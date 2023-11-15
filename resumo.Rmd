@@ -1709,7 +1709,7 @@ $\Theta$ = { <br>
 &emsp; &emsp; (4,1), (4,2), (4,3), (4,4), (4,5),<br>
 &emsp; &emsp; (5,1), (5,2), (5,3), (5,4), (5,5)
 }
-<br>
+<br><br>
 Por exemplo se queremos a distribuição amostral da média, calculamos a média para cada grupo. <br>
 
 { <br>
@@ -1745,6 +1745,54 @@ Mais que isso, para amostras aleatórias simples com n suficientemente grande de
  $\bar X$ &nbsp;~&nbsp; $N(\mu, \frac{\sigma^2} n)$</center> 
  <br><br>
  
- **Teorema do Limite Central**
+ **Teorema do Limite Central (TCL)**
  
+Sendo $X_1, ..., X_n$ variáveis aleatórias i.i.d. com média $\mu$ e variância $\sigma^2$, então para cada z.
 
+$F(z)$ converge para $\Phi(z)$ quando $n \rightarrow \infty,$
+
+Em que, 
+
+$$Z = \frac{(\bar X - E[\bar X])}{\sqrt{Var[\bar X]}} = \frac{(\bar X - \mu)}{\frac{\sigma}{\sqrt{n}}}$$,
+
+Sendo Z uma v.a de distribuição normal padrão. <br><br>
+
+Também pelo TCL, a distribuição assintótica de $\bar X$ 
+quando X tem média $\mu$, variância finita $\sigma^2$ e
+$n \rightarrow \infty$, a distribuição amostral de $\bar X$
+aproxima-se de uma distribuição normal padrão, ou seja
+
+ <center>
+ $\bar X$ &nbsp;~$^d$&nbsp; $N(\mu, \frac{\sigma^2} n)$</center> 
+ <br><br><br>
+ 
+ **Distribuição amostral da variância ($s^2$)**
+ 
+ 
+ $$s^2 = \frac 1 {n-1} \sum^n_{i=1}(X_i - \bar X)^2,$$
+ 
+ **Propriedades da média e da variância amostral**
+ 
+1. $\bar x$ e $s^2$ são variáveis aleatória independentes, $\bar x \perp s^$
+
+2. $\bar x$ tem distribuição normal com média $\mu$ e variância $\frac{\sigma^2} n$,  $\bar X$ &nbsp;~$^d$&nbsp; $N(\mu, \frac{\sigma^2} n)$
+
+3. $\frac {(n-1)s^2}{\sigma^2}$  tem uma distribuição Qui-quadrado
+com n-1 graus de liberdade $\frac {(n-1)s^2}{\sigma^2}$ 
+&nbsp; ~ &nbsp; $\chi^2_{n-1}$
+
+<br><br><br>
+
+**Distribuições amostrais derivadas da distribuição normal**
+<br>
+
+**Distribuição Qui-quadrado**
+
+Se X é uma v.a. com densidade
+
+$$f(x) = \frac{1}{\Gamma(k/2)} \left ( \frac 1 2 \right )^{k/2} x^{\frac k 2 -1} e^{\frac 1 2 x},$$
+
+$0 < x < \infty$,
+
+então x é definida como uma v.a. que segue a distribuição Qui-quadrado
+com k graus de liberdade, $x$ &nbsp; ~ &nbsp; $\chi^2_{k}$
