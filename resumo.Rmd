@@ -1866,4 +1866,100 @@ Se X é um v.a que segue F com m e n graus de liberdade, então
 
 $$W =\frac{mX/n}{1 + mX/n}$$
 Possui distribuição beta com parâmetros $\alpha = m/2$ e $\beta = n/2$
+<br><br><br>
 
+**Distribuição t de Student**
+
+A distribuição t de Student é a razão de uma v.a. que segue a distribuição
+normal padronizada por uma raiz quadrada de uma v.a. que segue a distribuição
+Qui-quadrado dividia pelos seus graus de liberdade.
+Sendo $Z$ uma v.a. que segue a normal padrão, U uma v.a. que segue a 
+Qui-quadrado com k graus de liberdade, e tendo Z e U como independente, 
+temos que
+
+$$X = \frac{Z} {\sqrt{U/k}}$$
+<br>
+A densidade conjunta de Z e U é dada por
+
+$$f(z,u) = \frac{1}{\sqrt{2\pi}}\frac{1} {\Gamma(k/2)}
+\left ( \frac{1}{2} \right )^{k/2} u^{(k/2)-1}e^{-\frac 1 2u}
+e^{\frac 1 2 z^2}
+$$
+Com, $-\infty < z < \infty$ e $0 < u < \infty$
+<br>
+
+Transformando $X = \frac Z {\sqrt{U/k}}$ e $Y = U$, obtemos a seguinte densidade,
+
+$$f(x) = \frac{\Gamma[(k + 1)/2]}{\Gamma(k/2)} \frac{1}{\sqrt{k\pi}}
+  \frac{1}{(1 + \frac{x^2}k)^{(k+1)/2}}
+$$
+Assim, se X possui tal densidade ele é uma v.a. que segue a distribuição 
+t de Student com k graus de liberdade.
+
+$E[X] = 0$, se k > 1
+
+$Var[X] = \frac{k}{k-2}$, se k > 2
+
+<br>
+Outras observações importantes sobre essa distribuição são que com 1 grau
+de liberdade ela se reduz a uma distribuição Cauchy, e conforme esse número
+aumenta ela se aproxima de uma distribuição normal padrão. Além disso, o
+quadrado de uma v.a que segue uma t com k graus de liberdade possui distribuição
+F com 1 e k graus de liberdade.
+
+<br><br><br>
+
+### Estimação Paramétrica
+
+**Estimação pontual**
+Nessa estimação, calculamos uma estatística $T(X)$ que representa o
+valor do parâmetro desconhecido $\theta$ ou de uma função $g(\theta)$.
+
+Por exemplo, podemos calcular a estatística
+$T(x) = \bar x = \frac{\sum^n_{i=1} x_i} n$ para estimarmos $\mu$.
+
+#### **Desempenho de um estimador**
+
+**Não viesado**
+
+Dizemos que um estimador $T(x) = \hat \theta$ é não viesado ou não tendencioso para $\theta$ se
+
+$$E[T(x)] = E[\hat \theta] = \theta,$$
+
+para todo $\theta \in \Theta$, ou seja a esperança da estatística deve ser igual ao parâmetro.
+
+Se um estimador $\hat theta$ do parâmetro $\theta$ é viesado, o **viés** é dado por
+
+$$B(\hat \theta) = E[\hat \theta] - \theta$$
+
+Ou seja o viés ou vício é a diferença entre a esperança do estimador e o parâmetro.
+
+<br>
+Por exemplo, $\bar x$ é um estimado não viesado para $\mu$
+
+$$E[\bar x] = E\left [\frac{\sum^n_{i=1} x_i}{n}\right] = \frac{1}{n} E [{\sum^n_{i=1} x_i}] = \frac{1}{n} {\sum^n_{i=1}E [ x_i}] = \frac{1}{n} \sum^n_{i=1}\mu  = \frac{1}{n} n \mu = \mu$$
+<br>
+
+Enquanto isso podemos mostrar que $T(x) = \hat{\sigma} = \frac{\sum^N_{i=1}(x_i - \bar x)^2} n$ é viesado para $\sigma = \frac{\sum^N_{i=1}(x_i - \mu)^2}{N}$
+
+
+$$E[\hat \sigma] = E \left [ \frac{\sum^N_{i=1}(x_i - \bar x)^2} n \right ] = \frac 1 n  E \left [ \sum^N_{i=1}(x_i - \bar x)^2 \right ] =  E \left [ \sum^N_{i=1}(x_i^2 - 2x_i \bar x + \bar x^2) \right ]$$
+$$E[\hat \sigma] = \sum^N_{i=1}\left[ E (x_i^2 - 2x_i \bar x + \bar x^2) \right ] = \sum^N_{i=1}\left[ E(x_i^2) -2E(x_i \bar x) + E(\bar x^2) \right] $$
+
+Sabemos que, $Var[x] = E[x^2] - E[x]^2$ e portanto $E[x^2] = Var[x] + E[x]^2$, assim para $\bar x$ temos $E[\bar x^2] = Var[\bar x] + E[\bar x]^2$
+
+$$E[\hat \sigma] = \sum^N_{i=1}\left[ E(x_i^2) -2E(x_i \bar x) + Var[\bar x] + E[\bar x]^2 \right] = \sum^N_{i=1}\left[ E(x_i^2) -2\mu E(x_i ) + \frac \sigma n + \mu^2 \right]$$
+$$ E[\hat \sigma] = \sum^N_{i=1}\left[ Var[x_i] + E[x_i]^2 -2\mu \mu + \frac \sigma n + \mu^2 \right] = \sum^N_{i=1}\left[ \sigma + \mu^2 -2\mu^2 + \frac \sigma n + \mu^2 \right] $$
+$$ E[\hat \sigma] =  \sum^N_{i=1}\left[ 2\mu^2 -2\mu^2   +\frac {n\sigma + \sigma} n\right]  = \sum^N_{i=1}\left[\frac {\sigma(n + 1)} n\right] = n \left[\frac {\sigma(n + 1)} n\right] =  {\sigma(n + 1)} $$
+
+Como $E[\hat \sigma]$
+
+#### **Consistência**
+
+Seja $\hat \theta$ um estimador de $\theta$ com base em uma amostra aleatória de tamanho n, temos que $\hat \theta$ é consistente (ou coerente) 
+se para todo $\epsilon > 0$ $\lim\limits_{n \to \infty} P(|\hat \theta - \theta | > \epsilon) \rightarrow 0$.
+
+1.  $\lim\limits_{n \to \infty} E[\hat \theta] = \theta,$ e se
+2.  $\lim\limits_{n \to \infty} Var[\hat \theta] = 0,$
+
+então $\hat \theta$ é um estimador consistente para $\theta$.
