@@ -1770,7 +1770,11 @@ aproxima-se de uma distribuição normal padrão, ou seja
  
  
  $$s^2 = \frac 1 {n-1} \sum^n_{i=1}(X_i - \bar X)^2,$$
- 
+
+<br>
+
+$E[s^2] = \sigma^2$ e $Var[s^2] = \frac{2\sigma^4}{n-1}$
+
  **Propriedades da média e da variância amostral**
  
 1. $\bar x$ e $s^2$ são variáveis aleatória independentes, $\bar x \perp s^$
@@ -1940,19 +1944,42 @@ Por exemplo, $\bar x$ é um estimado não viesado para $\mu$
 $$E[\bar x] = E\left [\frac{\sum^n_{i=1} x_i}{n}\right] = \frac{1}{n} E [{\sum^n_{i=1} x_i}] = \frac{1}{n} {\sum^n_{i=1}E [ x_i}] = \frac{1}{n} \sum^n_{i=1}\mu  = \frac{1}{n} n \mu = \mu$$
 <br>
 
-Enquanto isso podemos mostrar que $T(x) = \hat{\sigma} = \frac{\sum^N_{i=1}(x_i - \bar x)^2} n$ é viesado para $\sigma = \frac{\sum^N_{i=1}(x_i - \mu)^2}{N}$
+Enquanto isso podemos mostrar que $T(x) = \hat{\sigma} = \frac{\sum^n_{i=1}(x_i - \bar x)^2} n$ é viesado para $\sigma = \frac{\sum^n_{i=1}(x_i - \mu)^2}{N}$
 
 
-$$E[\hat \sigma] = E \left [ \frac{\sum^N_{i=1}(x_i - \bar x)^2} n \right ] = \frac 1 n  E \left [ \sum^N_{i=1}(x_i - \bar x)^2 \right ] =  E \left [ \sum^N_{i=1}(x_i^2 - 2x_i \bar x + \bar x^2) \right ]$$
-$$E[\hat \sigma] = \sum^N_{i=1}\left[ E (x_i^2 - 2x_i \bar x + \bar x^2) \right ] = \sum^N_{i=1}\left[ E(x_i^2) -2E(x_i \bar x) + E(\bar x^2) \right] $$
+$$E[\hat \sigma] = E \left [ \frac{\sum^n_{i=1}(x_i - \bar x)^2} n \right ] = \frac 1 n  E \left [ \sum^n_{i=1}(x_i - \bar x)^2 \right ] $$
+Completando quadrados, somamos e subtraímos $\mu$
 
-Sabemos que, $Var[x] = E[x^2] - E[x]^2$ e portanto $E[x^2] = Var[x] + E[x]^2$, assim para $\bar x$ temos $E[\bar x^2] = Var[\bar x] + E[\bar x]^2$
+$$E[\hat \sigma] = \frac 1 n  E \left [ \sum^n_{i=1}(x_i - \bar x + \mu - \mu)^2 \right] =
+\frac 1 n  E \left [ \sum^n_{i=1}( (x_i - \mu) - (\bar x - \mu) )^2 \right]  = 
+\frac 1 n  E \left [ \sum^n_{i=1}[ (x_i - \mu)^2 -2(x_i - \mu)(\bar x - \mu)  + (\bar x - \mu)^2] \right]  $$
 
-$$E[\hat \sigma] = \sum^N_{i=1}\left[ E(x_i^2) -2E(x_i \bar x) + Var[\bar x] + E[\bar x]^2 \right] = \sum^N_{i=1}\left[ E(x_i^2) -2\mu E(x_i ) + \frac \sigma n + \mu^2 \right]$$
-$$ E[\hat \sigma] = \sum^N_{i=1}\left[ Var[x_i] + E[x_i]^2 -2\mu \mu + \frac \sigma n + \mu^2 \right] = \sum^N_{i=1}\left[ \sigma + \mu^2 -2\mu^2 + \frac \sigma n + \mu^2 \right] $$
-$$ E[\hat \sigma] =  \sum^N_{i=1}\left[ 2\mu^2 -2\mu^2   +\frac {n\sigma + \sigma} n\right]  = \sum^N_{i=1}\left[\frac {\sigma(n + 1)} n\right] = n \left[\frac {\sigma(n + 1)} n\right] =  {\sigma(n + 1)} $$
+$$E[\hat \sigma] = \frac 1 n  E \left [ \sum^n_{i=1}[(x_i - \mu)^2] -2(\bar x - \mu)\sum^n_{i=1}[ (x_i - \mu)] + \sum^n_{i=1}[(\bar x - mu)]^2 \right]$$
+$$E[\hat \sigma] = \frac 1 n  E \left [ \sum^n_{i=1}[(x_i - \mu)^2] -2(\bar x - \mu)(\sum^n_{i=1}x_i - \sum^n_{i=1}\mu) + n(\bar x - mu)^2 \right]$$
+$$E[\hat \sigma] = \frac 1 n  E \left [ \sum^n_{i=1}[(x_i - \mu)^2] -2(\bar x - \mu)(n \bar x - n \mu) + n(\bar x - mu)^2 \right]$$
+$$E[\hat \sigma] = \frac 1 n  E \left [ \sum^n_{i=1}[(x_i - \mu)^2] -2n(\bar x - \mu)(\bar x - \mu) + n(\bar x - mu)^2 \right]$$
+$$E[\hat \sigma] = \frac 1 n  E \left [ \sum^n_{i=1}[(x_i - \mu)^2] -2n(\bar x - \mu)(\bar x - \mu) + n(\bar x - mu)^2 \right] =
+\frac 1 n  E \left [ \sum^n_{i=1}[(x_i - \mu)^2] -2n(\bar x - \mu)^2 + n(\bar x - mu)^2 \right]$$
+$$E[\hat \sigma] = \frac 1 n  E \left [ \sum^n_{i=1}[(x_i - \mu)^2] -n(\bar x - \mu)^2  \right] = 
+\frac 1 n \left [ E[\sum^n_{i=1}(x_i - \mu)^2] -nE[(\bar x - \mu)^2] \right] = 
+\frac 1 n \left [ \sum^n_{i=1}(Var(x_i)) - nVar(\bar x) \right]$$
 
-Como $E[\hat \sigma]$
+Como sabemos que $Var(x_i) = \sigma^2$ e $Var(\bar x) = \frac {\sigma^2}{n}$
+
+$$E[\hat \sigma] =  \frac 1 n \left [ \sum^n_{i=1}(\sigma^2) - n \frac {\sigma^2}{n}   \right] =
+\frac 1 n (n \sigma^2 - \sigma^2) = \frac{(n-1)\sigma^2}{n}$$
+
+Como $E[\hat \sigma] = \frac{(n-1)\sigma^2}{n}$ é diferente de $\sigma^2$
+<br><br>
+
+Calculando o viés
+
+$$B(\hat \theta) = E[\hat \theta] - \theta$$
+$$B(\sigma^2) = E[\sigma^2] - \sigma^2 = \frac{(n-1} n \sigma^2 - sigma^2$$
+$$B(\sigma^2) = \frac{(n-1)\sigma^2 - n\sigma^2} n = \frac{n\sigma^2 - \sigma^2 - n\sigma^2}{n} = \frac{-\sigma^2}{n}$$
+
+Interpretando esse viés, como o valor é negativo o estimador tende a fornecer valores menores que o verdadeiro parâmetro.
+<br><br>
 
 #### **Consistência**
 
@@ -1963,3 +1990,20 @@ se para todo $\epsilon > 0$ $\lim\limits_{n \to \infty} P(|\hat \theta - \theta 
 2.  $\lim\limits_{n \to \infty} Var[\hat \theta] = 0,$
 
 então $\hat \theta$ é um estimador consistente para $\theta$.
+
+
+**Erro Quadrático Médio (EQM)**
+
+É uma medida de desempenho de estimador, quanto menor melhor. <br>
+
+$$EQM[\hat \theta] = E[ (\hat \theta - \theta)^2]
+
+Se $\hat \theta$ é um estimador não viesado, então
+
+$EQM[\hat \theta] = Var(\hat \theta)$ <br>
+
+Pois, <br>
+ $$EQM[\theta] = E[ (\hat \theta - \theta)^2] = E[ (\hat \theta - E[\theta])^2 ] = Var( \hat \theta )$$
+<br>
+Pode-se mostrar também que,
+  $$EQM[\hat \theta] = \Var(\hat \theta) + B^2(\hat \theta)$$
