@@ -2009,7 +2009,7 @@ Assim verificamos que (1) é verdade
 Verificando (2), se $\lim\limits_{n \to \infty} Var[\hat \sigma^2] = 0$
 
 $$\lim\limits_{n \to \infty} Var[\hat \sigma^2] = \lim\limits_{n \to \infty} Var \right [ \frac{\sum^n_{i=1}(x_i - \bar x)^2} n \left ]$$
-$$
+
 
 
 **Erro Quadrático Médio (EQM)**
@@ -2047,3 +2047,17 @@ $$Var[\hat \theta *] \leq Var[\hat \theta],$$
 
 para todo $\theta$, se $\leq$ substituído por < para pelo menos um $\theta$.
 
+<br><br><br>
+**Eficiência**
+Chamamos de eficiência para um estimador $\hat \theta$, não viesado para o parâmetro $\theta$, o quociente,
+
+$$e(\hat \theta) = \frac{LI(\theta}{Var[\hat \theta]},$$
+
+No qual $LI(\theta$ é olimite inferior da variância dos estimadores não viesados de $\theta$.
+<br>
+
+Se $LI(\theta) = Var[\hat \theta]$, ou seja quando a variância de $\theta$ é igual ao limite inferior das variâncias dos estimadores não viesados de \theta, temos $e(\hat \theta) = 1$. Nesse caso, $\hat \theta$ é dito eficiente. <br> <br>
+
+$$LI(\theta) = \frac{1}{n E \left [ \left ( \frac {\partial}{\partial \theta} log f(X; \theta) \right ) \right )^2},
+
+Isso se, o suporte $A(x) = [x, f(x; \theta) > 0]$ seja independente de $\theta$ e que seja possível trocar a ordem das operações de derivação e de integração sob a distribuição da variável aleatória X.
