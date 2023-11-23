@@ -1990,6 +1990,26 @@ se para todo $\epsilon > 0$ $\lim\limits_{n \to \infty} P(|\hat \theta - \theta 
 2.  $\lim\limits_{n \to \infty} Var[\hat \theta] = 0,$
 
 então $\hat \theta$ é um estimador consistente para $\theta$.
+<br>
+
+Por exemplo, vimos que $T(x) = \hat{\sigma^2} = \frac{\sum^n_{i=1}(x_i - \bar x)^2} n$ é viesado para $\sigma^2 = \frac{\sum^N_{i=1}(x_i - \mu)^2}{N}$, agora vamos testar se o $\hat sigma^2$ é consistente $\sigma^2$:
+<br>
+
+Primeiramente, verificando se  $\lim\limits_{n \to \infty} E[\hat \sigma^2] = \sigma$
+
+$$\lim\limits_{n \to \infty} E[\frac{\sum^n_{i=1}(x_i - \bar x)^2} n ] =  \lim\limits_{n \to \infty} \frac{(n-1)\sigma^2}{n}$$
+
+Aplicando L'Hospital, derivando em cima e em baixo por n,
+
+$$ \lim\limits_{n \to \infty} \sigma^2 = \sigma^2$$
+<br>
+Assim verificamos que (1) é verdade
+<br>
+
+Verificando (2), se $\lim\limits_{n \to \infty} Var[\hat \sigma^2] = 0$
+
+$$\lim\limits_{n \to \infty} Var[\hat \sigma^2] = \lim\limits_{n \to \infty} Var \right [ \frac{\sum^n_{i=1}(x_i - \bar x)^2} n \left ]$$
+$$
 
 
 **Erro Quadrático Médio (EQM)**
@@ -2007,3 +2027,23 @@ Pois, <br>
 <br>
 Pode-se mostrar também que,
   $$EQM[\hat \theta] = \Var(\hat \theta) + B^2(\hat \theta)$$
+<br><br>
+
+O EQM de um estimador $\hat \theta$ é consistente se e somente se $\lim\limits_{n \to \infty}EQM(\hat \theta ) = 0$.
+
+E caso isso ocorra, o EQM consistente implica que o viés e a variância de $\hat \theta$ tendem a zero.
+<br><br>
+
+O EQM pode ser usado para comparar estimadores, sendo o menor melhor, por exemplo $\hat \theta_1$ é melhor que $\hat \theta_2$ se
+$$EQM[\hat \theta_1] \leq EQM[\hat \theta_2]$$
+<br>
+
+Caso exista $\hat \theta *$ que possua para todo $\hat \theta$ EQM menor ou igual,
+$$EQM[\hat \theta*] \leq EQM[\hat \theta]$$
+<br>
+Então $\hat \theta *$ é dito ser ótimo para $\theta$. Além disso, se os estimadores não são viesados, então $\hat \theta *$ é dito ser o **estimador não viesado de variância uniformemente mínima** (ENVVUM), pois também
+
+$$Var[\hat \theta *] \leq Var[\hat \theta],$$
+
+para todo $\theta$, se $\leq$ substituído por < para pelo menos um $\theta$.
+
