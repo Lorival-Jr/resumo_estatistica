@@ -1671,11 +1671,14 @@ Sejam $(X_n)_{n \ge1}$ v.a's  iid com média $\mu$ e variância $\sigma^2 < \inf
 
 ## Estatística Computacional
 
-## Inferência
+<br><br><br>
+
+## Inferência I
 
 Inferência estatística é um conjunto de técnicas que busca estudar a população, a partir de evidências de uma amostra. Essa sendo essencial na maioria dos casos visto o custo de coletar a população toda.
+<br> 
 
-### Conceitos iniciais
+### Conceitos iniciais <br>
 
 - População: Um conjunto de elementos que possuem uma característica em comum e descrevem algum fenômeno que queremos estudar.
 
@@ -1690,12 +1693,13 @@ Inferência estatística é um conjunto de técnicas que busca estudar a popula�
 - Estimativa: É o valor calculado a partir dos dados da amostra para estimar um parâmetro. (Ex: $\bar x = 3$)
 
 - Estimação: Processo em que a partir de uma amostra procura-se um valor e ou um intervalo que represente o parâmetro de interesse desconhecido.
+<br><br>
 
-
-### Distribuição amostral de um estimador
+### **Distribuição amostral de um estimador** <br>
 
 Considerando todas amostras aleatórias simples de tamanho n de uma população, calculamos a estimativa $t = t(x)$ para cada amostra, a partir disso teremos uma distribuição amostral de estimativas.
 <br>
+
 Por exemplo: <br>
 
 Dado uma população $X = (1,2,3,4,5)$, queremos todas as amostras de $n=2$ com reposição.
@@ -1712,7 +1716,7 @@ $\Theta$ = { <br>
 <br><br>
 Por exemplo se queremos a distribuição amostral da média, calculamos a média para cada grupo. <br>
 
-{ <br>
+$\Theta_{\bar x}$ = { <br>
 &emsp; &emsp; 1.0, 1.5, 2.0, 2.5, 3.0,<br>
 &emsp; &emsp; 1.5, 2.0, 2.5, 3.0, 3.5,<br>
 &emsp; &emsp; 2.0, 2.5, 3.0, 3.5, 4.0,<br>
@@ -1734,7 +1738,8 @@ hist(x = banco$valor, freq =F,
      xlab = 'Média', ylab = 'Probabilidade', main = '')
 curve(dnorm(x, 3, sd(banco$valor)), add = T, col = 'red')
 ```
-<br>
+<br><br>
+
 Para a distribuição amostral da média, em específico, quando $n$ aumenta ela se aproxima de uma normal. <br>
 Mais que isso, para amostras aleatórias simples com n suficientemente grande de uma variável aleatória X com média $\mu$ e variância $\sigma^2$, a variável aleatória $\bar X$ seguirá uma distribuição normal com média $\mu$ e variância $\frac{\sigma^2} n$, ou seja, se
 <center>
@@ -1745,7 +1750,7 @@ Mais que isso, para amostras aleatórias simples com n suficientemente grande de
  $\bar X$ &nbsp;~&nbsp; $N(\mu, \frac{\sigma^2} n)$</center> 
  <br><br>
  
- **Teorema do Limite Central (TCL)**
+#### **Teorema do Limite Central (TCL)** <br><br>
  
 Sendo $X_1, ..., X_n$ variáveis aleatórias i.i.d. com média $\mu$ e variância $\sigma^2$, então para cada z.
 
@@ -1773,7 +1778,7 @@ aproxima-se de uma distribuição normal padrão, ou seja
 
 <br>
 
-$E[s^2] = \sigma^2$ e $Var[s^2] = \frac{2\sigma^4}{n-1}$
+$E[s^2] = \sigma^2$ e $Var[s^2] = \frac{2\sigma^4}{n-1}$ <br><br>
 
  **Propriedades da média e da variância amostral**
  
@@ -1787,16 +1792,16 @@ com n-1 graus de liberdade $\frac {(n-1)s^2}{\sigma^2}$
 
 <br><br><br>
 
-**Distribuições amostrais derivadas da distribuição normal**
+### **Distribuições amostrais derivadas da distribuição normal**
 <br>
 
-**Distribuição Qui-quadrado**
+#### **Distribuição Qui-quadrado**
 
 Se X é uma v.a. com densidade
 
 $$f(x) = \frac{1}{\Gamma(k/2)} \left ( \frac 1 2 \right )^{k/2} x^{\frac k 2 -1} e^{\frac 1 2 x},$$
 
-$0 < x < \infty$,
+$$0 < x < \infty,$$
 
 então x é definida como uma v.a. que segue a distribuição Qui-quadrado
 com k graus de liberdade, $x$ &nbsp; ~ &nbsp; $\chi^2_{k}$, e possui
@@ -1822,9 +1827,9 @@ uma distribuição normal com média $\mu$ e variância $\sigma^2$, então
 
 $$U = \frac{(n-1)s^2}{\sigma^2},$$
 
-possui distribuição Qui-quadrado com $n-1$ graus de liberdade.
+possui distribuição Qui-quadrado com $n-1$ graus de liberdade. <br><br>
 
-**Distribuição F**
+#### **Distribuição F**
 
 A distribuição F é a distribuição da razão de duas v.a. independentes que seguem a distribuição Qui-quadrado. Sendo U e V essas variáveis com
 m e n graus de liberdade respectivamente, sua densidade conjunta é dada por,
@@ -1837,13 +1842,13 @@ Sendo $0 < u < \infty$, $0 < v < \infty$
 Queremos encontrar a distribuição da quantidade
 
 $$X = \frac{U/m}{V/n},$$
-A qual pode ser referida como razão de variâncias.
-<br>
+A qual pode ser referida como razão de variâncias.<br>
+
 Outra parametrização, seria se considerassemos $X = \frac{U/m}{V/n}$
-e $Y = V$, então
+ e $Y = V$, então
 
 $$f(x) = \frac{\Gamma[(m +n)/2]}{\Gamma(m/2)\Gamma(n/2)}
-\left ( \frac m n) \right )^{m/2} 
+\left ( \frac m n \right )^{m/2} 
 \frac{x^{(m-2)/2}}{[1 + (m/n)x]^{(m + n)/2}}$$
 
 então X é definido como uma v.a que segue a distribuição F com m e n graus de liberdade.
@@ -1861,9 +1866,9 @@ segue a distribuição F com $m-1$ e $n-1$ graus de liberdade.
 Agora considerando X como uma v.a que segue a distribuição F com 
 m e n graus de liberdade, então
 
-$E[X] = \frac n {n-2}$, para n > 2
+$E[X] = \frac n {n-2},$ para n > 2 <br>
 
-$Var[X] = \frac{2n^2(m + n -2)}{m(n-2)^2(n-4)}$, para n > 4,
+$Var[X] = \frac{2n^2(m + n -2)}{m(n-2)^2(n-4)},$ para n > 4,
 
 
 Se X é um v.a que segue F com m e n graus de liberdade, então
@@ -1872,7 +1877,7 @@ $$W =\frac{mX/n}{1 + mX/n}$$
 Possui distribuição beta com parâmetros $\alpha = m/2$ e $\beta = n/2$
 <br><br><br>
 
-**Distribuição t de Student**
+#### **Distribuição t de Student**
 
 A distribuição t de Student é a razão de uma v.a. que segue a distribuição
 normal padronizada por uma raiz quadrada de uma v.a. que segue a distribuição
@@ -1913,18 +1918,18 @@ F com 1 e k graus de liberdade.
 
 <br><br><br>
 
-### Estimação Paramétrica
+### **Estimação Paramétrica** <br>
 
 **Estimação pontual**
 Nessa estimação, calculamos uma estatística $T(X)$ que representa o
 valor do parâmetro desconhecido $\theta$ ou de uma função $g(\theta)$.
 
 Por exemplo, podemos calcular a estatística
-$T(x) = \bar x = \frac{\sum^n_{i=1} x_i} n$ para estimarmos $\mu$.
+$T(x) = \bar x = \frac{\sum^n_{i=1} x_i} n$ para estimarmos $\mu$. <br><br>
 
-#### **Desempenho de um estimador**
+### **Desempenho de um estimador** <br> <br>
 
-**Não viesado**
+#### **Viés** <br>
 
 Dizemos que um estimador $T(x) = \hat \theta$ é não viesado ou não tendencioso para $\theta$ se
 
@@ -1932,7 +1937,7 @@ $$E[T(x)] = E[\hat \theta] = \theta,$$
 
 para todo $\theta \in \Theta$, ou seja a esperança da estatística deve ser igual ao parâmetro.
 
-Se um estimador $\hat theta$ do parâmetro $\theta$ é viesado, o **viés** é dado por
+Se um estimador $\hat \theta$ do parâmetro $\theta$ é viesado, o **viés** é dado por
 
 $$B(\hat \theta) = E[\hat \theta] - \theta$$
 
@@ -1953,13 +1958,13 @@ Completando quadrados, somamos e subtraímos $\mu$
 $$E[\hat \sigma] = \frac 1 n  E \left [ \sum^n_{i=1}(x_i - \bar x + \mu - \mu)^2 \right] = \frac 1 n  E \left [ \sum^n_{i=1}( (x_i - \mu) - (\bar x - \mu) )^2 \right]$$
 $$E[\hat \sigma] = \frac 1 n  E \left [ \sum^n_{i=1}[ (x_i - \mu)^2 -2(x_i - \mu)(\bar x - \mu)  + (\bar x - \mu)^2] \right]  $$
 
-$$E[\hat \sigma] = \frac 1 n  E \left [ \sum^n_{i=1}[(x_i - \mu)^2] -2(\bar x - \mu)\sum^n_{i=1}[ (x_i - \mu)] + \sum^n_{i=1}[(\bar x - mu)]^2 \right]$$
-$$E[\hat \sigma] = \frac 1 n  E \left [ \sum^n_{i=1}[(x_i - \mu)^2] -2(\bar x - \mu)(\sum^n_{i=1}x_i - \sum^n_{i=1}\mu) + n(\bar x - mu)^2 \right]$$
-$$E[\hat \sigma] = \frac 1 n  E \left [ \sum^n_{i=1}[(x_i - \mu)^2] -2(\bar x - \mu)(n \bar x - n \mu) + n(\bar x - mu)^2 \right]$$
-$$E[\hat \sigma] = \frac 1 n  E \left [ \sum^n_{i=1}[(x_i - \mu)^2] -2n(\bar x - \mu)(\bar x - \mu) + n(\bar x - mu)^2 \right]$$
-$$E[\hat \sigma] = \frac 1 n  E \left [ \sum^n_{i=1}[(x_i - \mu)^2] -2n(\bar x - \mu)(\bar x - \mu) + n(\bar x - mu)^2 \right]$$
+$$E[\hat \sigma] = \frac 1 n  E \left [ \sum^n_{i=1}[(x_i - \mu)^2] -2(\bar x - \mu)\sum^n_{i=1}[ (x_i - \mu)] + \sum^n_{i=1}[(\bar x - \mu)]^2 \right]$$
+$$E[\hat \sigma] = \frac 1 n  E \left [ \sum^n_{i=1}[(x_i - \mu)^2] -2(\bar x - \mu)(\sum^n_{i=1}x_i - \sum^n_{i=1}\mu) + n(\bar x - \mu)^2 \right]$$
+$$E[\hat \sigma] = \frac 1 n  E \left [ \sum^n_{i=1}[(x_i - \mu)^2] -2(\bar x - \mu)(n \bar x - n \mu) + n(\bar x - \mu)^2 \right]$$
+$$E[\hat \sigma] = \frac 1 n  E \left [ \sum^n_{i=1}[(x_i - \mu)^2] -2n(\bar x - \mu)(\bar x - \mu) + n(\bar x - \mu)^2 \right]$$
+$$E[\hat \sigma] = \frac 1 n  E \left [ \sum^n_{i=1}[(x_i - \mu)^2] -2n(\bar x - \mu)(\bar x - \mu) + n(\bar x - \mu)^2 \right]$$
 $$E[\hat \sigma]  =
-\frac 1 n  E \left [ \sum^n_{i=1}[(x_i - \mu)^2] -2n(\bar x - \mu)^2 + n(\bar x - mu)^2 \right]$$
+\frac 1 n  E \left [ \sum^n_{i=1}[(x_i - \mu)^2] -2n(\bar x - \mu)^2 + n(\bar x - \mu)^2 \right]$$
 $$E[\hat \sigma] = \frac 1 n  E \left [ \sum^n_{i=1}[(x_i - \mu)^2] -n(\bar x - \mu)^2  \right] = 
 \frac 1 n \left [ E[\sum^n_{i=1}(x_i - \mu)^2] -nE[(\bar x - \mu)^2] \right]$$
 $$E[\hat \sigma] = 
@@ -1976,7 +1981,7 @@ Como $E[\hat \sigma] = \frac{(n-1)\sigma^2}{n}$ é diferente de $\sigma^2$
 Calculando o viés
 
 $$B(\hat \theta) = E[\hat \theta] - \theta$$
-$$B(\sigma^2) = E[\sigma^2] - \sigma^2 = \frac{(n-1} n \sigma^2 - sigma^2$$
+$$B(\sigma^2) = E[\sigma^2] - \sigma^2 = \frac{(n-1} n \sigma^2 - \sigma^2$$
 $$B(\sigma^2) = \frac{(n-1)\sigma^2 - n\sigma^2} n = \frac{n\sigma^2 - \sigma^2 - n\sigma^2}{n} = \frac{-\sigma^2}{n}$$
 
 Interpretando esse viés, como o valor é negativo o estimador tende a fornecer valores menores que o verdadeiro parâmetro.
@@ -1993,12 +1998,12 @@ se para todo $\epsilon > 0$ $\lim\limits_{n \to \infty} P(|\hat \theta - \theta 
 então $\hat \theta$ é um estimador consistente para $\theta$.
 <br>
 
-Por exemplo, vimos que $T(x) = \hat{\sigma^2} = \frac{\sum^n_{i=1}(x_i - \bar x)^2} n$ é viesado para $\sigma^2 = \frac{\sum^N_{i=1}(x_i - \mu)^2}{N}$, agora vamos testar se o $\hat sigma^2$ é consistente $\sigma^2$:
+Por exemplo, vimos que $T(x) = \hat{\sigma}^2 = \frac{\sum^n_{i=1}(x_i - \bar x)^2} n$ é viesado para $\sigma^2 = \frac{\sum^N_{i=1}(x_i - \mu)^2}{N}$, agora vamos testar se o $\hat \sigma^2$ é consistente para $\sigma^2$:
 <br>
 
-Primeiramente, verificando se  $\lim\limits_{n \to \infty} E[\hat \sigma^2] = \sigma$
+Primeiramente, verificando se  $\lim\limits_{n \to \infty} E[\hat \sigma^2] = \sigma^2$
 
-$$\lim\limits_{n \to \infty} E[\frac{\sum^n_{i=1}(x_i - \bar x)^2} n ] =  \lim\limits_{n \to \infty} \frac{(n-1)\sigma^2}{n}$$
+$$\lim\limits_{n \to \infty} E \left[\frac{\sum^n_{i=1}(x_i - \bar x)^2} n \right] =  \lim\limits_{n \to \infty} \frac{(n-1)\sigma^2}{n}$$
 
 Aplicando L'Hospital, derivando em cima e em baixo por n,
 
@@ -2010,10 +2015,12 @@ Assim verificamos que (1) é verdade
 Verificando (2), se $\lim\limits_{n \to \infty} Var[\hat \sigma^2] = 0$
 
 $$\lim\limits_{n \to \infty} Var[\hat \sigma^2] = \lim\limits_{n \to \infty} Var \left [ \frac{\sum^n_{i=1}(x_i - \bar x)^2} n \right ]$$
+$$\lim\limits_{n \to \infty} Var[\hat \sigma^2] = \lim\limits_{n \to \infty} \frac 1 {n^2} Var \left [ \sum^n_{i=1}(x_i - \bar x)^2 \right ]$$
+$$\lim\limits_{n \to \infty} Var[\hat \sigma^2] =  \frac 1 {\infty^2} Var \left [ \sum^n_{i=1}(x_i - \bar x)^2 \right ] = 0$$
+<br>
+Assim, verificamos que (2) é verdade, e portanto $\hat \sigma^2$ é consistente. <br><br>
 
-
-
-**Erro Quadrático Médio (EQM)**
+#### **Erro Quadrático Médio (EQM)**
 
 É uma medida de desempenho de estimador, quanto menor melhor. <br>
 
@@ -2021,7 +2028,7 @@ $$EQM[\hat \theta] = E[ (\hat \theta - \theta)^2]$$
 
 Se $\hat \theta$ é um estimador não viesado, então
 
-$EQM[\hat \theta] = Var(\hat \theta)$ <br>
+$$EQM[\hat \theta] = Var(\hat \theta)$$ <br>
 
 Pois, <br>
  $$EQM[\theta] = E[ (\hat \theta - \theta)^2] = E[ (\hat \theta - E[\theta])^2 ] = Var( \hat \theta )$$
@@ -2039,7 +2046,7 @@ O EQM pode ser usado para comparar estimadores, sendo o menor melhor, por exempl
 $$EQM[\hat \theta_1] \leq EQM[\hat \theta_2]$$
 <br>
 
-Caso exista $\hat \theta *$ que possua para todo $\hat \theta$ EQM menor ou igual,
+Caso exista $\hat \theta *$ que possua para todo $\hat \theta$, EQM menor ou igual,
 $$EQM[\hat \theta*] \leq EQM[\hat \theta]$$
 <br>
 Então $\hat \theta *$ é dito ser ótimo para $\theta$. Além disso, se os estimadores não são viesados, então $\hat \theta *$ é dito ser o **estimador não viesado de variância uniformemente mínima** (ENVVUM), pois também
@@ -2062,7 +2069,7 @@ No qual $LI(\theta)$ é o limite inferior da variância dos estimadores não vie
 Se $LI(\theta) = Var[\hat \theta]$, ou seja quando a variância de $\theta$ é igual ao limite inferior das variâncias
 dos estimadores não viesados de $\theta$, temos $e(\hat \theta) = 1$. Nesse caso, $\hat \theta$ é dito eficiente. <br> <br>
 
-$$LI(\theta) = \frac{1}{n E \left [ \left ( \frac {\partial}{\partial \theta} log f(X; \theta) \right ) \right )^2}$$,
+$$LI(\theta) = \frac{1}{n E \left [ \left ( \frac {\partial}{\partial \theta} log f(X; \theta) \right )^2 \right ]}$$,
 
 Isso se, o suporte $A(x) = [x, f(x; \theta) > 0]$ seja independente de $\theta$ e que seja possível trocar a ordem
 das operações de derivação e de integração sob a distribuição da variável aleatória X.
@@ -2096,10 +2103,10 @@ $$LI = \frac{1}{n E \left [ \left ( \frac {\partial}{\partial \mu} log f(X; \mu)
 E temos que a eficiência é, 
 
 $$e(\bar x) = \frac{LI(\mu)}{Var[\bar x]} = \frac{\sigma^2/n}{\sigma^2 / n} = 1 $$
-Assim $\bar x$ é um estimador eficiente para $\mu$.
+Assim $\bar x$ é um estimador eficiente para $\mu$. <br><br>
 
 
-#### Função Escore
+#### **Função Escore**
 
 A função escore tem a seguinte forma,
 
@@ -2115,7 +2122,7 @@ $$E \left [ \frac{\partial}{\partial \theta} \log  f (X;\theta) \right ]
 
 <br><br>
 
-#### Informação de Fisher
+#### **Informação de Fisher**
 
 A informação de Fisher possui a seguinte função,
 
@@ -2148,8 +2155,8 @@ $$E\left[\left ( \frac{\partial}{\partial \theta} \log L (\theta; X) \right )^2 
 Pois para todos $X_i$ temos a mesma informação de Fisher
 <br><br>
 
-#### Desigualdade de Informação
-<br>
+#### **Desigualdade de Informação**
+
 Quando as condições de de regularidade estão satisfeitas, a variância de de qualquer estimador $\hat \theta$ não viesado do do parâmetro $\theta$ satisfaz,
 
 $$Var[\hat \theta] \geq \frac{1}{nI_F(\theta)}$$
