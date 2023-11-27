@@ -1777,7 +1777,7 @@ $E[s^2] = \sigma^2$ e $Var[s^2] = \frac{2\sigma^4}{n-1}$
 
  **Propriedades da média e da variância amostral**
  
-1. $\bar x$ e $s^2$ são variáveis aleatória independentes, $\bar x \perp s^$
+1. $\bar x$ e $s^2$ são variáveis aleatória independentes, $\bar x \perp s^2$
 
 2. $\bar x$ tem distribuição normal com média $\mu$ e variância $\frac{\sigma^2} n$,  $\bar X$ &nbsp;~$^d$&nbsp; $N(\mu, \frac{\sigma^2} n)$
 
@@ -1950,18 +1950,19 @@ Enquanto isso podemos mostrar que $T(x) = \hat{\sigma} = \frac{\sum^n_{i=1}(x_i 
 $$E[\hat \sigma] = E \left [ \frac{\sum^n_{i=1}(x_i - \bar x)^2} n \right ] = \frac 1 n  E \left [ \sum^n_{i=1}(x_i - \bar x)^2 \right ] $$
 Completando quadrados, somamos e subtraímos $\mu$
 
-$$E[\hat \sigma] = \frac 1 n  E \left [ \sum^n_{i=1}(x_i - \bar x + \mu - \mu)^2 \right] =
-\frac 1 n  E \left [ \sum^n_{i=1}( (x_i - \mu) - (\bar x - \mu) )^2 \right]  = 
-\frac 1 n  E \left [ \sum^n_{i=1}[ (x_i - \mu)^2 -2(x_i - \mu)(\bar x - \mu)  + (\bar x - \mu)^2] \right]  $$
+$$E[\hat \sigma] = \frac 1 n  E \left [ \sum^n_{i=1}(x_i - \bar x + \mu - \mu)^2 \right] = \frac 1 n  E \left [ \sum^n_{i=1}( (x_i - \mu) - (\bar x - \mu) )^2 \right]$$
+$$E[\hat \sigma] = \frac 1 n  E \left [ \sum^n_{i=1}[ (x_i - \mu)^2 -2(x_i - \mu)(\bar x - \mu)  + (\bar x - \mu)^2] \right]  $$
 
 $$E[\hat \sigma] = \frac 1 n  E \left [ \sum^n_{i=1}[(x_i - \mu)^2] -2(\bar x - \mu)\sum^n_{i=1}[ (x_i - \mu)] + \sum^n_{i=1}[(\bar x - mu)]^2 \right]$$
 $$E[\hat \sigma] = \frac 1 n  E \left [ \sum^n_{i=1}[(x_i - \mu)^2] -2(\bar x - \mu)(\sum^n_{i=1}x_i - \sum^n_{i=1}\mu) + n(\bar x - mu)^2 \right]$$
 $$E[\hat \sigma] = \frac 1 n  E \left [ \sum^n_{i=1}[(x_i - \mu)^2] -2(\bar x - \mu)(n \bar x - n \mu) + n(\bar x - mu)^2 \right]$$
 $$E[\hat \sigma] = \frac 1 n  E \left [ \sum^n_{i=1}[(x_i - \mu)^2] -2n(\bar x - \mu)(\bar x - \mu) + n(\bar x - mu)^2 \right]$$
-$$E[\hat \sigma] = \frac 1 n  E \left [ \sum^n_{i=1}[(x_i - \mu)^2] -2n(\bar x - \mu)(\bar x - \mu) + n(\bar x - mu)^2 \right] =
+$$E[\hat \sigma] = \frac 1 n  E \left [ \sum^n_{i=1}[(x_i - \mu)^2] -2n(\bar x - \mu)(\bar x - \mu) + n(\bar x - mu)^2 \right]$$
+$$E[\hat \sigma]  =
 \frac 1 n  E \left [ \sum^n_{i=1}[(x_i - \mu)^2] -2n(\bar x - \mu)^2 + n(\bar x - mu)^2 \right]$$
 $$E[\hat \sigma] = \frac 1 n  E \left [ \sum^n_{i=1}[(x_i - \mu)^2] -n(\bar x - \mu)^2  \right] = 
-\frac 1 n \left [ E[\sum^n_{i=1}(x_i - \mu)^2] -nE[(\bar x - \mu)^2] \right] = 
+\frac 1 n \left [ E[\sum^n_{i=1}(x_i - \mu)^2] -nE[(\bar x - \mu)^2] \right]$$
+$$E[\hat \sigma] = 
 \frac 1 n \left [ \sum^n_{i=1}(Var(x_i)) - nVar(\bar x) \right]$$
 
 Como sabemos que $Var(x_i) = \sigma^2$ e $Var(\bar x) = \frac {\sigma^2}{n}$
@@ -2008,7 +2009,7 @@ Assim verificamos que (1) é verdade
 
 Verificando (2), se $\lim\limits_{n \to \infty} Var[\hat \sigma^2] = 0$
 
-$$\lim\limits_{n \to \infty} Var[\hat \sigma^2] = \lim\limits_{n \to \infty} Var \right [ \frac{\sum^n_{i=1}(x_i - \bar x)^2} n \left ]$$
+$$\lim\limits_{n \to \infty} Var[\hat \sigma^2] = \lim\limits_{n \to \infty} Var \left [ \frac{\sum^n_{i=1}(x_i - \bar x)^2} n \right ]$$
 
 
 
@@ -2016,7 +2017,7 @@ $$\lim\limits_{n \to \infty} Var[\hat \sigma^2] = \lim\limits_{n \to \infty} Var
 
 É uma medida de desempenho de estimador, quanto menor melhor. <br>
 
-$$EQM[\hat \theta] = E[ (\hat \theta - \theta)^2]
+$$EQM[\hat \theta] = E[ (\hat \theta - \theta)^2]$$
 
 Se $\hat \theta$ é um estimador não viesado, então
 
@@ -2026,7 +2027,7 @@ Pois, <br>
  $$EQM[\theta] = E[ (\hat \theta - \theta)^2] = E[ (\hat \theta - E[\theta])^2 ] = Var( \hat \theta )$$
 <br>
 Pode-se mostrar também que,
-  $$EQM[\hat \theta] = \Var(\hat \theta) + B^2(\hat \theta)$$
+  $$EQM[\hat \theta] = Var(\hat \theta) + B^2(\hat \theta)$$
 <br><br>
 
 O EQM de um estimador $\hat \theta$ é consistente se e somente se $\lim\limits_{n \to \infty}EQM(\hat \theta ) = 0$.
@@ -2048,16 +2049,55 @@ $$Var[\hat \theta *] \leq Var[\hat \theta],$$
 para todo $\theta$, se $\leq$ substituído por < para pelo menos um $\theta$.
 
 <br><br><br>
-**Eficiência**
+
+#### **Eficiência**
+
 Chamamos de eficiência para um estimador $\hat \theta$, não viesado para o parâmetro $\theta$, o quociente,
 
 $$e(\hat \theta) = \frac{LI(\theta}{Var[\hat \theta]},$$
 
-No qual $LI(\theta$ é olimite inferior da variância dos estimadores não viesados de $\theta$.
+No qual $LI(\theta)$ é o limite inferior da variância dos estimadores não viesados de $\theta$, também conhecido como limite inferior de Cramér-Rao.
 <br>
 
-Se $LI(\theta) = Var[\hat \theta]$, ou seja quando a variância de $\theta$ é igual ao limite inferior das variâncias dos estimadores não viesados de \theta, temos $e(\hat \theta) = 1$. Nesse caso, $\hat \theta$ é dito eficiente. <br> <br>
+Se $LI(\theta) = Var[\hat \theta]$, ou seja quando a variância de $\theta$ é igual ao limite inferior das variâncias
+dos estimadores não viesados de $\theta$, temos $e(\hat \theta) = 1$. Nesse caso, $\hat \theta$ é dito eficiente. <br> <br>
 
-$$LI(\theta) = \frac{1}{n E \left [ \left ( \frac {\partial}{\partial \theta} log f(X; \theta) \right ) \right )^2},
+$$LI(\theta) = \frac{1}{n E \left [ \left ( \frac {\partial}{\partial \theta} log f(X; \theta) \right ) \right )^2}$$,
 
-Isso se, o suporte $A(x) = [x, f(x; \theta) > 0]$ seja independente de $\theta$ e que seja possível trocar a ordem das operações de derivação e de integração sob a distribuição da variável aleatória X.
+Isso se, o suporte $A(x) = [x, f(x; \theta) > 0]$ seja independente de $\theta$ e que seja possível trocar a ordem
+das operações de derivação e de integração sob a distribuição da variável aleatória X.
+<br>
+
+Por exemplo, temos $x_1, x_2, ..., x_n$ uma amostra aleatória de tamanho $n$, com $X$ &nbsp;~&nbsp; $N(\mu, \sigma^2)$, com $\sigma^2$ conhecida.
+
+Logo sua fdp será,
+
+$$f(x; \mu) = \frac{1}{\sqrt{2\pi\sigma^2}} e\left \{-\frac 1 2 \frac{(x - \mu)^2} {\sigma^2}\right \}$$
+E queremos calcular a eficiência de $\bar x$ para $\mu$, pra isso precisamos calcular o $LI$
+$$LI(\theta) = \frac{1}{n E \left [ \left ( \frac {\partial}{\partial \theta} log f(X; \theta) \right ) \right )^2}$$
+Calculando o log *(o log é o ln)* da fdp,
+
+$$\log[f(x;\mu)] = \log\left[\frac{1}{\sqrt{2\pi\sigma^2}} e\left \{-\frac 1 2 \frac{(x - \mu)^2} {\sigma^2}\right \}\right]$$
+$$\log[f(x;\mu)] = \log\left[(2\pi\sigma^2)^{-\frac 1 2}\right ] + \log \left [ e\left \{-\frac 1 2 \frac{(x - \mu)^2} {\sigma^2}\right \}\right] = -\frac 1 2 \log[2\pi\sigma^2] -\frac 1 2 \frac{(x - \mu)^2} {\sigma^2}$$
+Agora derivando em relação ao parâmetro de interesse $\mu$
+
+$$ \frac {\partial}{\partial \mu} \log[f(x;\mu)] = \frac {\partial}{\partial \mu} \left [ -\frac 1 2 \log[2\pi\sigma^2] -\frac 1 2 \frac{(x - \mu)^2} {\sigma^2} \right ] =   \frac {\partial}{\partial \mu} \left [ -\frac 1 2 \log[2\pi\sigma^2] \right ] -\frac 1 2 \frac {\partial}{\partial \mu} \left [\frac{(x - \mu)^2} {\sigma^2} \right ]  $$
+$$ \frac {\partial}{\partial \mu} \log[f(x;\mu)] =  -\frac 1 2 \frac {\partial}{\partial \mu} \left [\frac{(x - \mu)^2} {\sigma^2} \right ] =
+-\frac 1 2 \frac {\partial}{\partial \mu} \left [ \frac{x^2 - 2x\mu + \mu^2}{\sigma^2} \right] = -\frac 1 2 \left [\frac{-2x +2\mu}{\sigma^2}  \right ] = \frac{x - \mu}{\sigma^2} $$
+
+Agora só falta aplicar a esperança,
+
+$$E\left[\left(\frac {\partial}{\partial \mu} \log f(x;\mu)\right)^2\right] = E \left [ \left (\frac{x - \mu}{\sigma^2}\right )^2\right ] = \frac 1 {\sigma^4} E[(x - \mu)^2]$$
+$$ E[(x - \mu)^2] = E[x^2 - 2\mu x + \mu^2] =  Var[x] + E[x]^2 - 2\mu E[x] + \mu^2 = Var[x]  + \mu^2 - 2\mu^2  + \mu^2 = Var[x]$$ 
+$$E\left[\left(\frac {\partial}{\partial \mu} \log f(x;\mu)\right)^2\right] = \frac 1 {\sigma^4} E\left[Var[x]\right] = \frac 1 {\sigma^4} \sigma^2 = \frac 1 {\sigma^2}$$
+Agora aplicando na fórmula do LI,
+
+$$LI = \frac{1}{n E \left [ \left ( \frac {\partial}{\partial \mu} log f(X; \mu) \right ) \right ]^2} = \frac{1} {n \frac 1 {\sigma^2}} = \frac {\sigma^2}{n}$$
+E temos que a eficiência é, 
+
+$$e(\bar x) = \frac{LI(\mu)}{Var[\bar x]} = \frac{\sigma^2/n}{\sigma^2 / n} = 1 $$
+Assim $\bar x$ é um estimador eficiente para $\mu$.
+
+
+
+
