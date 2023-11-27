@@ -2099,5 +2099,57 @@ $$e(\bar x) = \frac{LI(\mu)}{Var[\bar x]} = \frac{\sigma^2/n}{\sigma^2 / n} = 1 
 Assim $\bar x$ é um estimador eficiente para $\mu$.
 
 
+#### Função Escore
 
+A função escore tem a seguinte forma,
 
+$$\frac{\partial}{\partial\theta} \log f(X;\theta)$$
+
+A esperança da função escore é sempre igual a zero, ou seja,
+$$E \left [ \frac{\partial}{\partial\theta} \log f(X;\theta) \right] = 0$$
+<br>
+Por exemplo, utilizando o mesmo exemplo que usamos para eficiência, temos que $\frac{\partial}{\partial \theta} \log  f (X;\theta) = \frac{(x - \mu)}{\sigma^2}$, assim
+<br>
+$$E \left [ \frac{\partial}{\partial \theta} \log  f (X;\theta) \right ]
+= E \left[ \frac{(X - \mu)} {\sigma^2} \right ] = \frac{1}{\sigma^2}E[X - \mu] = \frac{1} {\sigma^2} (\mu - \mu) = 0$$
+
+<br><br>
+
+#### Informação de Fisher
+
+A informação de Fisher possui a seguinte função,
+
+$$I_F(\theta) = E \left [ \left ( \frac{\partial}{\partial \theta} \log  f (X;\theta) \right )^2 \right ], $$
+<br>
+Essa também pode ser representada da seguinte forma,
+<br>
+$$I_F(\theta) = Var\left[ \frac{\partial}{\partial \theta} \log f (X;\theta) \right ],$$
+
+Isso, pois $E[X] = 0$, e portanto $Var[X] = E[X^2]$, além disso temos que
+
+$$I_F(\theta) = E\left[\left ( \frac{\partial}{\partial \theta} \log f (X;\theta) \right )^2 \right ] = 
+-E\left[ \frac{\partial^2}{\partial \theta^2} \log f (X;\theta) \right ]$$
+<br>
+Outra propriedade estabelece que para uma amostra aleatória $X_1, ..., X_n$ da v.a. X com fdp $f(x; \theta)$
+e informação de Fisher $I_F(\theta)$, possui a informação total de Fisher de $\theta$, que é a soma das
+informações de Fisher das n observações da amostra, correspondente à amostra observada,
+
+$$L(\theta; x) = \prod^n_{i=1} f(x_i; \theta) = f(x_1; \theta)\cdot ... \cdot f(x_n; \theta)$$
+
+a densidade conjunta de $X_1, ..., X_n$, temos que
+
+$$E\left[\left ( \frac{\partial}{\partial \theta} \log L (\theta; X) \right )^2 \right ] =
+-E\left[ \frac{\partial^2}{\partial \theta^2} \log L (\theta; X) \right ] = 
+-E\left[ \sum^n_{i=1} \frac{\partial^2}{\partial \theta^2} \log f (X_i; \theta) \right ] $$
+
+$$E\left[\left ( \frac{\partial}{\partial \theta} \log L (\theta; X) \right )^2 \right ] = 
+\sum^n_{i=1} E\left[  -\frac{\partial^2}{\partial \theta^2} \log f (X_i; \theta) \right ] = n I_F(\theta)$$
+
+Pois para todos $X_i$ temos a mesma informação de Fisher
+<br><br>
+
+#### Desigualdade de Informação
+<br>
+Quando as condições de de regularidade estão satisfeitas, a variância de de qualquer estimador $\hat \theta$ não viesado do do parâmetro $\theta$ satisfaz,
+
+$$Var[\hat \theta] \geq$$
