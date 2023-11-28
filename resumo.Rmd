@@ -135,6 +135,7 @@ Se r é ímpar $-\infty$, se r é par $+\infty$
 $$\lim\limits_{x \to -\infty} \frac{1}{x^r} = 0$$ 
 $$\lim\limits_{x \to +\infty} \frac{1}{x^r} = 0$$ 
 <br>
+
 ### **Derivação**
 
 #### **O que é uma derivada?**

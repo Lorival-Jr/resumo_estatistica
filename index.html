@@ -11,7 +11,7 @@
 
 <meta name="author" content="Lorival Junior" />
 
-<meta name="date" content="2023-07-09" />
+<meta name="date" content="2023-11-27" />
 
 <title>Um resumo do curso de Estatística</title>
 
@@ -1493,7 +1493,7 @@ border-radius: 0px;
 
 <h1 class="title toc-ignore">Um resumo do curso de Estatística</h1>
 <h4 class="author">Lorival Junior</h4>
-<h4 class="date">2023-07-09</h4>
+<h4 class="date">2023-11-27</h4>
 
 </div>
 
@@ -1631,9 +1631,11 @@ Se r é ímpar <span class="math inline">\(-\infty\)</span>, se r é par
 <span class="math inline">\(+\infty\)</span></p>
 <p><span class="math display">\[\lim\limits_{x \to -\infty}
 \frac{1}{x^r} = 0\]</span> <span class="math display">\[\lim\limits_{x
-\to +\infty} \frac{1}{x^r} = 0\]</span> <br> ###
-<strong>Derivação</strong></p>
+\to +\infty} \frac{1}{x^r} = 0\]</span> <br></p>
 </div>
+</div>
+<div id="derivação" class="section level3">
+<h3><strong>Derivação</strong></h3>
 <div id="o-que-é-uma-derivada" class="section level4">
 <h4><strong>O que é uma derivada?</strong></h4>
 <p>A derivada representa o coeficiente de varição da reta tangente da
@@ -2686,7 +2688,7 @@ e^{bt}m_x(at)\)</span></li>
 <h2>Estrutura de Dados</h2>
 </div>
 <div id="probabilidade-ii" class="section level2">
-<h2>Probabilidade II</h2>
+<h2><strong>Probabilidade II</strong></h2>
 <hr />
 <div id="função-de-distribuição-acumulada-conjunta" class="section level3">
 <h3>Função de distribuição acumulada conjunta<br><br></h3>
@@ -3202,9 +3204,559 @@ n}} \rightarrow^D N(0,1)\)</span>
 </div>
 <div id="estatística-computacional" class="section level2">
 <h2>Estatística Computacional</h2>
+<p><br><br><br></p>
 </div>
-<div id="inferência" class="section level2">
-<h2>Inferência</h2>
+<div id="inferência-i" class="section level2">
+<h2>Inferência I</h2>
+<p>Inferência estatística é um conjunto de técnicas que busca estudar a
+população, a partir de evidências de uma amostra. Essa sendo essencial
+na maioria dos casos visto o custo de coletar a população toda. <br></p>
+<div id="conceitos-iniciais-1" class="section level3">
+<h3>Conceitos iniciais <br></h3>
+<ul>
+<li><p>População: Um conjunto de elementos que possuem uma
+característica em comum e descrevem algum fenômeno que queremos
+estudar.</p></li>
+<li><p>Amostra: Uma parte da população.</p></li>
+<li><p>Estatística: Função da amostra que não depende dos parâmetros
+deconhecidos da população.</p></li>
+<li><p>Parâmetro: Uma medida fixa e deconhecida que usamos para
+descrever uma característica da população. (Ex: <span class="math inline">\(\mu\)</span>)</p></li>
+<li><p>Estimador: É a estatística da amostra utilizada para estimar um
+parâmetro da população. (Ex: <span class="math inline">\(\bar{x}=
+\frac{\sum x}{n}\)</span>)</p></li>
+<li><p>Estimativa: É o valor calculado a partir dos dados da amostra
+para estimar um parâmetro. (Ex: <span class="math inline">\(\bar x =
+3\)</span>)</p></li>
+<li><p>Estimação: Processo em que a partir de uma amostra procura-se um
+valor e ou um intervalo que represente o parâmetro de interesse
+desconhecido. <br><br></p></li>
+</ul>
+</div>
+<div id="distribuição-amostral-de-um-estimador" class="section level3">
+<h3><strong>Distribuição amostral de um estimador</strong> <br></h3>
+<p>Considerando todas amostras aleatórias simples de tamanho n de uma
+população, calculamos a estimativa <span class="math inline">\(t =
+t(x)\)</span> para cada amostra, a partir disso teremos uma distribuição
+amostral de estimativas. <br></p>
+<p>Por exemplo: <br></p>
+<p>Dado uma população <span class="math inline">\(X =
+(1,2,3,4,5)\)</span>, queremos todas as amostras de <span class="math inline">\(n=2\)</span> com reposição.</p>
+<p>O espaço paramétrico será o seguinte: <br></p>
+<p><span class="math inline">\(\Theta\)</span> = { <br>     (1,1),
+(1,2), (1,3), (1,4), (1,5),<br>     (2,1), (2,2), (2,3), (2,4),
+(2,5),<br>     (3,1), (3,2), (3,3), (3,4), (3,5),<br>     (4,1), (4,2),
+(4,3), (4,4), (4,5),<br>     (5,1), (5,2), (5,3), (5,4), (5,5) }
+<br><br> Por exemplo se queremos a distribuição amostral da média,
+calculamos a média para cada grupo. <br></p>
+<p><span class="math inline">\(\Theta_{\bar x}\)</span> = { <br>    
+1.0, 1.5, 2.0, 2.5, 3.0,<br>     1.5, 2.0, 2.5, 3.0, 3.5,<br>     2.0,
+2.5, 3.0, 3.5, 4.0,<br>     2.5, 3.0, 3.5, 4.0, 4.5,<br>     3.0, 3.5,
+4.0, 4.5, 5.0 }<br></p>
+<p>Com isso, conseguimos a seguinte distribuição amostral: <br></p>
+<table>
+<colgroup>
+<col width="28%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(\bar x\)</span></th>
+<th>1.0</th>
+<th>1.5</th>
+<th>2.0</th>
+<th>2.5</th>
+<th>3.0</th>
+<th>3.5</th>
+<th>4.0</th>
+<th>4.5</th>
+<th>5.0</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(P(\bar X = \bar x)\)</span></td>
+<td>1/25</td>
+<td>2/25</td>
+<td>3/25</td>
+<td>4/25</td>
+<td>5/25</td>
+<td>4/25</td>
+<td>3/25</td>
+<td>2/25</td>
+<td>1/25</td>
+</tr>
+</tbody>
+</table>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABUAAAAPACAMAAADDuCPrAAAA5FBMVEUAAAAAADoAAGYAOjoAOmYAOpAAZmYAZrY6AAA6OgA6Ojo6OmY6OpA6ZmY6ZpA6ZrY6kJA6kLY6kNtmAABmOgBmOjpmZjpmZmZmZpBmkJBmkLZmkNtmtrZmtttmtv+QOgCQOjqQZjqQZmaQkDqQkGaQkJCQkLaQtraQttuQtv+Q2/+2ZgC2Zjq2kDq2kGa2kJC2kLa2tpC2tra2ttu227a229u22/+2///T09PbkDrbkGbbtmbbtpDbtrbb25Db27bb29vb2//b/7bb////AAD/tmb/25D/27b/29v//7b//9v////UgIUIAAAACXBIWXMAAB2HAAAdhwGP5fFlAAAgAElEQVR4nO2df2MTybVgWwzsCOaFvGBPnCVh5pHNZtgxj7eIhYkDBPPAGOTv/322W7/ckkqtqttVdW93nfNHBhxbR3LXPailVnd1AwAAIirtOwAAMFQIKACAEAIKACCEgAIACCGgAABCCCgAgBACCgAghIACAAghoAAAQggoAIAQAgoAIISAAgAIIaAAAEIIKACAEAIKACCEgAIACCGgAABCCCgAgBACCgAghIACAAghoAAAQggoAIAQAgoAIISAAgAIIaAAAEIIKACAEAIKACCEgAIACCGgAABCCCgAgBACCgAghIACAAghoAAAQggoAIAQAgoAIISAAgAIIaAAAEIIKACAEAIKACCEgAIACCGgAABCCCgAgBACCgAghIACAAghoAAAQggoAIAQAgoAIISAAgAIIaAAAEIIKACAEAIKACCEgAIACCGgAABCCCgAgBACCgAghIACAAghoAAAQggoAIAQAgoAIISAAgAIIaAAAEIIKACAEAIKACCEgAIACCGgAABCCCgAgBACCgAghIACAAghoAAAQggoAIAQAgoAIISAAgAIIaAAAEIIKACAEAIKACCEgAIACCGgAABCCCgAgBACCgAghIACAAghoAAAQggoAIAQAgoAIISAAgAIIaAAAEIIKACAEAIKACCEgAIACCGgAABCCCgAgBACCgAghIACAAghoAAAQggoAIAQAgoAIISAAgAIIaAAAEIIKACAEAIKACCEgAIACCGgAABCCCgAgBACCgAghIACAAghoAAAQggoAIAQAgoAIISAAgAIIaAAAEIIKACA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" width="672" />
+<br><br></p>
+Para a distribuição amostral da média, em específico, quando <span class="math inline">\(n\)</span> aumenta ela se aproxima de uma normal.
+<br> Mais que isso, para amostras aleatórias simples com n
+suficientemente grande de uma variável aleatória X com média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(\sigma^2\)</span>, a variável aleatória <span class="math inline">\(\bar X\)</span> seguirá uma distribuição normal
+com média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(\frac{\sigma^2} n\)</span>, ou seja, se
+<center>
+<span class="math inline">\(X\)</span>  ~  <span class="math inline">\(N(\mu, \sigma^2)\)</span>
+</center>
+então,
+<center>
+<span class="math inline">\(\bar X\)</span>  ~  <span class="math inline">\(N(\mu, \frac{\sigma^2} n)\)</span>
+</center>
+<p><br><br></p>
+<div id="teorema-do-limite-central-tcl" class="section level4">
+<h4><strong>Teorema do Limite Central (TCL)</strong> <br><br></h4>
+<p>Sendo <span class="math inline">\(X_1, ..., X_n\)</span> variáveis
+aleatórias i.i.d. com média <span class="math inline">\(\mu\)</span> e
+variância <span class="math inline">\(\sigma^2\)</span>, então para cada
+z.</p>
+<p><span class="math inline">\(F(z)\)</span> converge para <span class="math inline">\(\Phi(z)\)</span> quando <span class="math inline">\(n \rightarrow \infty,\)</span></p>
+<p>Em que,</p>
+<p><span class="math display">\[Z = \frac{(\bar X - E[\bar
+X])}{\sqrt{Var[\bar X]}} = \frac{(\bar X -
+\mu)}{\frac{\sigma}{\sqrt{n}}}\]</span>,</p>
+<p>Sendo Z uma v.a de distribuição normal padrão. <br><br></p>
+<p>Também pelo TCL, a distribuição assintótica de <span class="math inline">\(\bar X\)</span> quando X tem média <span class="math inline">\(\mu\)</span>, variância finita <span class="math inline">\(\sigma^2\)</span> e <span class="math inline">\(n
+\rightarrow \infty\)</span>, a distribuição amostral de <span class="math inline">\(\bar X\)</span> aproxima-se de uma distribuição
+normal padrão, ou seja</p>
+<center>
+<span class="math inline">\(\bar X\)</span>  ~<span class="math inline">\(^d\)</span>  <span class="math inline">\(N(\mu,
+\frac{\sigma^2} n)\)</span>
+</center>
+<p><br><br><br></p>
+<p><strong>Distribuição amostral da variância (<span class="math inline">\(s^2\)</span>)</strong></p>
+<p><span class="math display">\[s^2 = \frac 1 {n-1} \sum^n_{i=1}(X_i -
+\bar X)^2,\]</span></p>
+<p><br></p>
+<p><span class="math inline">\(E[s^2] = \sigma^2\)</span> e <span class="math inline">\(Var[s^2] = \frac{2\sigma^4}{n-1}\)</span>
+<br><br></p>
+<p><strong>Propriedades da média e da variância amostral</strong></p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(\bar x\)</span> e <span class="math inline">\(s^2\)</span> são variáveis aleatória
+independentes, <span class="math inline">\(\bar x \perp
+s^2\)</span></p></li>
+<li><p><span class="math inline">\(\bar x\)</span> tem distribuição
+normal com média <span class="math inline">\(\mu\)</span> e variância
+<span class="math inline">\(\frac{\sigma^2} n\)</span>, <span class="math inline">\(\bar X\)</span>  ~<span class="math inline">\(^d\)</span>  <span class="math inline">\(N(\mu,
+\frac{\sigma^2} n)\)</span></p></li>
+<li><p><span class="math inline">\(\frac {(n-1)s^2}{\sigma^2}\)</span>
+tem uma distribuição Qui-quadrado com n-1 graus de liberdade <span class="math inline">\(\frac {(n-1)s^2}{\sigma^2}\)</span>   ~   <span class="math inline">\(\chi^2_{n-1}\)</span></p></li>
+</ol>
+<p><br><br><br></p>
+</div>
+</div>
+<div id="distribuições-amostrais-derivadas-da-distribuição-normal" class="section level3">
+<h3><strong>Distribuições amostrais derivadas da distribuição
+normal</strong></h3>
+<p><br></p>
+<div id="distribuição-qui-quadrado-1" class="section level4">
+<h4><strong>Distribuição Qui-quadrado</strong></h4>
+<p>Se X é uma v.a. com densidade</p>
+<p><span class="math display">\[f(x) = \frac{1}{\Gamma(k/2)} \left (
+\frac 1 2 \right )^{k/2} x^{\frac k 2 -1} e^{\frac 1 2 x},\]</span></p>
+<p><span class="math display">\[0 &lt; x &lt; \infty,\]</span></p>
+<p>então x é definida como uma v.a. que segue a distribuição
+Qui-quadrado com k graus de liberdade, <span class="math inline">\(x\)</span>   ~   <span class="math inline">\(\chi^2_{k}\)</span>, e possui <br></p>
+<p><span class="math inline">\(E[x] = k\)</span>, <span class="math inline">\(Var[x]=2k\)</span> <br><br></p>
+<p>Seja <span class="math inline">\(X_i\)</span> com <span class="math inline">\(i = 1,2,...,n\)</span> v.a independentes e
+normalmente distribuídas com média <span class="math inline">\(\mu_i\)</span> e variância <span class="math inline">\(\sigma^2_i\)</span>, então</p>
+<p><span class="math display">\[U = \sum^n_{i=1} \left( \frac{x_i -
+\mu_i}{\sigma_i} \right )\]</span> Possui distribuição Qui-quadrado com
+n graus de liberdade. <br><br></p>
+<p>Um outro resultado importante é que, sendo <span class="math inline">\(X_1, X_2, ..., X_n\)</span> uma amostra aleatório
+de uma distribuição normal padrão, <span class="math inline">\(\sum^n_{i=1} (X_i - \bar{X})^2\)</span> possui
+distribuição Qui-quadrado com <span class="math inline">\(n-1\)</span>
+graus de liberdade, <span class="math inline">\(\chi^2_{n-1}\)</span>
+<br><br></p>
+<p>Se <span class="math inline">\(s^2\)</span> é a variância amostral de
+uma amostra aleatória que segue uma distribuição normal com média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(\sigma^2\)</span>, então</p>
+<p><span class="math display">\[U =
+\frac{(n-1)s^2}{\sigma^2},\]</span></p>
+<p>possui distribuição Qui-quadrado com <span class="math inline">\(n-1\)</span> graus de liberdade. <br><br></p>
+</div>
+<div id="distribuição-f" class="section level4">
+<h4><strong>Distribuição F</strong></h4>
+<p>A distribuição F é a distribuição da razão de duas v.a. independentes
+que seguem a distribuição Qui-quadrado. Sendo U e V essas variáveis com
+m e n graus de liberdade respectivamente, sua densidade conjunta é dada
+por,</p>
+<p><span class="math display">\[f(u,v) = \frac{1}{\Gamma(\frac m 2)
+\Gamma(\frac n 2)2^{(m + n)/2}}u^{(m-2)/2}v^{(n-2)/2}e^{-\frac 1 2 (u
++v)}\]</span></p>
+<p>Sendo <span class="math inline">\(0 &lt; u &lt; \infty\)</span>,
+<span class="math inline">\(0 &lt; v &lt; \infty\)</span> <br></p>
+<p>Queremos encontrar a distribuição da quantidade</p>
+<p><span class="math display">\[X = \frac{U/m}{V/n},\]</span> A qual
+pode ser referida como razão de variâncias.<br></p>
+<p>Outra parametrização, seria se considerassemos <span class="math inline">\(X = \frac{U/m}{V/n}\)</span> e <span class="math inline">\(Y = V\)</span>, então</p>
+<p><span class="math display">\[f(x) = \frac{\Gamma[(m
++n)/2]}{\Gamma(m/2)\Gamma(n/2)}
+\left ( \frac m n \right )^{m/2}
+\frac{x^{(m-2)/2}}{[1 + (m/n)x]^{(m + n)/2}}\]</span></p>
+<p>então X é definido como uma v.a que segue a distribuição F com m e n
+graus de liberdade. <br></p>
+<p>Além disso, se temos X e Y amostras independentes de tamanho m e n,
+respectivamente, que seguem a distribuição normal, e essas com
+variâncias amostrais <span class="math inline">\(s_x\)</span> e <span class="math inline">\(s_y\)</span>, então</p>
+<p><span class="math display">\[\frac{\frac{s_x}{(m-1)}}{\frac{s_y}{(n-1)}}\]</span></p>
+<p>segue a distribuição F com <span class="math inline">\(m-1\)</span> e
+<span class="math inline">\(n-1\)</span> graus de liberdade.
+<br><br></p>
+<p>Agora considerando X como uma v.a que segue a distribuição F com m e
+n graus de liberdade, então</p>
+<p><span class="math inline">\(E[X] = \frac n {n-2},\)</span> para n
+&gt; 2 <br></p>
+<p><span class="math inline">\(Var[X] = \frac{2n^2(m + n
+-2)}{m(n-2)^2(n-4)},\)</span> para n &gt; 4,</p>
+<p>Se X é um v.a que segue F com m e n graus de liberdade, então</p>
+<p><span class="math display">\[W =\frac{mX/n}{1 + mX/n}\]</span> Possui
+distribuição beta com parâmetros <span class="math inline">\(\alpha =
+m/2\)</span> e <span class="math inline">\(\beta = n/2\)</span>
+<br><br><br></p>
+</div>
+<div id="distribuição-t-de-student" class="section level4">
+<h4><strong>Distribuição t de Student</strong></h4>
+<p>A distribuição t de Student é a razão de uma v.a. que segue a
+distribuição normal padronizada por uma raiz quadrada de uma v.a. que
+segue a distribuição Qui-quadrado dividia pelos seus graus de liberdade.
+Sendo <span class="math inline">\(Z\)</span> uma v.a. que segue a normal
+padrão, U uma v.a. que segue a Qui-quadrado com k graus de liberdade, e
+tendo Z e U como independente, temos que</p>
+<p><span class="math display">\[X = \frac{Z} {\sqrt{U/k}}\]</span> <br>
+A densidade conjunta de Z e U é dada por</p>
+<p><span class="math display">\[f(z,u) = \frac{1}{\sqrt{2\pi}}\frac{1}
+{\Gamma(k/2)}
+\left ( \frac{1}{2} \right )^{k/2} u^{(k/2)-1}e^{-\frac 1 2u}
+e^{\frac 1 2 z^2}
+\]</span> Com, <span class="math inline">\(-\infty &lt; z &lt;
+\infty\)</span> e <span class="math inline">\(0 &lt; u &lt;
+\infty\)</span> <br></p>
+<p>Transformando <span class="math inline">\(X = \frac Z
+{\sqrt{U/k}}\)</span> e <span class="math inline">\(Y = U\)</span>,
+obtemos a seguinte densidade,</p>
+<p><span class="math display">\[f(x) = \frac{\Gamma[(k +
+1)/2]}{\Gamma(k/2)} \frac{1}{\sqrt{k\pi}}
+  \frac{1}{(1 + \frac{x^2}k)^{(k+1)/2}}
+\]</span> Assim, se X possui tal densidade ele é uma v.a. que segue a
+distribuição t de Student com k graus de liberdade.</p>
+<p><span class="math inline">\(E[X] = 0\)</span>, se k &gt; 1</p>
+<p><span class="math inline">\(Var[X] = \frac{k}{k-2}\)</span>, se k
+&gt; 2</p>
+<p><br> Outras observações importantes sobre essa distribuição são que
+com 1 grau de liberdade ela se reduz a uma distribuição Cauchy, e
+conforme esse número aumenta ela se aproxima de uma distribuição normal
+padrão. Além disso, o quadrado de uma v.a que segue uma t com k graus de
+liberdade possui distribuição F com 1 e k graus de liberdade.</p>
+<p><br><br><br></p>
+</div>
+</div>
+<div id="estimação-paramétrica" class="section level3">
+<h3><strong>Estimação Paramétrica</strong> <br></h3>
+<p><strong>Estimação pontual</strong> Nessa estimação, calculamos uma
+estatística <span class="math inline">\(T(X)\)</span> que representa o
+valor do parâmetro desconhecido <span class="math inline">\(\theta\)</span> ou de uma função <span class="math inline">\(g(\theta)\)</span>.</p>
+<p>Por exemplo, podemos calcular a estatística <span class="math inline">\(T(x) = \bar x = \frac{\sum^n_{i=1} x_i} n\)</span>
+para estimarmos <span class="math inline">\(\mu\)</span>. <br><br></p>
+</div>
+<div id="desempenho-de-um-estimador" class="section level3">
+<h3><strong>Desempenho de um estimador</strong> <br> <br></h3>
+<div id="viés" class="section level4">
+<h4><strong>Viés</strong> <br></h4>
+<p>Dizemos que um estimador <span class="math inline">\(T(x) = \hat
+\theta\)</span> é não viesado ou não tendencioso para <span class="math inline">\(\theta\)</span> se</p>
+<p><span class="math display">\[E[T(x)] = E[\hat \theta] =
+\theta,\]</span></p>
+<p>para todo <span class="math inline">\(\theta \in \Theta\)</span>, ou
+seja a esperança da estatística deve ser igual ao parâmetro.</p>
+<p>Se um estimador <span class="math inline">\(\hat \theta\)</span> do
+parâmetro <span class="math inline">\(\theta\)</span> é viesado, o
+<strong>viés</strong> é dado por</p>
+<p><span class="math display">\[B(\hat \theta) = E[\hat \theta] -
+\theta\]</span></p>
+<p>Ou seja o viés ou vício é a diferença entre a esperança do estimador
+e o parâmetro.</p>
+<p><br> Por exemplo, <span class="math inline">\(\bar x\)</span> é um
+estimado não viesado para <span class="math inline">\(\mu\)</span></p>
+<p><span class="math display">\[E[\bar x] = E\left [\frac{\sum^n_{i=1}
+x_i}{n}\right] = \frac{1}{n} E [{\sum^n_{i=1} x_i}] = \frac{1}{n}
+{\sum^n_{i=1}E [ x_i}] = \frac{1}{n} \sum^n_{i=1}\mu  = \frac{1}{n} n
+\mu = \mu\]</span> <br></p>
+<p>Enquanto isso podemos mostrar que <span class="math inline">\(T(x) =
+\hat{\sigma} = \frac{\sum^n_{i=1}(x_i - \bar x)^2} n\)</span> é viesado
+para <span class="math inline">\(\sigma = \frac{\sum^n_{i=1}(x_i -
+\mu)^2}{N}\)</span></p>
+<p><span class="math display">\[E[\hat \sigma] = E \left [
+\frac{\sum^n_{i=1}(x_i - \bar x)^2} n \right ] = \frac 1 n  E \left [
+\sum^n_{i=1}(x_i - \bar x)^2 \right ] \]</span> Completando quadrados,
+somamos e subtraímos <span class="math inline">\(\mu\)</span></p>
+<p><span class="math display">\[E[\hat \sigma] = \frac 1 n  E \left [
+\sum^n_{i=1}(x_i - \bar x + \mu - \mu)^2 \right] = \frac 1 n  E \left [
+\sum^n_{i=1}( (x_i - \mu) - (\bar x - \mu) )^2 \right]\]</span> <span class="math display">\[E[\hat \sigma] = \frac 1 n  E \left [
+\sum^n_{i=1}[ (x_i - \mu)^2 -2(x_i - \mu)(\bar x - \mu)  + (\bar x -
+\mu)^2] \right]  \]</span></p>
+<p><span class="math display">\[E[\hat \sigma] = \frac 1 n  E \left [
+\sum^n_{i=1}[(x_i - \mu)^2] -2(\bar x - \mu)\sum^n_{i=1}[ (x_i - \mu)] +
+\sum^n_{i=1}[(\bar x - \mu)]^2 \right]\]</span> <span class="math display">\[E[\hat \sigma] = \frac 1 n  E \left [
+\sum^n_{i=1}[(x_i - \mu)^2] -2(\bar x - \mu)(\sum^n_{i=1}x_i -
+\sum^n_{i=1}\mu) + n(\bar x - \mu)^2 \right]\]</span> <span class="math display">\[E[\hat \sigma] = \frac 1 n  E \left [
+\sum^n_{i=1}[(x_i - \mu)^2] -2(\bar x - \mu)(n \bar x - n \mu) + n(\bar
+x - \mu)^2 \right]\]</span> <span class="math display">\[E[\hat \sigma]
+= \frac 1 n  E \left [ \sum^n_{i=1}[(x_i - \mu)^2] -2n(\bar x -
+\mu)(\bar x - \mu) + n(\bar x - \mu)^2 \right]\]</span> <span class="math display">\[E[\hat \sigma] = \frac 1 n  E \left [
+\sum^n_{i=1}[(x_i - \mu)^2] -2n(\bar x - \mu)(\bar x - \mu) + n(\bar x -
+\mu)^2 \right]\]</span> <span class="math display">\[E[\hat \sigma]  =
+\frac 1 n  E \left [ \sum^n_{i=1}[(x_i - \mu)^2] -2n(\bar x - \mu)^2 +
+n(\bar x - \mu)^2 \right]\]</span> <span class="math display">\[E[\hat
+\sigma] = \frac 1 n  E \left [ \sum^n_{i=1}[(x_i - \mu)^2] -n(\bar x -
+\mu)^2  \right] =
+\frac 1 n \left [ E[\sum^n_{i=1}(x_i - \mu)^2] -nE[(\bar x - \mu)^2]
+\right]\]</span> <span class="math display">\[E[\hat \sigma] =
+\frac 1 n \left [ \sum^n_{i=1}(Var(x_i)) - nVar(\bar x)
+\right]\]</span></p>
+<p>Como sabemos que <span class="math inline">\(Var(x_i) =
+\sigma^2\)</span> e <span class="math inline">\(Var(\bar x) = \frac
+{\sigma^2}{n}\)</span></p>
+<p><span class="math display">\[E[\hat \sigma] =  \frac 1 n \left [
+\sum^n_{i=1}(\sigma^2) - n \frac {\sigma^2}{n}   \right] =
+\frac 1 n (n \sigma^2 - \sigma^2) = \frac{(n-1)\sigma^2}{n}\]</span></p>
+<p>Como <span class="math inline">\(E[\hat \sigma] =
+\frac{(n-1)\sigma^2}{n}\)</span> é diferente de <span class="math inline">\(\sigma^2\)</span> <br><br></p>
+<p>Calculando o viés</p>
+<p><span class="math display">\[B(\hat \theta) = E[\hat \theta] -
+\theta\]</span> <span class="math display">\[B(\sigma^2) = E[\sigma^2] -
+\sigma^2 = \frac{(n-1} n \sigma^2 - \sigma^2\]</span> <span class="math display">\[B(\sigma^2) = \frac{(n-1)\sigma^2 - n\sigma^2} n
+= \frac{n\sigma^2 - \sigma^2 - n\sigma^2}{n} =
+\frac{-\sigma^2}{n}\]</span></p>
+<p>Interpretando esse viés, como o valor é negativo o estimador tende a
+fornecer valores menores que o verdadeiro parâmetro. <br><br></p>
+</div>
+<div id="consistência" class="section level4">
+<h4><strong>Consistência</strong></h4>
+<p>Seja <span class="math inline">\(\hat \theta\)</span> um estimador de
+<span class="math inline">\(\theta\)</span> com base em uma amostra
+aleatória de tamanho n, temos que <span class="math inline">\(\hat
+\theta\)</span> é consistente (ou coerente) se para todo <span class="math inline">\(\epsilon &gt; 0\)</span> <span class="math inline">\(\lim\limits_{n \to \infty} P(|\hat \theta - \theta
+| &gt; \epsilon) \rightarrow 0\)</span>.</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\lim\limits_{n \to \infty} E[\hat
+\theta] = \theta,\)</span> e se</li>
+<li><span class="math inline">\(\lim\limits_{n \to \infty} Var[\hat
+\theta] = 0,\)</span></li>
+</ol>
+<p>então <span class="math inline">\(\hat \theta\)</span> é um estimador
+consistente para <span class="math inline">\(\theta\)</span>. <br></p>
+<p>Por exemplo, vimos que <span class="math inline">\(T(x) =
+\hat{\sigma}^2 = \frac{\sum^n_{i=1}(x_i - \bar x)^2} n\)</span> é
+viesado para <span class="math inline">\(\sigma^2 =
+\frac{\sum^N_{i=1}(x_i - \mu)^2}{N}\)</span>, agora vamos testar se o
+<span class="math inline">\(\hat \sigma^2\)</span> é consistente para
+<span class="math inline">\(\sigma^2\)</span>: <br></p>
+<p>Primeiramente, verificando se <span class="math inline">\(\lim\limits_{n \to \infty} E[\hat \sigma^2] =
+\sigma^2\)</span></p>
+<p><span class="math display">\[\lim\limits_{n \to \infty} E
+\left[\frac{\sum^n_{i=1}(x_i - \bar x)^2} n \right] =  \lim\limits_{n
+\to \infty} \frac{(n-1)\sigma^2}{n}\]</span></p>
+<p>Aplicando L’Hospital, derivando em cima e em baixo por n,</p>
+<p><span class="math display">\[ \lim\limits_{n \to \infty} \sigma^2 =
+\sigma^2\]</span> <br> Assim verificamos que (1) é verdade <br></p>
+<p>Verificando (2), se <span class="math inline">\(\lim\limits_{n \to
+\infty} Var[\hat \sigma^2] = 0\)</span></p>
+<p><span class="math display">\[\lim\limits_{n \to \infty} Var[\hat
+\sigma^2] = \lim\limits_{n \to \infty} Var \left [
+\frac{\sum^n_{i=1}(x_i - \bar x)^2} n \right ]\]</span> <span class="math display">\[\lim\limits_{n \to \infty} Var[\hat \sigma^2] =
+\lim\limits_{n \to \infty} \frac 1 {n^2} Var \left [ \sum^n_{i=1}(x_i -
+\bar x)^2 \right ]\]</span> <span class="math display">\[\lim\limits_{n
+\to \infty} Var[\hat \sigma^2] =  \frac 1 {\infty^2} Var \left [
+\sum^n_{i=1}(x_i - \bar x)^2 \right ] = 0\]</span> <br> Assim,
+verificamos que (2) é verdade, e portanto <span class="math inline">\(\hat \sigma^2\)</span> é consistente. <br><br></p>
+</div>
+<div id="erro-quadrático-médio-eqm" class="section level4">
+<h4><strong>Erro Quadrático Médio (EQM)</strong></h4>
+<p>É uma medida de desempenho de estimador, quanto menor melhor.
+<br></p>
+<p><span class="math display">\[EQM[\hat \theta] = E[ (\hat \theta -
+\theta)^2]\]</span></p>
+<p>Se <span class="math inline">\(\hat \theta\)</span> é um estimador
+não viesado, então</p>
+<p><span class="math display">\[EQM[\hat \theta] = Var(\hat
+\theta)\]</span> <br></p>
+<p>Pois, <br> <span class="math display">\[EQM[\theta] = E[ (\hat \theta
+- \theta)^2] = E[ (\hat \theta - E[\theta])^2 ] = Var( \hat \theta
+)\]</span> <br> Pode-se mostrar também que, <span class="math display">\[EQM[\hat \theta] = Var(\hat \theta) + B^2(\hat
+\theta)\]</span> <br><br></p>
+<p>O EQM de um estimador <span class="math inline">\(\hat
+\theta\)</span> é consistente se e somente se <span class="math inline">\(\lim\limits_{n \to \infty}EQM(\hat \theta ) =
+0\)</span>.</p>
+<p>E caso isso ocorra, o EQM consistente implica que o viés e a
+variância de <span class="math inline">\(\hat \theta\)</span> tendem a
+zero. <br><br></p>
+<p>O EQM pode ser usado para comparar estimadores, sendo o menor melhor,
+por exemplo <span class="math inline">\(\hat \theta_1\)</span> é melhor
+que <span class="math inline">\(\hat \theta_2\)</span> se <span class="math display">\[EQM[\hat \theta_1] \leq EQM[\hat
+\theta_2]\]</span> <br></p>
+<p>Caso exista <span class="math inline">\(\hat \theta *\)</span> que
+possua para todo <span class="math inline">\(\hat \theta\)</span>, EQM
+menor ou igual, <span class="math display">\[EQM[\hat \theta*] \leq
+EQM[\hat \theta]\]</span> <br> Então <span class="math inline">\(\hat
+\theta *\)</span> é dito ser ótimo para <span class="math inline">\(\theta\)</span>. Além disso, se os estimadores não
+são viesados, então <span class="math inline">\(\hat \theta *\)</span> é
+dito ser o <strong>estimador não viesado de variância uniformemente
+mínima</strong> (ENVVUM), pois também</p>
+<p><span class="math display">\[Var[\hat \theta *] \leq Var[\hat
+\theta],\]</span></p>
+<p>para todo <span class="math inline">\(\theta\)</span>, se <span class="math inline">\(\leq\)</span> substituído por &lt; para pelo menos
+um <span class="math inline">\(\theta\)</span>.</p>
+<p><br><br><br></p>
+</div>
+<div id="eficiência" class="section level4">
+<h4><strong>Eficiência</strong></h4>
+<p>Chamamos de eficiência para um estimador <span class="math inline">\(\hat \theta\)</span>, não viesado para o parâmetro
+<span class="math inline">\(\theta\)</span>, o quociente,</p>
+<p><span class="math display">\[e(\hat \theta) =
+\frac{LI(\theta}{Var[\hat \theta]},\]</span></p>
+<p>No qual <span class="math inline">\(LI(\theta)\)</span> é o limite
+inferior da variância dos estimadores não viesados de <span class="math inline">\(\theta\)</span>, também conhecido como limite
+inferior de Cramér-Rao. <br></p>
+<p>Se <span class="math inline">\(LI(\theta) = Var[\hat
+\theta]\)</span>, ou seja quando a variância de <span class="math inline">\(\theta\)</span> é igual ao limite inferior das
+variâncias dos estimadores não viesados de <span class="math inline">\(\theta\)</span>, temos <span class="math inline">\(e(\hat \theta) = 1\)</span>. Nesse caso, <span class="math inline">\(\hat \theta\)</span> é dito eficiente. <br>
+<br></p>
+<p><span class="math display">\[LI(\theta) = \frac{1}{n E \left [ \left
+( \frac {\partial}{\partial \theta} log f(X; \theta) \right )^2 \right
+]}\]</span>,</p>
+<p>Isso se, o suporte <span class="math inline">\(A(x) = [x, f(x;
+\theta) &gt; 0]\)</span> seja independente de <span class="math inline">\(\theta\)</span> e que seja possível trocar a ordem
+das operações de derivação e de integração sob a distribuição da
+variável aleatória X. <br></p>
+<p>Por exemplo, temos <span class="math inline">\(x_1, x_2, ...,
+x_n\)</span> uma amostra aleatória de tamanho <span class="math inline">\(n\)</span>, com <span class="math inline">\(X\)</span>  ~  <span class="math inline">\(N(\mu,
+\sigma^2)\)</span>, com <span class="math inline">\(\sigma^2\)</span>
+conhecida.</p>
+<p>Logo sua fdp será,</p>
+<p><span class="math display">\[f(x; \mu) =
+\frac{1}{\sqrt{2\pi\sigma^2}} e\left \{-\frac 1 2 \frac{(x - \mu)^2}
+{\sigma^2}\right \}\]</span> E queremos calcular a eficiência de <span class="math inline">\(\bar x\)</span> para <span class="math inline">\(\mu\)</span>, pra isso precisamos calcular o <span class="math inline">\(LI\)</span> <span class="math display">\[LI(\theta) = \frac{1}{n E \left [ \left ( \frac
+{\partial}{\partial \theta} log f(X; \theta) \right ) \right
+)^2}\]</span> Calculando o log <em>(o log é o ln)</em> da fdp,</p>
+<p><span class="math display">\[\log[f(x;\mu)] =
+\log\left[\frac{1}{\sqrt{2\pi\sigma^2}} e\left \{-\frac 1 2 \frac{(x -
+\mu)^2} {\sigma^2}\right \}\right]\]</span> <span class="math display">\[\log[f(x;\mu)] = \log\left[(2\pi\sigma^2)^{-\frac
+1 2}\right ] + \log \left [ e\left \{-\frac 1 2 \frac{(x - \mu)^2}
+{\sigma^2}\right \}\right] = -\frac 1 2 \log[2\pi\sigma^2] -\frac 1 2
+\frac{(x - \mu)^2} {\sigma^2}\]</span> Agora derivando em relação ao
+parâmetro de interesse <span class="math inline">\(\mu\)</span></p>
+<p><span class="math display">\[ \frac {\partial}{\partial \mu}
+\log[f(x;\mu)] = \frac {\partial}{\partial \mu} \left [ -\frac 1 2
+\log[2\pi\sigma^2] -\frac 1 2 \frac{(x - \mu)^2} {\sigma^2} \right ]
+=   \frac {\partial}{\partial \mu} \left [ -\frac 1 2 \log[2\pi\sigma^2]
+\right ] -\frac 1 2 \frac {\partial}{\partial \mu} \left [\frac{(x -
+\mu)^2} {\sigma^2} \right ]  \]</span> <span class="math display">\[
+\frac {\partial}{\partial \mu} \log[f(x;\mu)] =  -\frac 1 2 \frac
+{\partial}{\partial \mu} \left [\frac{(x - \mu)^2} {\sigma^2} \right ] =
+-\frac 1 2 \frac {\partial}{\partial \mu} \left [ \frac{x^2 - 2x\mu +
+\mu^2}{\sigma^2} \right] = -\frac 1 2 \left [\frac{-2x
++2\mu}{\sigma^2}  \right ] = \frac{x - \mu}{\sigma^2} \]</span></p>
+<p>Agora só falta aplicar a esperança,</p>
+<p><span class="math display">\[E\left[\left(\frac {\partial}{\partial
+\mu} \log f(x;\mu)\right)^2\right] = E \left [ \left (\frac{x -
+\mu}{\sigma^2}\right )^2\right ] = \frac 1 {\sigma^4} E[(x -
+\mu)^2]\]</span> <span class="math display">\[ E[(x - \mu)^2] = E[x^2 -
+2\mu x + \mu^2] =  Var[x] + E[x]^2 - 2\mu E[x] + \mu^2 = Var[x]  + \mu^2
+- 2\mu^2  + \mu^2 = Var[x]\]</span> <span class="math display">\[E\left[\left(\frac {\partial}{\partial \mu} \log
+f(x;\mu)\right)^2\right] = \frac 1 {\sigma^4} E\left[Var[x]\right] =
+\frac 1 {\sigma^4} \sigma^2 = \frac 1 {\sigma^2}\]</span> Agora
+aplicando na fórmula do LI,</p>
+<p><span class="math display">\[LI = \frac{1}{n E \left [ \left ( \frac
+{\partial}{\partial \mu} log f(X; \mu) \right ) \right ]^2} = \frac{1}
+{n \frac 1 {\sigma^2}} = \frac {\sigma^2}{n}\]</span> E temos que a
+eficiência é,</p>
+<p><span class="math display">\[e(\bar x) = \frac{LI(\mu)}{Var[\bar x]}
+= \frac{\sigma^2/n}{\sigma^2 / n} = 1 \]</span> Assim <span class="math inline">\(\bar x\)</span> é um estimador eficiente para
+<span class="math inline">\(\mu\)</span>. <br><br></p>
+</div>
+<div id="função-escore" class="section level4">
+<h4><strong>Função Escore</strong></h4>
+<p>A função escore tem a seguinte forma,</p>
+<p><span class="math display">\[\frac{\partial}{\partial\theta} \log
+f(X;\theta)\]</span></p>
+<p>A esperança da função escore é sempre igual a zero, ou seja, <span class="math display">\[E \left [ \frac{\partial}{\partial\theta} \log
+f(X;\theta) \right] = 0\]</span> <br> Por exemplo, utilizando o mesmo
+exemplo que usamos para eficiência, temos que <span class="math inline">\(\frac{\partial}{\partial \theta} \log f (X;\theta)
+= \frac{(x - \mu)}{\sigma^2}\)</span>, assim <br> <span class="math display">\[E \left [ \frac{\partial}{\partial \theta}
+\log  f (X;\theta) \right ]
+= E \left[ \frac{(X - \mu)} {\sigma^2} \right ] = \frac{1}{\sigma^2}E[X
+- \mu] = \frac{1} {\sigma^2} (\mu - \mu) = 0\]</span></p>
+<p><br><br></p>
+</div>
+<div id="informação-de-fisher" class="section level4">
+<h4><strong>Informação de Fisher</strong></h4>
+<p>A informação de Fisher possui a seguinte função,</p>
+<p><span class="math display">\[I_F(\theta) = E \left [ \left (
+\frac{\partial}{\partial \theta} \log  f (X;\theta) \right )^2 \right ],
+\]</span> <br> Essa também pode ser representada da seguinte forma, <br>
+<span class="math display">\[I_F(\theta) = Var\left[
+\frac{\partial}{\partial \theta} \log f (X;\theta) \right
+],\]</span></p>
+<p>Isso, pois <span class="math inline">\(E[X] = 0\)</span>, e portanto
+<span class="math inline">\(Var[X] = E[X^2]\)</span>, além disso temos
+que</p>
+<p><span class="math display">\[I_F(\theta) = E\left[\left (
+\frac{\partial}{\partial \theta} \log f (X;\theta) \right )^2 \right ] =
+-E\left[ \frac{\partial^2}{\partial \theta^2} \log f (X;\theta) \right
+]\]</span> <br> Outra propriedade estabelece que para uma amostra
+aleatória <span class="math inline">\(X_1, ..., X_n\)</span> da v.a. X
+com fdp <span class="math inline">\(f(x; \theta)\)</span> e informação
+de Fisher <span class="math inline">\(I_F(\theta)\)</span>, possui a
+informação total de Fisher de <span class="math inline">\(\theta\)</span>, que é a soma das informações de
+Fisher das n observações da amostra, correspondente à amostra
+observada,</p>
+<p><span class="math display">\[L(\theta; x) = \prod^n_{i=1} f(x_i;
+\theta) = f(x_1; \theta)\cdot ... \cdot f(x_n; \theta)\]</span></p>
+<p>a densidade conjunta de <span class="math inline">\(X_1, ...,
+X_n\)</span>, temos que</p>
+<p><span class="math display">\[E\left[\left ( \frac{\partial}{\partial
+\theta} \log L (\theta; X) \right )^2 \right ] =
+-E\left[ \frac{\partial^2}{\partial \theta^2} \log L (\theta; X) \right
+] =
+-E\left[ \sum^n_{i=1} \frac{\partial^2}{\partial \theta^2} \log f (X_i;
+\theta) \right ] \]</span></p>
+<p><span class="math display">\[E\left[\left ( \frac{\partial}{\partial
+\theta} \log L (\theta; X) \right )^2 \right ] =
+\sum^n_{i=1} E\left[  -\frac{\partial^2}{\partial \theta^2} \log f (X_i;
+\theta) \right ] = n I_F(\theta)\]</span></p>
+<p>Pois para todos <span class="math inline">\(X_i\)</span> temos a
+mesma informação de Fisher <br><br></p>
+</div>
+<div id="desigualdade-de-informação" class="section level4">
+<h4><strong>Desigualdade de Informação</strong></h4>
+<p>Quando as condições de de regularidade estão satisfeitas, a variância
+de de qualquer estimador <span class="math inline">\(\hat
+\theta\)</span> não viesado do do parâmetro <span class="math inline">\(\theta\)</span> satisfaz,</p>
+<p><span class="math display">\[Var[\hat \theta] \geq
+\frac{1}{nI_F(\theta)}\]</span></p>
+<p>Por exemplo, seja <span class="math inline">\(x_1, ..., x_n\)</span>
+uma amostra aleatória de tamanho n de uma v.a. <span class="math inline">\(X\)</span>  ~  Poisson<span class="math inline">\((\theta)\)</span>, daí temos sua fdp como</p>
+<p><span class="math display">\[f(x; \theta) = \frac{e^{-\theta}
+\theta^x}{x!},\]</span> Nesse caso temos que,</p>
+<p><span class="math display">\[\log f(x; \theta) = -\theta + x
+\log(\theta) - \log(x!),\]</span> derivando,</p>
+<p><span class="math display">\[\frac{\partial}{\partial\theta} \log
+f(x; \theta) = \frac x \theta -1 \]</span> <span class="math display">\[E \left
+[\frac{\partial^2}{\partial\theta^2}  \log f(x; \theta)\right] = - \frac
+1 \theta\]</span> E portanto,</p>
+<p><span class="math display">\[LI(\theta) = \frac \theta n\]</span> E
+sabendo que <span class="math inline">\(Var[\bar x] = \frac \theta
+n\)</span>, temos que <span class="math inline">\(e= 1\)</span> e que
+<span class="math inline">\(\bar x\)</span> é um estimador eficiente
+para <span class="math inline">\(\theta\)</span>.</p>
+</div>
+</div>
 </div>
 </div>
 
