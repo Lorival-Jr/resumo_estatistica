@@ -2180,3 +2180,72 @@ E sabendo que $Var[\bar x] = \frac \theta n$, temos que $e= 1$ e que $\bar x$
 é um estimador eficiente para $\theta$.
 
 
+### Famílias Exponenciais
+
+Dizemos que a distribuição da v.a. X pertence a família exponencial unidimensional,
+se pudermos escrever sua fdp como
+<br>
+
+$$f(x;\theta) = exp\{ c(\theta) T(x) + d(\theta) + S(x)\}, x \in A,$$
+
+em que,
+<br>
+
+$c(.)$ e $d(.)$ são funções reais de $\theta$;
+
+$T(.)$ e $S(.)$ são funções reais de $x$
+
+$A$ não depende de $\theta$
+
+<br>
+
+Caso $X$ seja contínua, para que $f(x;\theta)$ seja uma fdp é necessário que
+
+$$\int_{A} exp \{ c(\theta) T(x) + d(\theta) + S(x)\}dx = 1$$
+<br>
+ou seja,
+<br>
+$$\int_{A} exp \{ c(\theta) T(x) + S(x)\}dx = exp{-d(\theta)}$$
+<br>
+
+de modo que $d(\theta)$ está associado à constante de normalização da densidade.
+<br><br>
+
+Por exemplo, seja $X$ uma v.a. com distribuição de *Bernoulli($\theta$)*,
+verifique se ela pertence à família exponencial.
+<br>
+
+$$f(x; \theta) = \theta^x (1 - \theta)^{1 - x} =
+\left ( \frac{\theta}{1 - \theta}\right )^x (1 - \theta)$$
+
+$$f(x; \theta) = exp \left \{ \log \left[ \left( 6\frac{\theta}{1 - \theta}\right )^x
+(1 - \theta)  \right ] \right \}$$
+
+$$f(x; \theta) = exp \left \{ x \log \left(\frac{\theta}{1 - \theta} \right) + 
+\log(1 - \theta) \right \}$$
+
+<br><br>
+Assim, chegamos na estrutura da função exponencial, a qual era
+
+$$exp \left\{c(\theta)T(x) + d(\theta) + S(x) \right\}$$
+
+e daí temos,
+
+$c(\theta) = \left( \frac{1}{1 - \theta} \right)$, $T(x) = x$, 
+
+$d(\theta) = \log(1 - \theta)$, $S(x) = 0$
+
+<br><br>
+
+Outro exemplo,
+
+Sendo $X$ uma v.a, e $X$ &nbsp;~&nbsp; $N(\mu, 1)$, verifique se X pertence a família exponencial.
+
+$$f(x; \mu) = \frac{1}{\sqrt{2 \pi}} exp \left \{ - \frac{(x - \mu)^2} 2 \right \}$$
+
+$$f(x; \mu) = exp \left\{ \log \left[ \frac{1}{\sqrt{2 \pi}} exp 
+\left \{ - \frac{(x^2 - 2 \mu x + \mu^2)} 2 \right \} \right] \right \} $$
+
+$$f(x; \mu) = exp \left\{ \log(1) - \log(\sqrt{2 \pi}) -
+\frac{(x^2 - 2 \mu x + \mu^2)} 2 \right\}$$
+
