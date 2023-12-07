@@ -2424,7 +2424,7 @@ verifique se ela pertence à família exponencial.
 $$f(x; \theta) = \theta^x (1 - \theta)^{1 - x} =
 \left ( \frac{\theta}{1 - \theta}\right )^x (1 - \theta)$$
 
-$$f(x; \theta) = exp \left \{ \log \left[ \left( 6\frac{\theta}{1 - \theta}\right )^x
+$$f(x; \theta) = exp \left \{ \log \left[ \left( \frac{\theta}{1 - \theta}\right )^x
 (1 - \theta)  \right ] \right \}$$
 
 $$f(x; \theta) = exp \left \{ x \log \left(\frac{\theta}{1 - \theta} \right) + 
@@ -2455,3 +2455,31 @@ $$f(x; \mu) = exp \left\{ \log \left[ \frac{1}{\sqrt{2 \pi}} exp
 $$f(x; \mu) = exp \left\{ \log(1) - \log(\sqrt{2 \pi}) -
 \frac{(x^2 - 2 \mu x + \mu^2)} 2 \right\}$$
 
+$$f(x; \mu) = exp \left \{ -\log(\sqrt{2\pi}) - \frac{x^2}{2} + \mu x +
+\frac{\mu^2} 2 \right\}$$
+
+<br>
+
+Lembrando que $f(x;\theta) = exp \{ c(\theta)T(x) + d(\theta) + S(x) \}$
+
+Então temos, <br>
+
+$c(\theta) = \mu$
+
+$T(x) = x$
+
+$d(\theta) = \frac{\mu^2} 2$
+
+$S(x) = -\log \left( \sqrt{2\pi} - \frac{x^2} 2\right)$
+
+Uma observação, é que $S(x)$ pode conter qualquer coisa que não seja um parâmetro.
+
+<br><br>
+
+Sejam $X_1,...,X_n$ uma amostra aleatória de tamanho $n$ da v.a. X, com 
+densidade qualquer. Então, a distribuição conjunta de $X_1,...,X_n$ é dada por
+
+$$f(x_i; \theta) = exp\left\{ c^*(\theta)\sum^n_{i=1}T(x_i) + d^*(\theta)
++ S^*(x) \right\}$$
+
+E daí, temos que $T(X)$ é uma estatística suficiente
