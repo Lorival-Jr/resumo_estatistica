@@ -2179,6 +2179,212 @@ $$LI(\theta) = \frac \theta n$$
 E sabendo que $Var[\bar x] = \frac \theta n$, temos que $e= 1$ e que $\bar x$
 é um estimador eficiente para $\theta$.
 
+<br>
+
+A desigualdade de informação ou Cramér-Rao, não é um método de construção de estimadores,
+é apenas um método que possibilita verificar se um estimador é ou não eficiente. 
+<br><br>
+
+### **Estatísticas Suficientes**
+
+Essas são estatísticas que condensem os dados sem que haja perda de informação. Sejam
+$X_1,...,X_n$ uma amostra aleatória da v.a X com fdp $f(x; \theta)$, quando resumimos a 
+informação é importante que a estatística contenha toda a informação, dentro do possível,
+sobre $\theta$ presente na amostra. Ou seja, se $T = T(X_1, ..., T_n)$ conter toda a
+informação que a amostra $X_1,...,X_n$ contém sobre $\theta$, então T é suficiente 
+para $\theta$. Assim, o conhecimento apenas de $T$, e não necessariamente da amostra completa,
+é suficiente para que seja feito inferências sobre $\theta$.
+<br><br>
+
+Dizemos que a estatística $T = T(X_1,...,X_n)$ é suficiente para $\theta$, quando a distribuição
+condicional $X_1,...,X_n$ dado $T$ for idependente de $\theta$.
+<br><br>
+
+Por exemplo, sendo $X_1,...,X_n$ uma amostra aleatória de tamanho $n$ para uma v.a. 
+$X$ &nbsp;~&nbsp; $Bernoulli(\theta)$, a estatística $T = \sum^n_{i=1} X_i$ é suficiente
+para $\theta$?
+<br>
+
+De acordo com a definição inicial, temos que $T$ é suficiente para $\theta$, se a probabilidade
+condicional $P(X_1 = x_1, ..., X_n = x_n | T = t)$ for independente de $\theta$.
+
+Para realizarmos esse exercício, precisamos lembrar que 
+$Bernoulli(\theta) = Binomial(1, \theta)$ <br>
+
+$$P(X_1 = x_1, ..., X_n = x_n | T = t) = \frac{P(X_1 = x_1, ..., X_n = x_n , T = t)}{P(T=t)}$$
+$$P(X_1 = x_1, ..., X_n = x_n | T = t) = \frac{P(X_1 = x_1, ..., X_n = x_n )}
+{ \binom n t \theta^t(1 - \theta)^{n-t}}$$
+
+$$P(X_1 = x_1, ..., X_n = x_n | T = t) = \frac{P(X_1 = x_1), ..., P(X_n = x_n)}
+{ \binom n t \theta^t(1 - \theta)^{n-t}}$$
+
+$$P(X_1 = x_1, ..., X_n = x_n | T = t) =
+\frac{\theta^{x_1}(1 - \theta)^{1-x_1}\cdot ... \cdot \theta^{x_n}(1 - \theta)^{1-x_n}}
+{ \binom n t \theta^t(1 - \theta)^{n-t}}$$
+
+$$P(X_1 = x_1, ..., X_n = x_n | T = t) =
+\frac{\theta^{\sum x_i}(1 - \theta)^{\sum (1-x_i)}}
+{ \binom n t \theta^t(1 - \theta)^{n-t}}$$
+
+$$P(X_1 = x_1, ..., X_n = x_n | T = t) =
+\frac{\theta^{\sum x_i}(1 - \theta)^{n - \sum (x_i)}}
+{ \binom n t \theta^t(1 - \theta)^{n-t}}$$
+E como t = $\sum^n_{i = 1}$
+
+$$P(X_1 = x_1, ..., X_n = x_n | T = t) =
+\frac{\theta^{t}(1 - \theta)^{n - t}}
+{ \binom n t \theta^t(1 - \theta)^{n-t}} = \frac{1}{\binom n t},$$
+
+<br>
+
+Assim, verificamos que $T = \sum^n_{i=1} X_i$ é suficiente para $\theta$, visto que $\frac{1}{\binom n t}$ não depende de $\theta$.
+<br><br>
+
+#### **Critério de Fatoração ou Lema de Neyman-Fisher**
+
+O lema de Neyman-Fisher é uma forma mais simples para encontrar estatísticas suficientes,
+sejam $X_1, ..., X_n$ com fdp $f(x; \theta)$ e função de verossimilhança $L(\theta; x)$.
+Então a estatística $T = T(X) = T(X_1, ..., X_n)$ é suficiente para $\theta$, se e somente se
+a verossimilhança pode ser fatorada como,
+
+$$L(\theta; x) = g_\theta (T(x_1, ..., x_n))h(x_1,...,x_n)$$
+$$L(\theta; x) = g (T; \theta)h(x_1,...,x_n)$$
+
+Na qual a função $h(x_1, ..., x_n)$ é uma função positiva que depende apenas de $x_1,..., x_n$,
+ou seja h não depende de $\theta$, e $g(T(x_1, ..., x_n); \theta)$ depende de $\theta$ e de
+$x_1, ..., x_n$ por meio de $T$.
+<br><br>
+
+Por exemplo, sejam $X_1, ..., X_n$ uma amostra aleatória de tamanho $n$ de uma v.a.
+$X$ &nbsp;~&nbsp; $Poisson(\theta)$, queremos verificar se $T(X) = \sum^n_{i=1}$ é suficiente
+para $\theta$. <br>
+
+$$f(x; \theta) =  \frac{e^{-\theta}\theta^x}{x!}$$
+$$L(x; \theta) = \prod^n_{i=1} f(x; \theta) =  \prod^n_{i=1}  \frac{e^{-\theta}\theta^x}{x!}
+= \frac{e^{-\sum \theta} \theta^{\sum x_i}}{\prod x!}$$
+$$L(x; \theta) = \frac{e^{-n\theta} \theta^{\sum x_i}}{\prod x!} $$
+$$L(x; \theta) = \frac{1}{\prod^n_{i=1} x!} \cdot e^{-n\theta}\theta^{\sum^n_{i=1} x_i}$$
+
+Portanto temos que,
+
+$h(x_1, ..., x_n) =  \frac{1}{\prod^n_{i=1} x!}$ 
+
+$g_\theta(T(X)) = e^{-n\theta}\theta^{\sum^n_{i=1} x_i}$
+
+Assim, pelo critério de fatoração $T(X) = \sum^n_{i=1} X_i$ é suficiente para $\theta$.
+<br><br>
+
+Outro exemplo,
+
+Sejam $X_1, ..., X_n$ uma amostra aleatória de tamanho $n$ da distribuiçã $N(\mu, 1)$. 
+É possível encontrar uma estatística suficiente para $\mu$?
+
+$$L(\mu, x) = \prod^n_{i=1} f(x_i; \mu) = \prod^n_{i=1} \frac{1}{\sqrt{2\pi}}
+exp\left \{ - \frac{(x_i - \mu)^2}{2} \right\}$$
+
+$$L(\mu, x) = \left (\frac{1}{2\pi} \right )^n exp\left \{ -\sum^n_{i=1} \frac{(x_i - \mu)^2}{2} \right\}$$
+Agora aplicando o Lema de Neyman-Fisher,
+
+$$L(\mu, x) = \left (\frac{1}{2\pi} \right )^n 
+exp\left \{ -\sum^n_{i=1} \frac{(x_i^2 - 2\mu x_i + \mu^2)}{2} \right\} =
+\left (\frac{1}{2\pi} \right )^n exp\left \{ -\sum^n_{i=1} \frac{x_i^2 }{2} \right\} 
+exp \left \{ \sum^n_{i=1} \frac{2\mu x_i }{2}  \right \} exp \left \{ -\sum^n_{i=1} \frac{\mu^2}{2}  \right \} $$
+
+$$L(\mu, x) = \left (\frac{1}{2\pi} \right )^n exp\left \{ -\sum^n_{i=1} \frac{x_i^2 }{2} \right\} 
+exp \left \{ \mu \sum^n_{i=1}x_i   \right \} exp \left \{\frac{-n\mu^2}{2}  \right \}$$
+
+Agora relembrando que o lema é definido como $L(\theta, x) = g(T, \theta)h(x_1,...,x_n)$ teríamos,
+
+$g(T; \mu) = exp \left \{ \mu \sum^n_{i=1}x_i   \right \} exp \left \{\frac{-n\mu^2}{2}  \right \} = exp\left \{\mu\left[\sum^n_{i=1}x_i - \frac{n\mu}{2}\right] \right\}$
+
+<br>
+
+$h(x_i) = \left (\frac{1}{2\pi} \right )^n exp\left \{ -\sum^n_{i=1} \frac{x_i^2 }{2} \right\} $
+
+<br>
+
+Assim, retirando a função de $x$ de $g(T; \mu)$ temos que $\sum^n_{i=1} x_i$ é uma estatística suficiente para $\mu$.
+
+<br><br>
+
+### **Estatísticas Conjuntamente Suficientes**
+
+Agora considerando o caso multiparamétrico em que $\theta$ é um vetor de parâmetros, 
+ao qual denotaremos por $\theta$. Isso seria o caso de, por exemplo, uma
+$N(\mu,\sigma^2)$ e daí teríamos $\theta = (\mu, \sigma^2)$.
+
+#### **Critério de fatoração no caso multiparamétrico**
+
+Sejam $X_1, ..., X_n$ uma amostra aleatória da distribuição da v.a $X$, com fdp 
+$f(x; \theta)$. Temos, então, que a estatística r-dimensional $T = (T_1,...,T_r)$,
+$T_i = T_i(X)$ é conjuntamente suficiente para $\theta$ se
+
+$$L(\theta; x) = f(x_1,...,x_n|\theta) = \prod^n_{i=1}f(x_1; \theta) =
+h(x_1,...,x_n)g_\theta(T_1(x), ..., T_r(x)),$$
+
+Em que $h(x_1, ..., x_n)$ é uma função que não depende de 
+$\theta$ e $g_\theta(T_1(x), ..., T_r(x))$ depende de $\theta$ e de $x_1,...,x_n$ 
+somente por meio de $(T_1(x),...,T_R(x))$.
+
+<br>
+
+Pra exemplificar, sejam $x_1, ..., x_n$ uma amostra aleatória de tamanho $n$ da 
+v.a $X$ &nbsp;~&nbsp; $N(\mu, \sigma^2)$ em que $\mu$ e $\sigma^2$ são desconhecidas.
+
+Temos que $\theta = (\mu, \sigma^2)$
+
+$$L(\theta; x) = \prod^n_{i=1} f(x_i; \mu, \sigma^2) = 
+\prod^n_{i=1} \frac{1}{\sqrt{2\pi\sigma^2}}exp\left\{
+-\frac{(x_i - \mu)^2}{2\sigma^2} \right \}$$
+
+$$L(\theta; x) = \left( \frac{1}{\sqrt{2\pi\sigma^2}} \right)^n exp\left\{
+-\frac{\sum^n_{i=1}(x_i^2 -2x_i\mu + \mu^2)}{2\sigma^2} \right \}$$
+
+$$L(\theta; x) = \left( \frac{1}{\sqrt{2\pi\sigma^2}} \right)^n 
+exp \left\{-\frac{\sum^n_{i=1}x_i^2 }{2\sigma^2}  \right \}
+exp \left\{-\frac{\sum^n_{i=1}-2x_i\mu}{2\sigma^2} \right\}
+exp \left\{-\frac{\sum^n_{i=1} \mu^2}{2\sigma^2} \right\}$$
+
+$$L(\theta; x) = \left( \frac{1}{\sqrt{2\pi\sigma^2}} \right)^n 
+exp \left\{-\frac{\sum^n_{i=1}x_i^2 }{2\sigma^2}  \right \}
+exp \left\{\frac{\mu \sum^n_{i=1}x_i}{\sigma^2} \right\}
+exp \left\{\frac{-n \mu^2}{2\sigma^2} \right\}$$
+
+Assim, seguindo a estrutura do da fatoração conjunta,
+
+$h(x_1,...,x_n) =  \left( \frac{1}{\sqrt{2\pi\sigma^2}} \right)^n$
+
+$g_\theta(t_1(x), t_2(x)) = exp \left\{-\frac{\sum^n_{i=1}x_i^2 }{2\sigma^2}  + \frac{\mu \sum^n_{i=1}x_i}{\sigma^2} - \frac{n \mu^2}{2\sigma^2} \right\}$
+ 
+ Assim, temos que $T = (\sum^n_{i=1} x_i, \sum^n_{i=1}x^2_i)$ é
+ conjuntamente suficiente para $(\mu, \sigma^2)$.
+ 
+ 
+ <br><br>
+ 
+ Assim como no caso uniparamétrico, as estatísticas derivadas de
+ estatísticas suficientes também são suficientes, por exemplo no caso
+ $T_2 = (\bar x, s^2)$ também é suficiente para o exemplo anterior.
+ 
+ <br>
+ 
+ Dando outro exemplo, seja uma v.a. $X$ &nbsp;~&nbsp; $Gama(\alpha, \beta)$.
+  Enconte uma estatística suficiente para os parâmetros da distribuição.
+  
+  $$f(x;\alpha, \beta) = \frac{\beta^\alpha}{\Gamma(\alpha)}
+  x^{\alpha-1}exp\{-\beta x\}$$
+  
+$$L(\theta,x)= \prod^n_{i=1}f(x_i;\theta)=
+\prod^n_{i=1}\frac{\beta^\alpha}{\Gamma(\alpha)}x^{\alpha-1}exp\{-\beta
+x\}$$
+$$L(\theta,x)= \frac{\beta^{n\alpha}}{\Gamma^n(\alpha)}
+\prod^n_{i=1}x_i^{\alpha-1}exp \left\{-\beta \sum^n_{i=1}x_i \right\}$$
+<br>
+Temos que,
+<br>
+
+$T = (\prod^n_{i=1} x_i, \sum^n_{i=1}x_i)$
+<br><br><br>
 
 ### Famílias Exponenciais
 
